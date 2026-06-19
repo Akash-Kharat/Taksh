@@ -1,334 +1,355 @@
 # Taksh Skill Library
-*(Operational Specifications for the Dynamic Skills Engine)*
+*(Epistemic Framework for a Domain-Level, Platform-Agnostic Skills Engine)*
 
 > [!NOTE]
-> This document details the specifications of the 10 core AI skills embedded in the **Taksh Skills Engine**. These skills are dynamically loaded by the Session Orchestrator based on workspace triggers, user queries, and sensory memory context. Each specification defines the operational limits, workflows, and success metrics for the agent.
+> This document defines the operational specifications, taxonomy, hierarchy, collaboration mechanisms, and activation strategies for the **Taksh Skills Engine**. Designed to remain technology-agnostic and future-proof for the next 10 years, these specifications focus on first principles, physical laws, and architectural standards rather than specific platforms, libraries, or silicon vendors.
 
 ---
 
-## Skill Composition Model
+## 1. Skill Taxonomy & Hierarchy
 
-The Skills Engine activates skills based on three parallel pathways:
-1. **Static Trigger Evaluation**: Checks open files and workspace symbols (e.g., `#include "freertos/FreeRTOS.h"` triggers the *FreeRTOS Expert*).
-2. **Semantic Intent Mapping**: Maps natural language questions (e.g., "What's the best partition layout?") to the relevant skill (e.g., *ESP32 Firmware Engineer*).
-3. **Blackboard Pattern Composition**: Combines constraints from multiple active skills (e.g., *IoT Architect* + *ESP32 Firmware Engineer* cooperate when designing low-power secure telemetry on an ESP32).
+To separate high-level systems planning, detailed code/layout audits, and cognitive self-evolution, the Skills Engine utilizes a **four-tiered operational hierarchy**:
 
 ```mermaid
 graph TD
-    Query[User Query / Audio] --> Orch[Session Orchestrator]
-    Telemetry[Workspace Telemetry] --> Orch
-    Orch --> SE[Skills Engine]
-    
-    subgraph Registry [Skill Registry]
-        EA[Embedded Architect]
+    subgraph Meta_Layer [1. Meta-Skills Layer]
+        SI[Systems Integrator]
+        SA[Socratic Arbiter]
+    end
+    subgraph Domain_Layer [2. Domain-Skills Layer]
+        ESA[Electronics Systems Architect]
+        E_SA[Embedded Systems Architect]
+        IIA[Industrial IoT Architect]
+        ECA[Edge Computing Architect]
+        ASA[AI Systems Architect]
+        PME[Predictive Maintenance Engineer]
+        FSA[Full-Stack Software Architect]
+    end
+    subgraph Review_Layer [3. Review-Skills Layer]
         PR[PCB Reviewer]
-        FE[ESP32 Firmware Engineer]
-        RT[FreeRTOS Expert]
-        IA[IoT Architect]
-        DA[Django Architect]
-        RA[React Architect]
-        PM[Predictive Maintenance]
-        AA[AI Architect]
-        AS[Research Assistant]
+        FR[Firmware Reviewer]
+        SR[Security Reviewer]
+        PA[Performance Auditor]
+    end
+    subgraph Knowledge_Layer [4. Knowledge-Skills Layer]
+        EKC[Epistemic Knowledge Curator]
+        RA[Research Assistant]
     end
 
-    SE -->|Resolves Triggers| Registry
-    Registry -->|Prompt Overlays| BB[Shared Session Blackboard]
-    BB -->|Unified Instructions| Gemini[Gemini Multimodal Live API]
+    Meta_Layer -->|Orchestrates| Domain_Layer
+    Domain_Layer -->|Delegates to| Review_Layer
+    Review_Layer -->|Audits Code & Layouts| Domain_Layer
+    Knowledge_Layer <-->|Curates & Ingests| Meta_Layer & Domain_Layer & Review_Layer
 ```
 
----
-
-## 1. Embedded Architect
-
-### Purpose
-The **Embedded Architect** skill guides the user in designing robust hardware-independent systems, defining memory-mapped peripheral boundaries, formulating power budgets, and establishing solid hardware abstraction layers (HAL). It focuses on the physics of electronic hardware, microarchitectures, and hardware-software co-design.
-
-### Inputs
-*   **Workspace Triggers**: System block diagrams, data sheets, timing diagrams, power profiles, memory map files (`.ld`, `.map`), MCU selections.
-*   **User Queries**: Core questions regarding bus speeds, DMA mapping, interrupt latency, sleep profiles, peripheral multiplexing, or component selections.
-*   **Sensory Context**: Open registers definition files, peripheral configuration schemas (e.g., Pin multiplexing sheets).
-
-### Outputs
-*   **Memory Map Allocations**: Relational and absolute boundary mapping for Flash, SRAM, Core-Coupled Memory (CCM), and external storage.
-*   **Power Budget Matrices**: Dynamic and static current calculations across operating modes (Run, Sleep, Deep Sleep, Hibernate).
-*   **HAL & Peripheral API Designs**: Clean, modular API signatures for bare-metal drivers (I2C, SPI, UART, ADC) separating hardware details from application logic.
-
-### Workflow
-1.  **Analyze System Constraints**: Extract system specifications, processor frequency ($f_{CPU}$), memory boundaries, and operating voltage ($V_{DD}$).
-2.  **Evaluate Memory Layouts**: Analyze link scripts (`.ld`) to prevent stack-heap collisions and optimize memory utilization (e.g., mapping fast ISR handlers to CCM SRAM).
-3.  **Perform Bus & DMA Auditing**: Calculate bus bandwidth and optimize DMA channel allocations to prevent bus contention between high-speed peripherals (e.g., ADC, SPI) and the CPU.
-4.  **Formulate Power and Timing Profiles**:
-    *   Compute total average current: 
-        \[I_{avg} = \frac{\sum (I_i \times t_i)}{T_{period}}\]
-    *   Draft low-power transitions and state flow diagrams.
-
-### Success Criteria
-*   **Resource Feasibility**: Memory layout structures leave at least a 20% safety margin for stack growth.
-*   **Deterministic Timing**: Peripheral communication models prevent CPU starvation and keep interrupt latency below target bounds.
-*   **Hardware Isolation**: The HAL layer contains zero direct register writes in application space, utilizing clean, functional boundaries.
+### Taxonomy Classification
+*   **Meta-Skills (Tier 1)**: Core controllers that coordinate multi-skill execution, enforce systems-level integration constraints, and manage Socratic dialogue and conflict resolution.
+*   **Domain-Skills (Tier 2)**: Specialized conceptual designers that evaluate architectural requirements, formulate design trade-offs, and make high-level technology recommendations based on physical and mathematical limits.
+*   **Review-Skills (Tier 3)**: Execution-level validators that audit code, circuit diagrams, PCB layout geometries, and security configurations against defined industry rules and standards.
+*   **Knowledge-Skills (Tier 4)**: Engines responsible for maintaining the local workspace knowledge base, executing background research, and managing cognitive self-evolution.
 
 ---
 
-## 2. PCB Reviewer
+## 2. Skill Activation Strategy
 
-### Purpose
-The **PCB Reviewer** skill reviews schematics and layout designs to ensure signal integrity (SI), power integrity (PI), thermal performance, manufacturing compliance (DFM/DFA), and electromagnetic compatibility (EMC). It acts as an automated design verification peer.
+To optimize execution speed, minimize token consumption, and ensure high-quality reasoning without inducing analysis paralysis, Taksh implements a dynamic activation strategy.
 
-### Inputs
-*   **Workspace Triggers**: Schematic netlists, Gerber files, BOM lists, stackup specifications, high-speed routing rules, component data sheets.
-*   **User Queries**: Inquiries regarding decoupling capacitor placements, differential pair impedance matching, thermal via design, or ground plane segmentation.
-*   **Sensory Context**: Current PCB layout images or schematic screenshots shared via visual channels.
+### 2.1. Dynamic Gating & Contextual Pruning
+A request should not trigger the entire library. The **Orchestrator** prevents over-activation using a two-tier evaluation gate:
 
-### Outputs
-*   **Review Report**: Line-by-line review of decoupling placements, impedance mismatches, loop-area hazards, and trace spacing issues.
-*   **SI/PI Calculations**: High-speed trace characteristic impedance ($Z_0$) and differential impedance ($Z_{diff}$) verification:
-    \[Z_0 = \frac{87}{\sqrt{\epsilon_r + 1.41}} \ln\left(\frac{5.98h}{0.8w + t}\right)\]
-*   **Thermal/DFM Mitigation Plans**: Recommendations on copper pour distributions, thermal relief configurations, and fabrication clearances.
+```mermaid
+flowchart TD
+    UserQuery[User Query / File Change] --> WorkspaceScan[Scan Workspace File Types & Symbols]
+    WorkspaceScan --> FilterPool[Prune Irrelevant Skills from Selection Pool]
+    FilterPool --> SemanticClassifier[Lightweight Semantic Classifier Run]
+    SemanticClassifier -->|Assign Relevancy Scores S| Gating{S >= 0.75?}
+    Gating -->|No| Sleep[Remain Dormant]
+    Gating -->|Yes| Activate[Register in Active Session Context]
+```
 
-### Workflow
-1.  **Decoupling Audit**: Verify that each IC power pin has dedicated decoupling capacitors placed physically close to the pins with low-inductance return paths.
-2.  **Power Delivery Network (PDN) Audit**: Analyze trace widths for high-current paths using IPC-2152 standards to limit temperature rise.
-3.  **Signal Integrity Check**: Evaluate high-speed signals (e.g., USB, Ethernet, DDR) for differential routing, loop-area reduction, and return path discontinuities (e.g., routing over splits in reference planes).
-4.  **DFM & DFC Compliance**: Compare trace-to-trace, trace-to-pad, and via-to-via dimensions against typical manufacturer limits (e.g., 4mil/4mil spacing rules).
+1.  **Contextual Pruning**: Before running LLM-based evaluation, the orchestrator checks workspace file types and symbols. For instance, if the workspace contains no PCB schematic or layout files (`.sch`, `.brd`, `.kicad_pcb`), all electronics and PCB skills are immediately pruned from the evaluation pool.
+2.  **Semantic Gating**: The orchestrator runs a fast, local semantic classifier against the user request. A skill is loaded only if its relevance score is $S \ge 0.75$.
 
-### Success Criteria
-*   **Zero Floating Nets**: All components have fully defined connections.
-*   **Return Path Integrity**: All high-speed signal traces possess a continuous ground return path without crossing splits.
-*   **Decoupling Proximity**: Decoupling capacitors are verified to be within maximum permissible electrical distances of their target IC pins.
+### 2.2. Task Complexity Estimation
+Task complexity is calculated algorithmically using three variables: file scope ($N_{files}$), dependency coupling density ($D_{deps}$), and request linguistic depth ($I_{intent}$):
 
----
+\[C = w_1 \cdot \log(N_{files} + 1) + w_2 \cdot D_{deps} + w_3 \cdot I_{intent}\]
 
-## 3. ESP32 Firmware Engineer
+Where weights are balanced to $w_1 = 1.0$, $w_2 = 1.5$, and $w_3 = 2.0$. The calculated score maps to three categories:
 
-### Purpose
-The **ESP32 Firmware Engineer** skill specializes in writing, refactoring, and debugging applications built using the Espressif IoT Development Framework (ESP-IDF) and target-specific hardware features of the ESP32 family (ESP32, S2, S3, C3, C6).
+| Complexity Category | Complexity Score ($C$) | Description |
+| :--- | :--- | :--- |
+| **Simple Task** | $C \le 2.0$ | Conceptual questions, single-file edits, minor documentation lookups. |
+| **Medium Task** | $2.0 < C \le 5.0$ | Multi-file changes within one domain layer, localized debugging, API refactors. |
+| **Complex Task** | $C > 5.0$ | Cross-domain integration, system refactorings, performance optimization. |
 
-### Inputs
-*   **Workspace Triggers**: ESP-IDF codebases (C/C++), `CMakeLists.txt` build scripts, `partitions.csv` layouts, `sdkconfig` files, stack traces, core dump files.
-*   **User Queries**: Questions on ESP-IDF components, Wi-Fi/BLE initialization, deep sleep sleep configurations, non-volatile storage (NVS), partition schemes, and core allocation.
-*   **Sensory Context**: Open C/C++ workspace files, active terminal compiler errors, and backtrace logs.
+### 2.3. Cost & Token Optimization Model
+To prevent prompt bloat, Taksh uses a **Tiered Prompt Ingestion Model**:
 
-### Outputs
-*   **Optimized Partition Tables**: Custom layouts optimizing flash space for application binaries, NVS storage, and Over-the-Air (OTA) update buffers.
-*   **Crash Log Diagnostics**: Decoded stack traces mapping program counter (PC) values to source code files and lines.
-*   **Dual-Core Execution Designs**: Task affinity templates assigning performance-critical functions to Core 1 and protocol/background tasks to Core 0.
+*   **Level 1 (Trigger State)**: Only the skill's name and basic trigger rules (100 tokens per skill) are loaded into the orchestrator.
+*   **Level 2 (Active State)**: When activated, only the skill's *Core Constraints & Workflows* (approx. 600 tokens) are injected into the system prompt.
+*   **Level 3 (Tool-Execution State)**: The detailed rules and reference specs of the skill (up to 3,000 tokens) are loaded *dynamically* and *only* when the agent calls a tool that requires that specific skill's data.
 
-### Workflow
-1.  **Parse ESP-IDF Context**: Analyze the active target chip architecture and configuration (`sdkconfig`).
-2.  **Evaluate Core Allocation**: Audit task initialization configurations to ensure the scheduler uses dual-core capabilities effectively (`xTaskCreatePinnedToCore`).
-3.  **Analyze Memory Allocation**: Inspect static, heap, and external RAM (PSRAM) usage. Differentiate allocations utilizing `MALLOC_CAP_SPIRAM` versus fast internal `MALLOC_CAP_INTERNAL` memory.
-4.  **Diagnose Crash Logs**: Feed crash traces through the ESP-IDF monitor mapping tools to identify null pointers, stack overflows, or watchdog resets (e.g., Interrupt Watchdog triggered on Core 0).
+### 2.4. Skill Allocation Limits
+To prevent token waste and cognitive loops, active skill counts are strictly capped based on complexity:
 
-### Success Criteria
-*   **IDF Compliance**: Generated code uses standard ESP-IDF driver APIs (e.g., ESP_ERROR_CHECK wrappers) and avoids raw register configuration unless necessary.
-*   **Zero Heap Leaks**: Heap operations balance allocations and deallocations, validated by heap monitoring API calls.
-*   **WDT Safeties**: High-priority tasks yield control periodically to feed the Task Watchdog Timer (TWDT).
+| Task Complexity | Max Lead Skills | Max Secondary Skills | Max Total Active Skills |
+| :--- | :--- | :--- | :--- |
+| **Simple** | 1 | 0 | 1 |
+| **Medium** | 1 | 1 | 2 |
+| **Complex** | 1 | 3 | 4 |
 
 ---
 
-## 4. FreeRTOS Expert
+## 3. Multi-Skill Collaboration & Arbitration Workflow
 
-### Purpose
-The **FreeRTOS Expert** skill analyzes multithreaded firmware to eliminate synchronization hazards (deadlocks, race conditions, priority inversions) and optimize resource allocation (stacks, task priorities, queues, semaphores) in real-time execution.
+When a task requires multiple domains (e.g., designing an edge signal analyzer with cloud reporting), skills coordinate on a shared Blackboard.
 
-### Inputs
-*   **Workspace Triggers**: Concurrency code blocks, RTOS task declarations, interrupt service routines (ISR), lock-free data structures, task notification files.
-*   **User Queries**: Inquiries about priority inversions, mutex vs. binary semaphore selection, queue message sizes, tick configurations, or ISR-safe function calls.
-*   **Sensory Context**: System-level runtime configurations and thread state traces.
+```mermaid
+sequenceDiagram
+    autonumber
+    participant Orch as Session Orchestrator
+    participant BB as Session Blackboard
+    participant Lead as Lead: Embedded Systems Architect
+    participant Sec as Secondary: Security Reviewer
+    participant Arb as Meta: Socratic Arbiter
 
-### Outputs
-*   **Concurrency Audits**: High-resolution warnings highlighting structural race conditions, nested locks, and priority misalignments.
-*   **ISR-Safe Code Refactors**: Correct implementations mapping standard FreeRTOS calls (e.g., `xQueueSend`) to their interrupt equivalents (e.g., `xQueueSendFromISR`).
-*   **Priority Allocation Plans**: Rate-monotonic or deadline-driven task priority mapping.
+    Orch->>BB: Parse goal & initialize blackboard
+    Orch->>Lead: Appoint Lead Skill
+    Lead->>BB: Write proposed design (e.g., ESP32 platform)
+    Sec->>BB: Read proposed design & run security audit
+    Sec->>BB: Write conflict flag (e.g., Cryptographic hardware risk)
+    Arb->>BB: Detect conflict & run Arbitration Pipeline
+    Arb->>Arb: Build Trade-off Matrix (MCDA)
+    Arb->>Orch: Escalate trade-off evaluation to user
+```
 
-### Workflow
-1.  **Audit Task Priorities**: Verify task priorities align with latency requirements (critical/short deadlines receive higher priority).
-2.  **Inspect Synchronization Objects**:
-    *   Evaluate mutex usage: Ensure `xSemaphoreCreateMutex` is used for resource locking to enable priority inheritance.
-    *   Evaluate semaphore usage: Enforce `xSemaphoreCreateBinary` or task notifications for signaling.
-3.  **Validate ISR Boundaries**: Scan Interrupt Service Routines to ensure zero blocking calls (e.g., `vTaskDelay` or infinite loops) and verify the `pxHigherPriorityTaskWoken` parameter is correctly passed and evaluated on exit.
-4.  **Analyze Heap Allocations**: Evaluate heap schemes (Heap_1 to Heap_5) and identify heap fragmentation patterns caused by dynamic task creation.
+### 3.1. Collaboration Rules
+1.  **Blackboard Communication**: Active skills do not converse directly in free-form text. They read from and write to a structured JSON schema on the Blackboard:
+    ```json
+    {
+      "origin_skill": "Firmware Reviewer",
+      "target_component": "hal_uart.c",
+      "status": "flag | approve",
+      "metric_impact": { "latency_ms": 12.0, "ram_bytes": 512 },
+      "constraint_violations": ["ISR_BLOCKING_CALL"],
+      "recommended_fix": "Replace xQueueSend with xQueueSendFromISR"
+    }
+    ```
+2.  **Strict Turn Limits**: To prevent endless review loops, collaboration turns are hard-capped:
+    *   **Medium Tasks**: Max 2 collaboration cycles.
+    *   **Complex Tasks**: Max 3 collaboration cycles.
+    If a review skill does not raise a new flag within a cycle, it is immediately deactivated.
 
-### Success Criteria
-*   **Deterministic Scheduling**: Concurrency architecture guarantees execution within predictable timing envelopes.
-*   **Thread Safety**: Mutual exclusion boundaries surround shared non-atomic resources.
-*   **ISR Conformity**: Zero standard blocking calls exist inside ISR paths.
+### 3.2. Conflict Resolution & Arbitration Pipeline
+When two skills disagree (e.g., *Embedded Systems Architect* selects a low-cost, low-resource MCU, but *Security Reviewer* flags it for lacking hardware secure boot), the **Socratic Arbiter** executes the following arbitration pipeline:
 
----
-
-## 5. IoT Architect
-
-### Purpose
-The **IoT Architect** skill defines and secures edge-to-cloud interfaces, optimizes network payloads, manages device onboarding/provisioning sequences, and designs robust remote firmware update (OTA) architectures.
-
-### Inputs
-*   **Workspace Triggers**: Connection protocols configuration, JSON/Protobuf schemas, TLS certificate management files, OTA state machine scripts.
-*   **User Queries**: Questions on MQTT broker topologies, payload serialization choices (Protobuf vs. CBOR vs. JSON), secure provisioning, keep-alive calculations, or OTA rollback schemes.
-*   **Sensory Context**: API configurations, socket implementations, network telemetry logs.
-
-### Outputs
-*   **Telemetry payload designs**: High-efficiency serialization setups minimizing bandwidth consumption.
-*   **MQTT Topic Trees**: Hierarchical, clean topic models supporting wildcards and client isolation (e.g., `devices/{tenant_id}/{device_id}/telemetry/{stream_id}`).
-*   **Security Protocols**: Device-side client-certificate TLS configuration checklists.
-*   **OTA State Machine**: Fail-safe boot diagrams verifying firmwares before marking updates as successful.
-
-### Workflow
-1.  **Evaluate Telemetry Bandwidth**: Calculate network serialization overhead.
-    > [!TIP]
-    > Prefer binary formats (CBOR/Protobuf) over verbose text formats (JSON) for cellular or satellite connections to reduce data volume by up to 80%.
-2.  **Design Connection State Recovery**: Formulate retry models using exponential backoff with random jitter to prevent "thundering herd" scenarios on connection loss.
-3.  **Audit Security Layers**: Validate cryptographic cipher suites, check certificate validation expiration policies, and evaluate hardware secure-element integrations.
-4.  **Structure Safe OTA**: Map the dual-partition OTA flow, ensuring that if a boot failure or network handshake timeout occurs post-update, the bootloader automatically reverts to the previous stable partition.
-
-### Success Criteria
-*   **Bandwidth Efficiency**: Payloads utilize compact serialization matching network physical-layer MTUs.
-*   **Fail-safe Updates**: OTA processes cannot brick devices on power failure or invalid app crashes.
-*   **Transport Security**: End-to-end transport utilizes modern encryption standardizations (e.g., TLS 1.2/1.3 with hardware acceleration).
+1.  **Constraint Translation**: Each skill translates its recommendation into quantifiable values:
+    *   *Embedded Systems Architect*: Unit Cost = $1.50, Active Power = 120mA, Cryptographic Acceleration = None.
+    *   *Security Reviewer*: Secure Boot = Required, Firmware Encryption = Yes, Minimum Crypto Hardware = AES-256.
+2.  **Multi-Criteria Decision Analysis (MCDA)**: The Socratic Arbiter evaluates these values against the user's primary project constraints (retrieved from working and long-term project memory).
+3.  **Weighted Trade-off Matrix**: The Arbiter calculates a weighted score for both options:
+    \[Score = \sum (Weight_i \times Performance_i)\]
+4.  **User Escalation**: If the score difference is within a 15% margin, or if it represents an architectural branching point, the Socratic Arbiter halts automated execution, formats the trade-off matrix into a readable UI table, and presents it to the user via voice or text for final confirmation.
 
 ---
 
-## 6. Django Architect
+## 4. Future Expansion & Self-Evolution Strategy
 
-### Purpose
-The **Django Architect** skill designs backend web architectures, optimizes relational database queries, structures background tasks via Celery, and secures API endpoints.
+To allow Taksh to learn new engineering domains without requiring code updates to the core engine, the architecture implements **Dynamic Skill Scaffolding**:
 
-### Inputs
-*   **Workspace Triggers**: Django models (`models.py`), views (`views.py`), query implementations, custom middleware, database settings, migrations files.
-*   **User Queries**: Queries about database optimization, N+1 query debugging, custom middleware structures, celery task workflows, or authorization models.
-*   **Sensory Context**: Open Django source files, SQL execution logs, API response traces.
+```mermaid
+flowchart LR
+    NewDocs[New Domain Docs / Code] --> EKC[Epistemic Knowledge Curator]
+    EKC -->|Extracts Patterns| Manifest[Generate Skill Manifest YAML/MD]
+    Manifest -->|Register| Registry[Skills Registry Directory]
+    Registry -->|Dynamic Load| Orch[Session Orchestrator]
+```
 
-### Outputs
-*   **Query Optimization Plans**: Performance reports showing how to refactor Django ORM queries using `select_related`, `prefetch_related`, and indexes.
-*   **Schema Refactoring Blueprints**: Safe multi-step migrations for high-traffic tables.
-*   **Task Ingestion Flowcharts**: Structured background process queues with idempotency checks.
-
-### Workflow
-1.  **Scan for N+1 Queries**: Review active views and serializers. Look for loops iterating over objects that query related models without prefetching.
-2.  **Evaluate Index Strategies**: Assess database model fields to recommend appropriate database indexes (e.g., `db_index=True`, `Meta.indexes`) for search fields.
-3.  **Audit Middleware Execution**: Evaluate custom middleware classes to prevent execution bottlenecks on common requests.
-4.  **Optimize Background Processing**:
-    *   Verify Celery tasks pass minimal serializable arguments (e.g., primary keys instead of full model instances).
-    *   Ensure Celery tasks execute idempotently to handle execution retries safely.
-
-### Success Criteria
-*   **ORM Efficiency**: Critical API endpoints execute with a bounded number of database queries (ideally $O(1)$ relative to list length).
-*   **Database Safety**: Database modifications occur within managed atomic transactions (`transaction.atomic`).
-*   **API Security**: Access validation controls are applied to all sensitive endpoints.
+1.  **Declarative Manifests**: All skills are defined as declarative markdown manifests located at `Skills/Manifests/skill_name.md`. They contain standardized metadata tags, trigger rules, and input/output interfaces.
+2.  **Knowledge-Driven Generation**: When a user introduces a new technology domain (e.g., Quantum Control Circuits), the **Epistemic Knowledge Curator** processes the documentation, extracts the core constraints, generates a new skill manifest, and writes it to the `Skills/Manifests/` directory.
+3.  **Dynamic Registration**: The Session Orchestrator scans this directory on startup. Any valid manifest is immediately registered in the active selection pool, enabling zero-code skill evolution.
 
 ---
 
-## 7. React Architect
-
-### Purpose
-The **React Architect** skill structures high-performance user interfaces, optimizes rendering pipelines, manages state management stores (Zustand, Redux, Context), and builds responsive component systems.
-
-### Inputs
-*   **Workspace Triggers**: React component structures (`.jsx`, `.tsx`), state management modules, React hooks, bundle analysis files, Web Vitals performance indicators.
-*   **User Queries**: Inquiries on state propagation, redundant re-render mitigation, custom hook design, chunking code, or asset optimization.
-*   **Sensory Context**: UI layout code, CSS rules, React DevTools traces.
-
-### Outputs
-*   **Component Separation Blueprints**: Clean component hierarchies separating presentation blocks from state logic container components.
-*   **State Propagation Models**: State diagrams illustrating state data flows through Zustand or context boundaries.
-*   **Rendering Optimization Recommendations**: Performance refactoring suggestions (e.g., `useMemo`, `useCallback`, dynamic imports).
-
-### Workflow
-1.  **Map State Flow**: Identify where state is defined and how it is consumed. Move shared state up or extract it to a global store to prevent deep prop drilling.
-2.  **Detect Rendering Bottlenecks**: Identify heavy computations happening on render paths or components re-rendering because of reference equality changes on props.
-3.  **Optimize Bundle Sizes**: Implement code-splitting using `React.lazy` and `Suspense` for router paths or heavy UI elements.
-4.  **Enforce UI Best Practices**: Verify layouts use responsive flexbox/grid models and maintain semantic, accessible HTML (WCAG compliance).
-
-### Success Criteria
-*   **High Performance**: Bounded re-renders on inputs; heavy rendering operations are memoized.
-*   **Modular Architecture**: Component interfaces are clean, reusable, and single-purpose.
-*   **Bundle Optimization**: First-load page sizes are kept minimal through effective lazy loading.
+## 5. Tiered Skill Specifications
 
 ---
 
-## 8. Predictive Maintenance Engineer
+### 5.1. Meta-Skills
 
-### Purpose
-The **Predictive Maintenance Engineer** skill designs, refactors, and debugs digital signal processing (DSP) pipelines and lightweight machine learning models (TinyML) on edge processors to identify physical asset degradations.
+#### Systems Integrator
+*   **Purpose**: Manages multi-domain integrations, verifies interface compatibility across system boundaries, and enforces project-wide Architectural Decision Records (ADRs).
+*   **Inputs**: System interface definitions, API schemas, multi-skill proposals on the Blackboard, active project ADR logs.
+*   **Outputs**: Interface compatibility reports, system-level dependency charts, integration fix configurations.
+*   **Workflow**:
+    1. Scan individual skill proposals for cross-boundary connections (e.g., hardware outputs feeding into edge database schemas).
+    2. Check the proposed data formats against interface definitions to identify mismatches.
+    3. Audit proposed components against historical project ADRs to ensure architectural compliance.
+*   **Success Criteria**: No interface mismatches in final proposed changes; complete compliance with project ADR constraints.
 
-### Inputs
-*   **Workspace Triggers**: DSP algorithms, sensor logs (high-speed accelerometer/gyro scope readings, thermistor logs), FFT window configurations, feature extraction scripts, classification models.
-*   **User Queries**: Questions on Nyquist sampling limits, FFT window size tradeoffs, vibration feature extraction (RMS, kurtosis), or edge classification threshold designs.
-*   **Sensory Context**: Sample data logs, DSP implementation code.
-
-### Outputs
-*   **Signal Processing Specifications**: Clear configurations for high-pass/low-pass filtering, window functions (Hanning, Hamming), and sampling rates.
-*   **Feature Extraction Code**: Algorithms generating time-domain and frequency-domain telemetry metrics.
-*   **FMEA Correlation Matrices**: Mapping computed anomalies to physical failure modes (e.g., motor bearing wear).
-
-### Workflow
-1.  **Validate Sampling Setup**: Verify sampling rates ($f_s$) satisfy Nyquist criteria ($f_s > 2 \times f_{max\_signal}$) to prevent aliasing.
-2.  **Design DSP Pipeline**:
-    *   Apply detrending and window functions to raw sensor arrays.
-    *   Compute Fast Fourier Transform (FFT) to convert signals to the frequency domain:
-        \[X(k) = \sum_{n=0}^{N-1} x(n) e^{-j 2\pi k n / N}\]
-3.  **Compute Degradation Features**: Calculate statistical indicators such as Root Mean Square (RMS) for energy tracking, Crest Factor for transient peaks, and Kurtosis for structural wear.
-4.  **Formulate Edge Anomaly Logic**: Set up lightweight, static, or adaptive threshold classifications (e.g., Z-score analysis) requiring minimal memory footprints.
-
-### Success Criteria
-*   **DSP Correctness**: Frequency transformations are verified using synthetic or validation signals.
-*   **Edge Resource Compatibility**: Algorithms execute within the constrained memory and processing budgets of target MCUs (e.g., ESP32 running DSP libraries).
-*   **Diagnostic Mapping**: Alerts link detected anomalies directly to Failure Modes and Effects Analysis (FMEA) classifications.
+#### Socratic Arbiter
+*   **Purpose**: Resolves conflicts between competing skill recommendations, evaluates multi-criteria trade-off matrices, and guides user interaction during architectural decision points.
+*   **Inputs**: Conflicting skill recommendations, performance metrics, project design constraints, user-defined priority levels.
+*   **Outputs**: Multi-Criteria Decision Analysis (MCDA) matrices, Socratic trade-off questions, final arbitrated architecture proposals.
+*   **Workflow**:
+    1. Detect conflicting assertions on the Blackboard.
+    2. Request quantified constraint metrics from both conflicting skills.
+    3. Generate a weighted trade-off matrix evaluating cost, power, latency, complexity, and security.
+    4. Compile the trade-offs into Socratic prompts for the user if direct resolution thresholds are not met.
+*   **Success Criteria**: Resolves all Blackboard conflicts; escalates decisions to the user with zero jargon, framing trade-offs in quantified engineering metrics.
 
 ---
 
-## 9. AI Architect
+### 5.2. Domain-Skills
 
-### Purpose
-The **AI Architect** skill configures cognitive architectures, retrieval pipelines (RAG), semantic indices, prompting strategies, and multi-turn agent planning loops.
+#### Electronics Systems Architect
+*   **Purpose**: Designs and optimizes analog, digital, and power delivery architectures, focusing on circuit physics, component selection matrices, and signal path topologies.
+*   **Inputs**: Electrical requirements, power supply constraints, bandwidth budgets, environmental factors, sensor and actuator datasheets.
+*   **Outputs**: Block diagrams, power delivery network (PDN) models, component trade-off evaluations, interface designs.
+*   **Workflow**:
+    1. Parse system inputs to calculate total maximum and average power consumption.
+    2. Evaluate components based on electrical parameters (e.g., input voltage ranges, output current capability, signal-to-noise ratios).
+    3. Design circuit protection structures (ESD, overvoltage, reverse polarity).
+    4. Structure analog-to-digital signal paths to maximize signal resolution.
+*   **Success Criteria**: Power delivery networks meet load demands with $\ge 25\%$ current headroom; analog signal paths optimize signal-to-noise ratio (SNR) based on source impedance.
 
-### Inputs
-*   **Workspace Triggers**: Vector DB schemas (ChromaDB), ingestion scripts, search rank configs, system prompts, planning loop code.
-*   **User Queries**: Questions about semantic search chunking, query rewriting, embedding models, agent planning, or prompt evaluation.
-*   **Sensory Context**: System prompts, agent state graphs, RAG response evaluations.
+#### Embedded Systems Architect
+*   **Purpose**: Designs bare-metal and RTOS-based system software architectures, optimizing concurrency models, memory-mapped I/O boundaries, and CPU/memory resources.
+*   **Inputs**: Hardware specifications, processor architectures (e.g., Harvard vs. Von Neumann, instruction sets), memory constraints, execution timing requirements.
+*   **Outputs**: Memory map specifications, task scheduling architectures, peripheral driver APIs, state machine diagrams.
+*   **Workflow**:
+    1. Analyze memory footprints (Flash, SRAM) to allocate memory regions.
+    2. Define concurrency models (event loops vs. preemptive task priority structures).
+    3. Design memory-mapped register access layers and DMA channel assignments.
+    4. Formulate low-power states based on CPU and peripheral activity profiles.
+*   **Success Criteria**: Memory allocations avoid collisions; scheduling designs prevent task starvation and priority inversion.
 
-### Outputs
-*   **Ingestion Pipeline Designs**: Specifications for semantic markdown chunking and metadata generation.
-*   **RAG Retrieval Protocols**: Configurations for hybrid search, query expansion, and reranking pipelines.
-*   **Planning State Diagrams**: Graph models mapping agent actions, tool evaluations, and loop terminations.
+#### Industrial IoT Architect
+*   **Purpose**: Designs secure, resilient edge-to-cloud communication architectures and device-management topologies suited for industrial environments.
+*   **Inputs**: Network conditions, bandwidth budgets, security levels, data schemas, OTA deployment requirements.
+*   **Outputs**: Communication protocol recommendations (e.g., Pub-Sub vs. Request-Response), secure provisioning workflows, OTA state machine models, network bandwidth matrices.
+*   **Workflow**:
+    1. Calculate network payload sizes and evaluate transport protocol efficiency (e.g., overhead comparison of transport protocols).
+    2. Design cryptographic handshake processes and certificate rotation strategies.
+    3. Establish fail-safe OTA mechanisms with automated rollback policies.
+    4. Define state transition patterns for offline data persistence and recovery.
+*   **Success Criteria**: Network usage stays within bandwidth allocations; security designs pass TLS 1.3 compliance; OTA rollback mechanisms recover from interrupted transfers.
 
-### Workflow
-1.  **Optimize Chunking Boundaries**: Ensure documentation is chunked along semantic boundaries (e.g., section headers) to preserve contextual completeness.
-2.  **Evaluate Retrieval Precision**: Formulate hybrid search mechanisms combining vector search for conceptual queries with keyword search (FTS5) for exact code symbols.
-3.  **Refine Agent Planning Loops**: Design ReAct state loops or directed acyclic graphs (DAG) that manage tool executions and intermediate state evaluations.
-4.  **Evaluate LLM Prompt Engineering**:
-    *   Structure system instructions to enforce output formats (e.g., JSON schemas).
-    *   Build safeguards to prevent prompt injection and handle out-of-domain inputs gracefully.
+#### Edge Computing Architect
+*   **Purpose**: Optimizes edge data processing, signal filtering, local databases, and execution performance on resource-constrained systems.
+*   **Inputs**: Sensor sampling rates, processing budgets, local storage constraints, data filtering requirements.
+*   **Outputs**: Filtering pipelines, local database schemas, resource optimization profiles, data aggregation rules.
+*   **Workflow**:
+    1. Evaluate raw data rates to design aggregation and filtering pipelines.
+    2. Select appropriate local storage models (e.g., time-series vs. key-value) based on read/write frequency and flash wear.
+    3. Optimize mathematical operations using fixed-point arithmetic where floating-point units are missing or slow.
+    4. Profile processing paths to isolate execution bottlenecks.
+*   **Success Criteria**: Edge processing executes within local CPU and memory budgets; storage layouts prevent write amplification and excessive flash degradation.
 
-### Success Criteria
-*   **Search Quality**: RAG retrieval fetches high-relevance chunks with minimal context noise.
-*   **Agent Convergence**: Multi-turn planning loops reach target outcomes without endless loops or execution crashes.
-*   **Robust Outputs**: Generated responses parse reliably into structured downstream formats (JSON/Pydantic).
+#### AI Systems Architect
+*   **Purpose**: Configures cognitive architectures, retrieval pipelines (RAG), agent planning loops, and semantic evaluation models.
+*   **Inputs**: RAG performance metrics, query logs, system prompt layouts, vector database schemas, agent trace logs.
+*   **Outputs**: Semantic chunking models, query routing strategies, prompt architectures, evaluation benchmark datasets.
+*   **Workflow**:
+    1. Design document parsing and chunking configurations preserving hierarchical context.
+    2. Build hybrid search queries combining vector search with keyword indices.
+    3. Structure agent planning execution graphs (e.g., state machines, ReAct loops).
+    4. Evaluate generated outputs against reference datasets to measure retrieval recall and generation accuracy.
+*   **Success Criteria**: Retrieval precision matches or exceeds target thresholds; agent planning loops resolve goals without getting stuck in execution loops.
+
+#### Predictive Maintenance Engineer
+*   **Purpose**: Designs algorithms to model degradation, analyze failure modes, and detect physical asset anomalies from sensor data.
+*   **Inputs**: Failure Mode and Effects Analysis (FMEA) sheets, sensor telemetry datasets, physical asset parameters, operating conditions.
+*   **Outputs**: Degradation models, feature extraction rules, anomaly detection thresholds, diagnostic classification rules.
+*   **Workflow**:
+    1. Correlate sensor parameters with known asset failure modes from FMEA documentation.
+    2. Define time-domain features (e.g., Root Mean Square, Crest Factor) and frequency-domain features (e.g., spectral energy bands).
+    3. Construct anomaly detection models based on statistical deviations (e.g., Mahalanobis distance) or lightweight edge classification rules.
+    4. Map anomalies back to specific components (e.g., bearing wear, shaft misalignment).
+*   **Success Criteria**: Anomaly detection logic identifies degradation signatures before critical failures; false alarm rates remain below target margins.
+
+#### Full-Stack Software Architect
+*   **Purpose**: Designs backend and frontend software architectures, optimizing data persistence layers, API designs, cache topologies, and component layouts.
+*   **Inputs**: System requirements, user interaction profiles, API performance metrics, database schemas, scaling targets.
+*   **Outputs**: Logical database schemas, API contracts, state management patterns, frontend component structures.
+*   **Workflow**:
+    1. Structure database schemas using appropriate normalization rules and index configurations.
+    2. Design API contracts separating concerns between client and server.
+    3. Design state propagation models (atomic stores, context limits) to optimize UI responsiveness.
+    4. Implement caching strategies (e.g., write-through, read-through) to minimize database load.
+*   **Success Criteria**: Database layouts eliminate redundant queries; API response latency satisfies performance targets; UI states update efficiently without unnecessary re-renders.
 
 ---
 
-## 10. Research Assistant
+### 5.3. Review-Skills
 
-### Purpose
-The **Research Assistant** skill automates multi-turn information gathering, documentation indexing, comparative analysis of software libraries, and licensing validation.
+#### PCB Reviewer
+*   **Purpose**: Audits PCB schematics and layout geometries to ensure signal integrity, power delivery stability, DFM compliance, and electromagnetic compatibility.
+*   **Inputs**: Schematic netlists, layout Gerber files, stackup definitions, high-speed trace parameters, fabrication limits.
+*   **Outputs**: Layout audit checklists, trace impedance calculations, decoupling proximity reports, EMI risk analyses.
+*   **Workflow**:
+    1. Verify that decoupling capacitors are placed physically adjacent to target power pins with minimal return loop inductance.
+    2. Calculate trace characteristic impedance ($Z_0$) and differential impedance ($Z_{diff}$) to verify matching.
+    3. Scan signal reference planes to identify traces crossing splits or discontinuities.
+    4. Check layout dimensions against manufacturer fabrication rules (trace spacing, via diameters, annular rings).
+*   **Success Criteria**: No floating nets; high-speed trace return paths are continuous; layout dimensions comply with manufacturer manufacturing constraints.
 
-### Inputs
-*   **Workspace Triggers**: Comparative criteria files, library license checklists, documentation URLs, reference PDFs.
-*   **User Queries**: Requests to compare libraries, check license compatibility, review RFC specifications, or synthesize documentation.
-*   **Sensory Context**: Search queries, retrieved markdown documentation pages.
+#### Firmware Reviewer
+*   **Purpose**: Audits embedded code base quality, identifying synchronization errors, memory leaks, interrupt violations, and resource inefficiencies.
+*   **Inputs**: Source code files (C/C++), compiler logs, static analysis outputs, link maps, RTOS configurations.
+*   **Outputs**: Code review reports, concurrency risk maps, static memory utilization profiles, interrupt performance reviews.
+*   **Workflow**:
+    1. Analyze code for race conditions, deadlock paths, and priority inversions.
+    2. Verify that Interrupt Service Routines (ISRs) utilize non-blocking, ISR-safe API calls and execute quickly.
+    3. Inspect dynamic memory allocations to confirm every allocation path matches a deallocation path.
+    4. Audit peripheral driver code for proper error handling and watchdog timer integration.
+*   **Success Criteria**: Zero potential concurrency deadlocks; zero ISR-related scheduler blocks; dynamic memory operations are leak-free.
 
-### Outputs
-*   **Comparative Analysis Matrices**: Structured tables comparing libraries on features, performance, footprint, licensing, and community activity.
-*   **Licensing Compliance Reports**: Risk assessments flagging copyleft (e.g., GPL) violations in commercial codebases.
-*   **Research Summaries**: Concise summaries synthesizing documentation or RFC standards with inline clickable source links.
+#### Security Reviewer
+*   **Purpose**: Audits software, networks, and hardware layouts to identify cryptographic weaknesses, storage vulnerabilities, and transport insecurities.
+*   **Inputs**: Source code, network configurations, encryption configurations, access logs, system threat models.
+*   **Outputs**: Threat modeling reports, encryption evaluations, vulnerability registers, remediation guidelines.
+*   **Workflow**:
+    1. Audit source code for hardcoded secrets, API tokens, and insecure protocols (e.g., plain HTTP).
+    2. Evaluate encryption configurations (TLS versions, cipher suites) and key storage security.
+    3. Analyze authentication and authorization paths to ensure strict access control.
+    4. Check software dependency trees for known vulnerabilities (CVEs).
+*   **Success Criteria**: Zero hardcoded secrets in version control; encryption algorithms match modern standards; third-party dependency vulnerabilities are flagged and mitigated.
 
-### Workflow
-1.  **Formulate Search Strategy**: Break down user requests into targeted search terms and identify primary sources (e.g., official docs, GitHub, RFCs).
-2.  **Execute Multi-Turn Extraction**: Crawl and parse retrieved web resources, converting them to structured markdown while extracting relevant metrics.
-3.  **Construct Comparison Matrix**: Populate comparison metrics (e.g., memory footprint, security record, active support).
-4.  **Audit License Terms**: Evaluate library licenses (e.g., MIT, Apache 2.0, GPLv3) against project delivery goals, highlighting integration risks.
+#### Performance Auditor
+*   **Purpose**: Profiles software and hardware systems to detect execution bottlenecks, memory bloat, network latency, and physical power leaks.
+*   **Inputs**: Profiling traces, memory usage reports, execution time logs, network packets, power profile data.
+*   **Outputs**: CPU/Memory utilization profiles, execution latency reports, optimization recommendations, resource consumption graphs.
+*   **Workflow**:
+    1. Identify hot paths in execution traces where the CPU spends significant cycles.
+    2. Track heap memory size over time to detect memory bloat or cache build-ups.
+    3. Measure network response times and trace payloads to identify transit bottlenecks.
+    4. Audit power metrics during hardware active states to locate unnecessary peripheral usage.
+*   **Success Criteria**: Critical paths operate within execution time budgets; memory consumption profiles stabilize under load; network communication overhead is minimized.
 
-### Success Criteria
-*   **Answer Grounding**: All assertions are backed by verified citations with direct, clickable links.
-*   **Objective Comparisons**: Tables use consistent, measurable criteria across all compared libraries.
-*   **Compliance Verification**: Licensing audits identify potential compliance hazards.
+---
+
+### 5.4. Knowledge-Skills
+
+#### Epistemic Knowledge Curator
+*   **Purpose**: Evaluates, structures, and updates the local markdown knowledge files and vector databases, extracting patterns from sessions to drive self-evolution.
+*   **Inputs**: Post-session summaries, developer debug transcripts, external documentation pools, active project ADRs.
+*   **Outputs**: Structured markdown documentation, updated vector index databases, newly scaffolded skill manifests.
+*   **Workflow**:
+    1. Evaluate post-session summaries to isolate new design insights and lessons learned.
+    2. Update local markdown files (`Knowledge/`) ensuring structural conformance and cross-domain linking.
+    3. Re-index modified documents into the ChromaDB vector database.
+    4. Identify new domain trends and generate skill manifests (`Skills/Manifests/`) to support system self-evolution.
+*   **Success Criteria**: Core documentation files remain up to date; vector database queries return contextually correct chunks; newly generated skill manifests pass validation checks.
+
+#### Research Assistant
+*   **Purpose**: Audits external specifications, runs multi-turn search queries, compares third-party libraries, and verifies license compliance.
+*   **Inputs**: Research objectives, external URLs, RFC standards, software licenses, search parameters.
+*   **Outputs**: Literature review summaries, library comparison matrices, license compatibility evaluations.
+*   **Workflow**:
+    1. Formulate structured search terms and retrieve relevant documentation, RFCs, or codebases.
+    2. Extract key metrics (e.g., license types, package size, security records, update frequency).
+    3. Check licenses against target deployment criteria to flag compatibility risks.
+    4. Summarize technical documentation into clear engineering reviews with verified citations.
+*   **Success Criteria**: Comparison matrices present complete evaluation criteria; licensing reviews identify potential copyleft or commercial integration hazards; citations link directly to verified sources.
