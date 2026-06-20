@@ -149,10 +149,13 @@ The focus of the MVP is to prove the viability of voice-enabled mentoring with c
 
 ## 8. Out-of-Scope Features for v0.1
 
-The following capabilities are excluded from v0.1 and deferred to the Year 2/3 roadmap:
+The following capabilities are excluded from v0.1 and deferred to future roadmaps:
 
 *   **Native IDE Plugins**: Dedicated extensions for VS Code, JetBrains, or Vim (v0.1 runs as a companion browser app).
 *   **Autonomous File Writing**: Taksh will not write or refactor codebase files directly on disk without a manual git-apply or explicit user-facing visual diff check.
-*   **Fully Offline Operation**: Local execution of audio transcripion and LLMs is deferred (requires massive local hardware); v0.1 relies on cloud APIs with strict data protection compliance.
-*   **Multi-Agent Networks**: Task delegation to parallel autonomous subagents (e.g., automatic QA agents, automated PR refactorers).
+*   **Fully Offline Operation**: Local execution of audio transcription and LLMs is deferred (requires massive local hardware); v0.1 relies on cloud APIs with strict data protection compliance.
+*   **Multi-Agent Networks** [Planned | Not implemented in v0.1]: Task delegation to parallel autonomous subagents (e.g., automatic QA agents, automated PR refactorers).
 *   **Integration with Local Language Servers (LSP)**: Automatic compiler diagnostics via LSP are deferred to v0.2.
+*   **Visual Memory** [Planned | Not implemented in v0.1]: Tracking active screen visual context or layout frames.
+*   **Emotion Analysis** [Planned | Not implemented in v0.1]: Processing microphone tone or visual expressions to gauge user emotional state.
+*   **Webcam Context** [Planned | Not implemented in v0.1]: Streaming webcam capture to analyze user physical workspace environment.

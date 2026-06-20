@@ -119,26 +119,29 @@ Taksh maintains a defined collaborative boundary to ensure safety and productivi
 
 ## 9. Five-Year Strategic Roadmap
 
-### Year 1: The Local-First Scaffold (Current)
+> [!NOTE]
+> All future phases including **Multi-Agent Systems**, **Continuous Local Learning**, **Webcam Context**, **Visual Memory**, and the **Omni-Workspace OS** are explicitly marked as **Planned | Not implemented in v0.1**.
+
+### Year 1: The Local-First Scaffold (Current / v0.1 MVP)
 *   Integrate terminal execution, search-web capability, browser manipulation, and file-system manipulation tools.
 *   Establish local task-tracking (`task.md`) and implementation planning frameworks.
 *   Design the core agent persona and Socratic debugging strategies.
 
-### Year 2: Multi-Agent Collaboration & Persistent Memory
+### Year 2: Multi-Agent Collaboration & Persistent Memory [Planned | Not implemented in v0.1]
 *   Enable seamless task delegation to specialized subagent networks (e.g., Codebase Researcher, Database Optimizer, Automated QA).
 *   Implement cross-session, project-scoped long-term semantic memory (local vector stores, key-value preferences).
 *   Develop customizable local skill repositories that agents can define, store, and share.
 
-### Year 3: Cognitive Integration & Local Compilation
+### Year 3: Cognitive Integration & Local Compilation [Planned | Not implemented in v0.1]
 *   Integrate directly with local compilers, language servers (LSP), and performance profilers for sub-millisecond feedback loops.
 *   Proactively run local background diagnostics, detecting security issues and memory leaks before they reach commits.
 *   Introduce continuous codebase learning, where Taksh learns from the project's commit history and pull-request comments.
 
-### Year 4: Autonomous Research-to-Build Pipelines
+### Year 4: Autonomous Research-to-Build Pipelines [Planned | Not implemented in v0.1]
 *   Transition from reactive assistants to proactive agents capable of handling complex, open-ended tasks (e.g., *"Port this library to Rust and verify API parity"*).
 *   Deploy autonomous test suites and playground environments to validate architectures prior to presenting them to the user.
 
-### Year 5: The Symbiotic Cognitive OS
+### Year 5: The Symbiotic Cognitive OS [Planned | Not implemented in v0.1]
 *   Establish Taksh as a personalized cognitive workspace that spans across the user's entire machine, understanding their work patterns, notes, repositories, and learning goals.
 *   Act as a key accelerator for human technological breakthroughs, allowing humans to operate at the level of systems designers while Taksh manages complex synthesis and scaffolding.
 

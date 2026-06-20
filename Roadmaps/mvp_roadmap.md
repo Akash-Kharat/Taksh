@@ -148,7 +148,7 @@ Combine all systems: implement the Skills Engine, prompt overlay compiler, real-
 4. **E2E Dashboard UI**: Completed React dashboard displaying transcripts, memory states, active skills, and real-time status.
 
 ### Tasks
-- [ ] **Skills Prompt Registry**: Define prompts for the 10 static developer skills (e.g., *ESP32 Firmware Engineer*, *FreeRTOS Expert*, *React Architect*) and save them as configuration schemas.
+- [ ] **Skills Prompt Registry**: Define prompts for the 8 static domain-centric skills (e.g., *Firmware Systems Engineer*, *Embedded Systems Architect*, *Full-Stack Software Architect*) and save them as configuration schemas.
 - [ ] **Context Composer**: Build the orchestrator method that aggregates:
   1. Core Identity (`core_identity.md`)
   2. Active telemetry (`SensoryMemory`)
@@ -192,5 +192,5 @@ The following test matrix will be used to verify the working prototype at the en
 | **VAL-04** | Memory | Relational Persistence | Opening app retrieves past developer profile, trust levels, and last session log metadata from `taksh.db`. | |
 | **VAL-05** | Memory | Project Constraints | Agent warns user when they attempt to use a prohibited pattern listed in `project_memory.md`. | |
 | **VAL-06** | RAG | Documentation Lookup | Asking about a specific topic (e.g. FreeRTOS queues) injects correct markdown documentation chunks into the prompt context. | |
-| **VAL-07** | Skills | Skill Activation | Opening a C file with `#include "freertos/FreeRTOS.h"` automatically lists "FreeRTOS Expert" as an active skill on the UI dashboard. | |
+| **VAL-07** | Skills | Skill Activation | Opening a C file with `#include "freertos/FreeRTOS.h"` automatically lists "Embedded Systems Architect" as an active skill on the UI dashboard. | |
 | **VAL-08** | Pedagogy | Socratic Interaction | Agent guides a debugging session using leading questions and refuses to provide direct copy-paste code. | |

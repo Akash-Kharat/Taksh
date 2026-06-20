@@ -138,7 +138,7 @@ sequenceDiagram
     DB-->>API: Active file telemetry, active skill list, past ADRs
     API->>DB: Query Knowledge Base (ChromaDB)
     DB-->>API: FreeRTOS queue documentation chunk
-    API->>API: Skills Engine activates 'FreeRTOS Expert'
+    API->>API: Skills Engine activates 'Embedded Systems Architect'
     API->>Gemini: Establish WebSocket & send system instructions / RAG context
     API->>Gemini: Forward streaming user audio
     Gemini-->>API: Stream audio PCM + text tokens
@@ -354,22 +354,20 @@ graph TD
 ```
 
 ### Skill Registry & Active Skills (v0.1)
-The engine loads metadata, prompting templates, and specialized tool interfaces for each skill:
-*   **Embedded Architect**: Evaluates low-level resource limits, latency bounds, and hardware constraints.
-*   **PCB Reviewer**: Guides high-level schematic checks, trace clearance requirements, and decoupling capacitor placement.
-*   **ESP32 Firmware Engineer**: Specializes in ESP-IDF patterns, bootloader behavior, and hardware strapping pins.
-*   **FreeRTOS Expert**: Identifies race conditions, deadlocks, task priority inversions, and heap allocation strategies.
-*   **IoT Architect**: Analyzes MQTT QoS levels, secure TLS handshakes, data serialization overhead, and OTA strategies.
-*   **Django Architect**: Enforces REST/GraphQL best practices, query optimization (N+1 queries), and database isolation.
-*   **React Architect**: Guides state management, custom hook structures, components decoupling, and bundle optimization.
-*   **Predictive Maintenance Engineer**: Guides vibration anomaly models, DSP sampling rates, and edge inference constraints.
-*   **AI Architect**: Guides prompt engineering, vector search strategies, and deployment metrics.
-*   **Research Assistant**: Executes multi-turn web search flows, compares software libraries, and verifies licenses.
+The engine loads metadata, prompting templates, and specialized tool interfaces for each skill. While activation is driven internally by framework files and keywords, the exposed skills remain domain-centric:
+*   **Embedded Systems Architect**: Evaluates low-level resource limits, latency bounds, hardware constraints, task scheduling, synchronization (queues, semaphores), and real-time execution safety. (Activated by: RTOS headers, memory maps, task scheduling queries; incorporates FreeRTOS features).
+*   **Hardware Circuit Architect**: Guides schematic reviews, PCB trace clearance requirements, hardware design constraints, decoupling capacitor placement, and electrical debugging. (Activated by: PCB schematic files, strapping pins).
+*   **Firmware Systems Engineer**: Focuses on micro-controller configurations, peripheral driver interfacing (SPI, I2C, UART), board bring-up, bootloaders, and platform-specific firmware platforms (such as ESP-IDF or STM32 HAL). (Activated by: hardware-specific toolchain configs, ESP-IDF config).
+*   **Distributed IoT Systems Architect**: Analyzes edge-to-cloud architectures, communication topologies, telemetry patterns, MQTT QoS levels, TLS handshake overhead, and secure over-the-air (OTA) updates. (Activated by: MQTT, telemetry libraries).
+*   **Full-Stack Software Architect**: Guides frontend/backend framework architectures, database isolation, query optimization, API design, state management systems, and component decoupling patterns. (Activated by: Django, React, state managers, ORMs).
+*   **Industrial Diagnostics Engineer**: Directs signal processing methods, sensor sampling rates, anomaly detection algorithms, failure mode evaluations, and edge inference limits. (Activated by: FFT libraries, vibration anomaly configs).
+*   **AI & Cognitive Systems Architect**: Formulates vector search configurations, semantic retrieval optimizations, dynamic prompt engineering, and agentic planning architectures. (Activated by: agent frameworks, vector database clients).
+*   **Technical Research Specialist**: Coordinates multi-step technical literature and web searches, parses library documentation, evaluates software license compliance, and drafts comparison briefs. (Activated by: comparison queries, license scanning).
 
 ### Skill Selection & Composition Strategy
-1.  **Static Trigger Evaluation**: The Orchestrator monitors the active files in the workspace (sensory memory). For example, finding `sdkconfig` or `#include "freertos/FreeRTOS.h"` automatically registers the *ESP32 Firmware Engineer* and *FreeRTOS Expert* skills.
-2.  **Semantic Intent Mapping**: If the user asks "How do we secure the MQTT broker payload?", the semantic classifier matches the query to the *IoT Architect* skill, adding its templates to the session context.
-3.  **Collaborative Composition (Blackboard Pattern)**: Active skills write constraints to a shared session blackboard. The Orchestrator combines these constraints. For an IoT device running on an ESP32, the *FreeRTOS Expert* and *IoT Architect* skills combine their instructions, ensuring the generated advice covers both task safety and network efficiency.
+1.  **Static Trigger Evaluation**: The Orchestrator monitors the active files in the workspace (sensory memory). For example, finding `sdkconfig` or `#include "freertos/FreeRTOS.h"` automatically triggers the *Firmware Systems Engineer* and *Embedded Systems Architect* skills.
+2.  **Semantic Intent Mapping**: If the user asks "How do we secure the MQTT broker payload?", the semantic classifier matches the query to the *Distributed IoT Systems Architect* skill, adding its templates to the session context.
+3.  **Collaborative Composition (Blackboard Pattern)**: Active skills write constraints to a shared session blackboard. The Orchestrator combines these constraints. For an IoT device running on an ESP32, the *Embedded Systems Architect* and *Distributed IoT Systems Architect* skills combine their instructions, ensuring the generated advice covers both task safety and network efficiency.
 
 ---
 
@@ -485,7 +483,7 @@ All communications over `ws://localhost:8000/api/v1/voice/stream` use a structur
       "type": "state",
       "payload": {
         "status": "thinking", 
-        "active_skill": "FreeRTOS Expert"
+        "active_skill": "Embedded Systems Architect"
       }
     }
     ```
@@ -555,8 +553,8 @@ gantt
 
 | Vector | Taksh v0.1 | Taksh v1.0 | Taksh v2.0 | Taksh v3.0 |
 | :--- | :--- | :--- | :--- | :--- |
-| **Primary Capability** | Local voice companion sidecar; RAG for local markdown files. | IDE plugins (VS Code / JetBrains); automated file refactoring. | Fully offline voice modeling; multimodal schematic parsing. | Autonomous multi-agent networks; continuous system auditing. |
-| **System Architecture** | Local FastAPI + React web UI. | IDE extension backend + headless service wrapper. | Edge-inference processing pipeline. | Multi-agent orchestrator with blackboard messaging. |
+| **Primary Capability** | Local voice companion sidecar; RAG for local markdown files. | IDE plugins (VS Code / JetBrains); automated file refactoring. | Fully offline voice modeling; multimodal schematic parsing. | Autonomous multi-agent networks [Planned | Not implemented in v0.1]; continuous system auditing. |
+| **System Architecture** | Local FastAPI + React web UI. | IDE extension backend + headless service wrapper. | Edge-inference processing pipeline. | Multi-agent orchestrator with blackboard messaging [Planned | Not implemented in v0.1]. |
 | **Memory Evolution** | In-process SQLite + ChromaDB persistence. | Shared cross-project memory databases. | Hierarchical memory networks with semantic decay. | Fully decentralized memory synchronization. |
 | **Skill Evolution** | 10 static developer skills with blackboard composition. | Dynamically downloaded skills; custom DSL for user skills. | Multi-modal visual skills (PCB trace review, UI mocks). | Self-improving skills with automatic code testing. |
-| **Voice & Avatar** | Single websocket PCM stream; browser playout. | Native WebRTC audio stream with server-side VAD. | Edge-to-edge voice streaming with natural pause handling. | Real-time interactive 3D visual avatar (WebGL/WebGPU). |
+| **Voice & Avatar** | Single websocket PCM stream; browser playout. | Native WebRTC audio stream with server-side VAD. | Edge-to-edge voice streaming with natural pause handling. | Real-time interactive 3D visual avatar (WebGL/WebGPU) [Planned | Not implemented in v0.1]. |

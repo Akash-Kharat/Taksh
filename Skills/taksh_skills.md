@@ -19,21 +19,21 @@ graph TD
     subgraph Domain_Layer [2. Domain-Skills Layer]
         ESA[Electronics Systems Architect]
         E_SA[Embedded Systems Architect]
-        IIA[Industrial IoT Architect]
+        DIA[Distributed IoT Systems Architect]
         ECA[Edge Computing Architect]
-        ASA[AI Systems Architect]
-        PME[Predictive Maintenance Engineer]
+        ASA[AI & Cognitive Systems Architect]
+        IDE[Industrial Diagnostics Engineer]
         FSA[Full-Stack Software Architect]
     end
     subgraph Review_Layer [3. Review-Skills Layer]
-        PR[PCB Reviewer]
-        FR[Firmware Reviewer]
+        HCA[Hardware Circuit Architect]
+        FSE[Firmware Systems Engineer]
         SR[Security Reviewer]
         PA[Performance Auditor]
     end
     subgraph Knowledge_Layer [4. Knowledge-Skills Layer]
         EKC[Epistemic Knowledge Curator]
-        RA[Research Assistant]
+        TRS[Technical Research Specialist]
     end
 
     Meta_Layer -->|Orchestrates| Domain_Layer
@@ -225,8 +225,8 @@ flowchart LR
     4. Formulate low-power states based on CPU and peripheral activity profiles.
 *   **Success Criteria**: Memory allocations avoid collisions; scheduling designs prevent task starvation and priority inversion.
 
-#### Industrial IoT Architect
-*   **Purpose**: Designs secure, resilient edge-to-cloud communication architectures and device-management topologies suited for industrial environments.
+#### Distributed IoT Systems Architect
+*   **Purpose**: Designs secure, resilient edge-to-cloud communication architectures and device-management topologies suited for industrial and distributed environments.
 *   **Inputs**: Network conditions, bandwidth budgets, security levels, data schemas, OTA deployment requirements.
 *   **Outputs**: Communication protocol recommendations (e.g., Pub-Sub vs. Request-Response), secure provisioning workflows, OTA state machine models, network bandwidth matrices.
 *   **Workflow**:
@@ -247,8 +247,8 @@ flowchart LR
     4. Profile processing paths to isolate execution bottlenecks.
 *   **Success Criteria**: Edge processing executes within local CPU and memory budgets; storage layouts prevent write amplification and excessive flash degradation.
 
-#### AI Systems Architect
-*   **Purpose**: Configures cognitive architectures, retrieval pipelines (RAG), agent planning loops, and semantic evaluation models.
+#### AI & Cognitive Systems Architect
+*   **Purpose**: Configures cognitive agent architectures, retrieval pipelines (RAG), agent planning loops, and semantic evaluation models.
 *   **Inputs**: RAG performance metrics, query logs, system prompt layouts, vector database schemas, agent trace logs.
 *   **Outputs**: Semantic chunking models, query routing strategies, prompt architectures, evaluation benchmark datasets.
 *   **Workflow**:
@@ -258,7 +258,7 @@ flowchart LR
     4. Evaluate generated outputs against reference datasets to measure retrieval recall and generation accuracy.
 *   **Success Criteria**: Retrieval precision matches or exceeds target thresholds; agent planning loops resolve goals without getting stuck in execution loops.
 
-#### Predictive Maintenance Engineer
+#### Industrial Diagnostics Engineer
 *   **Purpose**: Designs algorithms to model degradation, analyze failure modes, and detect physical asset anomalies from sensor data.
 *   **Inputs**: Failure Mode and Effects Analysis (FMEA) sheets, sensor telemetry datasets, physical asset parameters, operating conditions.
 *   **Outputs**: Degradation models, feature extraction rules, anomaly detection thresholds, diagnostic classification rules.
@@ -284,7 +284,7 @@ flowchart LR
 
 ### 5.3. Review-Skills
 
-#### PCB Reviewer
+#### Hardware Circuit Architect
 *   **Purpose**: Audits PCB schematics and layout geometries to ensure signal integrity, power delivery stability, DFM compliance, and electromagnetic compatibility.
 *   **Inputs**: Schematic netlists, layout Gerber files, stackup definitions, high-speed trace parameters, fabrication limits.
 *   **Outputs**: Layout audit checklists, trace impedance calculations, decoupling proximity reports, EMI risk analyses.
@@ -295,7 +295,7 @@ flowchart LR
     4. Check layout dimensions against manufacturer fabrication rules (trace spacing, via diameters, annular rings).
 *   **Success Criteria**: No floating nets; high-speed trace return paths are continuous; layout dimensions comply with manufacturer manufacturing constraints.
 
-#### Firmware Reviewer
+#### Firmware Systems Engineer
 *   **Purpose**: Audits embedded code base quality, identifying synchronization errors, memory leaks, interrupt violations, and resource inefficiencies.
 *   **Inputs**: Source code files (C/C++), compiler logs, static analysis outputs, link maps, RTOS configurations.
 *   **Outputs**: Code review reports, concurrency risk maps, static memory utilization profiles, interrupt performance reviews.
@@ -343,7 +343,7 @@ flowchart LR
     4. Identify new domain trends and generate skill manifests (`Skills/Manifests/`) to support system self-evolution.
 *   **Success Criteria**: Core documentation files remain up to date; vector database queries return contextually correct chunks; newly generated skill manifests pass validation checks.
 
-#### Research Assistant
+#### Technical Research Specialist
 *   **Purpose**: Audits external specifications, runs multi-turn search queries, compares third-party libraries, and verifies license compliance.
 *   **Inputs**: Research objectives, external URLs, RFC standards, software licenses, search parameters.
 *   **Outputs**: Literature review summaries, library comparison matrices, license compatibility evaluations.

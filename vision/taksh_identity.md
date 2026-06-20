@@ -171,7 +171,7 @@ Over the next decade, Taksh will evolve from a local agentic editor into a **Sym
 | **Cognitive Depth** | Snippet generation / Autocomplete | Systems Architecture & Concept Synthesis |
 | **Goal Orientation** | Single-line / Single-file focus | Multi-file planning, refactoring, and roadmap tracking |
 | **Socratic Reasoning** | Minimal (outputs what you ask for, even if buggy) | High (interviews user, challenges weak architecture) |
-| **Specialized Skills** | Uniform general-purpose model | Orchestrated Skills Library (e.g., ESP32, PCB Reviewer) |
+| **Specialized Skills** | Uniform general-purpose model | Orchestrated Skills Library (e.g., Firmware Systems Engineer, Hardware Circuit Architect) |
 | **Agency Balance** | Either fully passive (autocomplete) or black-box | Shared Agency with strict Proposal-Approval boundaries |
 
 ---
