@@ -15,6 +15,36 @@ async def lifespan(app: FastAPI):
     # Local SQLite DB setup
     system_logger.info("Running database initializations...")
 
+    # Startup validation checks for Knowledge / RAG
+    # 1. Verify Docs Directory
+    if not settings.DOCS_DIR.exists() or not settings.DOCS_DIR.is_dir():
+        system_logger.error(f"Docs Directory not found at: {settings.DOCS_DIR.resolve()}")
+        raise RuntimeError(f"Docs Directory not found at: {settings.DOCS_DIR}")
+    system_logger.info("✓ Docs Directory Found")
+
+    # 2. Verify SQLite FTS5 support
+    import sqlite3
+    con = sqlite3.connect(":memory:")
+    cur = con.cursor()
+    try:
+        cur.execute("CREATE VIRTUAL TABLE test_fts USING fts5(content);")
+        cur.execute("DROP TABLE test_fts;")
+        system_logger.info("✓ FTS5 Available")
+    except Exception as e:
+        system_logger.error(f"FTS5 Not Available: {e}")
+        raise RuntimeError("SQLite FTS5 support is required but not available.") from e
+    finally:
+        con.close()
+
+    # 3. Verify ChromaDB Client
+    try:
+        from app.services.knowledge.vector_store import ChromaDBClient
+        chroma_client = ChromaDBClient()
+        system_logger.info("✓ ChromaDB Initialized")
+    except Exception as e:
+        system_logger.error(f"ChromaDB Initialization failed: {e}")
+        raise RuntimeError("ChromaDB failed to initialize.") from e
+
     # Core Identity Manager
     identity_manager = CoreIdentityManager()
     identity_manager.initialize()

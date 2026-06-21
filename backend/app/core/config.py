@@ -27,6 +27,12 @@ class Settings(BaseSettings):
     # Source of truth core identity path (relative to backend/)
     IDENTITY_PATH: Path = Path("../docs/Vision/taksh_identity.md")
     
+    # Knowledge / RAG configurations
+    DOCS_DIR: Path = Path("../docs")
+    KNOWLEDGE_CHUNK_SIZE: int = 500
+    KNOWLEDGE_CHUNK_OVERLAP: int = 50
+    MOCK_EMBEDDINGS: bool = False
+    
     # Skill Registry configurations
     SKILLS_MANIFEST_DIR: Path = Path("./app/services/skills/manifests")
 

@@ -3,6 +3,10 @@ from typing import Generator
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
+from app.core.config import settings
+settings.MOCK_EMBEDDINGS = True
+
 from app.main import app
 from app.core.database import Base, get_db
 

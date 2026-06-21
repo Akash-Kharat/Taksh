@@ -1888,3 +1888,1846 @@
 [2026-06-21 14:12:48,327] [INFO] WebSocket client disconnected: client-b
 [2026-06-21 14:12:48,329] [INFO] WebSocket client disconnected: client-a
 [2026-06-21 14:12:48,334] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:36:28,708] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:28,708] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:28,708] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:28,725] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:29,049] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:29,065] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:29,065] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:30,748] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:30,748] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:30,748] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:30,748] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:30,764] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:30,772] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:30,772] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:32,222] [CRITICAL] [Category: Memory] Core Identity file missing.
+[2026-06-21 14:36:32,222] [CRITICAL] [Category: Memory] Configured Path: non_existent_identity.md
+[2026-06-21 14:36:32,222] [CRITICAL] [Category: Memory] Fallback Identity Activated.
+[2026-06-21 14:36:32,222] [INFO] [Category: Memory] Core Identity successfully loaded and cached in memory.
+[2026-06-21 14:36:32,230] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:32,230] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:32,230] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:32,230] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:32,246] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:32,254] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:32,254] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:33,506] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:33,514] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:33,514] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:33,516] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:33,531] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:33,531] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:33,531] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:34,922] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:34,922] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:34,922] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:34,922] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:34,938] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:34,938] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:34,938] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:36,335] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:36,335] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:36,335] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:36,335] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:36,350] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:36,350] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:36,358] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:37,599] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:37,599] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:37,599] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:37,599] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:37,615] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:37,623] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:37,623] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:39,002] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:39,002] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:39,002] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:39,010] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:39,027] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:39,027] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:39,027] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:40,520] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\empty_manifests
+[2026-06-21 14:36:40,520] [INFO] [Category: Skills] Loaded 0 skill manifests successfully.
+[2026-06-21 14:36:40,520] [ERROR] [Category: Skills] Registry must contain at least one valid skill. Zero valid skills loaded!
+[2026-06-21 14:36:40,520] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\manifests
+[2026-06-21 14:36:40,528] [INFO] [Category: Skills] Loaded skill manifest: 'Embedded Systems Architect' from embedded_systems_architect.yaml
+[2026-06-21 14:36:40,528] [INFO] [Category: Skills] Loaded skill manifest: 'Full-Stack Software Architect' from fullstack_software_architect.yaml
+[2026-06-21 14:36:40,536] [INFO] [Category: Skills] Loaded 2 skill manifests successfully.
+[2026-06-21 14:36:40,544] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:40,544] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:40,544] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:40,544] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:40,561] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:40,569] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:40,569] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:42,016] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=10, overlap=2.
+[2026-06-21 14:36:42,024] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-0\test_markdown_structure_parser0\test_doc.md
+[2026-06-21 14:36:42,072] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:42,080] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:42,185] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:42,193] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:42,340] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:42,340] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:42,436] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:42,436] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:42,436] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:42,436] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:42,453] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:42,461] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:42,461] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:43,928] [INFO] [Category: Memory] Recorded sensory event afb0ac6d-a853-476d-b7fc-0b957b97eb7f for session test-session-fifo
+[2026-06-21 14:36:43,936] [INFO] [Category: Memory] Recorded sensory event 1efc00f6-15a9-4c55-b5c4-6cadd9db929a for session test-session-fifo
+[2026-06-21 14:36:43,936] [INFO] [Category: Memory] Recorded sensory event 2608b443-9fd1-4c5a-93fb-54f0360507db for session test-session-fifo
+[2026-06-21 14:36:43,944] [INFO] [Category: Memory] Recorded sensory event 2f56ddf6-a3e3-47b9-ac3c-2c5e79383733 for session test-session-fifo
+[2026-06-21 14:36:43,944] [INFO] [Category: Memory] Recorded sensory event 957ca5b3-d0a4-4f49-9ff0-858852818b44 for session test-session-fifo
+[2026-06-21 14:36:43,968] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:43,968] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:43,968] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:43,968] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:43,993] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:43,993] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:43,993] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:45,248] [INFO] [Category: Memory] Recorded sensory event 21d0085a-a2ce-4a17-81bc-c367a48ca34d for session session-test-close
+[2026-06-21 14:36:45,256] [INFO] [Category: Memory] Session session-test-close closed. Sensory cache evicted.
+[2026-06-21 14:36:45,346] [INFO] [Category: Skills] SkillsEngine initialized and manifests registry loaded.
+[2026-06-21 14:36:45,354] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:45,354] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:45,354] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:45,354] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:45,370] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:45,370] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:45,370] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:46,754] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:46,754] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:46,754] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:46,754] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:46,772] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:46,778] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:46,778] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:48,175] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:48,183] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:48,183] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:48,183] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:48,199] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:48,199] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:48,199] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:49,589] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:49,589] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:49,589] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:49,589] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:49,613] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:49,613] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:49,613] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:50,860] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:50,860] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:50,860] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:50,860] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:50,877] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:50,885] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:50,885] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:52,263] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:36:52,263] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:36:52,263] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:36:52,271] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:36:52,287] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:36:52,287] [ERROR] [Category: Knowledge] Failed to initialize ChromaDBClient: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:36:52,287] [ERROR] [Category: SYSTEM] ChromaDB Initialization failed: ChromaDB failed to initialize: 'MockEmbeddingFunction' object has no attribute 'name'
+[2026-06-21 14:37:30,040] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:30,040] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:30,040] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:30,048] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:30,285] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:30,285] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:30,290] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:30,290] [INFO] [Category: Memory] Core Identity successfully loaded and cached in memory.
+[2026-06-21 14:37:30,290] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:30,290] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:30,290] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\manifests
+[2026-06-21 14:37:30,293] [INFO] [Category: Skills] Loaded skill manifest: 'Embedded Systems Architect' from embedded_systems_architect.yaml
+[2026-06-21 14:37:30,301] [INFO] [Category: Skills] Loaded skill manifest: 'Full-Stack Software Architect' from fullstack_software_architect.yaml
+[2026-06-21 14:37:30,301] [INFO] [Category: Skills] Loaded 2 skill manifests successfully.
+[2026-06-21 14:37:30,301] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:30,301] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:30,301] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:30,318] [INFO] [Category: API] Creating a goal record: Implement goal validation
+[2026-06-21 14:37:30,368] [INFO] HTTP Request: POST http://testserver/api/v1/goals/ "HTTP/1.1 201 Created"
+[2026-06-21 14:37:30,376] [INFO] [Category: API] Retrieving goal: ff5ba731-ec98-47d9-9c1e-fad756e84c27
+[2026-06-21 14:37:30,384] [INFO] HTTP Request: GET http://testserver/api/v1/goals/ff5ba731-ec98-47d9-9c1e-fad756e84c27 "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,384] [INFO] [Category: API] Updating goal: ff5ba731-ec98-47d9-9c1e-fad756e84c27
+[2026-06-21 14:37:30,393] [INFO] HTTP Request: PUT http://testserver/api/v1/goals/ff5ba731-ec98-47d9-9c1e-fad756e84c27 "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,401] [INFO] HTTP Request: PUT http://testserver/api/v1/goals/ff5ba731-ec98-47d9-9c1e-fad756e84c27 "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 14:37:30,409] [INFO] [Category: API] Listing goals
+[2026-06-21 14:37:30,409] [INFO] HTTP Request: GET http://testserver/api/v1/goals/ "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,422] [INFO] [Category: API] Deleting goal: ff5ba731-ec98-47d9-9c1e-fad756e84c27
+[2026-06-21 14:37:30,426] [INFO] HTTP Request: DELETE http://testserver/api/v1/goals/ff5ba731-ec98-47d9-9c1e-fad756e84c27 "HTTP/1.1 204 No Content"
+[2026-06-21 14:37:30,426] [INFO] [Category: API] Retrieving goal: ff5ba731-ec98-47d9-9c1e-fad756e84c27
+[2026-06-21 14:37:30,426] [INFO] HTTP Request: GET http://testserver/api/v1/goals/ff5ba731-ec98-47d9-9c1e-fad756e84c27 "HTTP/1.1 404 Not Found"
+[2026-06-21 14:37:30,434] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:30,451] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:30,451] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:30,451] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:30,451] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:30,467] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:30,467] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:30,467] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:30,474] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:30,474] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:30,474] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:30,474] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:30,475] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:30,484] [INFO] HTTP Request: GET http://testserver/api/v1/identity/ "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,490] [INFO] HTTP Request: GET http://testserver/api/v1/identity/info "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,492] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:30,492] [CRITICAL] [Category: Memory] Core Identity file missing.
+[2026-06-21 14:37:30,492] [CRITICAL] [Category: Memory] Configured Path: non_existent_identity.md
+[2026-06-21 14:37:30,492] [CRITICAL] [Category: Memory] Fallback Identity Activated.
+[2026-06-21 14:37:30,500] [INFO] [Category: Memory] Core Identity successfully loaded and cached in memory.
+[2026-06-21 14:37:30,509] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:30,509] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:30,509] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:30,509] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:30,527] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:30,527] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:30,527] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:30,527] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:30,527] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:30,533] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:30,533] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:30,533] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:30,542] [INFO] [Category: API] Creating a learning history record: SQLAlchemy Declarative
+[2026-06-21 14:37:30,550] [INFO] HTTP Request: POST http://testserver/api/v1/learning-history/ "HTTP/1.1 201 Created"
+[2026-06-21 14:37:30,550] [INFO] [Category: API] Retrieving concept: a0e2947c-a894-4167-8cc9-947247a08e7a
+[2026-06-21 14:37:30,560] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/a0e2947c-a894-4167-8cc9-947247a08e7a "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,560] [INFO] [Category: API] Updating concept: a0e2947c-a894-4167-8cc9-947247a08e7a
+[2026-06-21 14:37:30,575] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/a0e2947c-a894-4167-8cc9-947247a08e7a "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,575] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/a0e2947c-a894-4167-8cc9-947247a08e7a "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 14:37:30,583] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/a0e2947c-a894-4167-8cc9-947247a08e7a "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 14:37:30,583] [INFO] [Category: API] Listing learning history
+[2026-06-21 14:37:30,592] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/ "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,592] [INFO] [Category: API] Deleting concept: a0e2947c-a894-4167-8cc9-947247a08e7a
+[2026-06-21 14:37:30,600] [INFO] HTTP Request: DELETE http://testserver/api/v1/learning-history/a0e2947c-a894-4167-8cc9-947247a08e7a "HTTP/1.1 204 No Content"
+[2026-06-21 14:37:30,607] [INFO] [Category: API] Retrieving concept: a0e2947c-a894-4167-8cc9-947247a08e7a
+[2026-06-21 14:37:30,608] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/a0e2947c-a894-4167-8cc9-947247a08e7a "HTTP/1.1 404 Not Found"
+[2026-06-21 14:37:30,608] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:30,617] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:30,625] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:30,625] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:30,625] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:30,641] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:30,641] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:30,641] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:30,641] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:30,641] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:30,649] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:30,649] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:30,649] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:30,659] [INFO] [Category: API] Creating a new session
+[2026-06-21 14:37:30,665] [INFO] HTTP Request: POST http://testserver/api/v1/sessions/ "HTTP/1.1 201 Created"
+[2026-06-21 14:37:30,677] [INFO] [Category: API] Creating memory event for session: 017bae9c-517d-4bf1-b072-6172d230fe2f
+[2026-06-21 14:37:30,681] [INFO] [Category: Memory] Recorded sensory event 725e2d29-e80a-46f5-81b3-4f1897e2e11b for session 017bae9c-517d-4bf1-b072-6172d230fe2f
+[2026-06-21 14:37:30,697] [INFO] HTTP Request: POST http://testserver/api/v1/memory/ "HTTP/1.1 201 Created"
+[2026-06-21 14:37:30,702] [INFO] [Category: API] Fetching memory event: 725e2d29-e80a-46f5-81b3-4f1897e2e11b
+[2026-06-21 14:37:30,707] [INFO] HTTP Request: GET http://testserver/api/v1/memory/725e2d29-e80a-46f5-81b3-4f1897e2e11b "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,713] [INFO] [Category: API] Listing memory events
+[2026-06-21 14:37:30,722] [INFO] HTTP Request: GET http://testserver/api/v1/memory/ "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,722] [INFO] [Category: API] Listing memory events
+[2026-06-21 14:37:30,730] [INFO] HTTP Request: GET http://testserver/api/v1/memory/?session_id=017bae9c-517d-4bf1-b072-6172d230fe2f "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,738] [INFO] [Category: API] Deleting memory event: 725e2d29-e80a-46f5-81b3-4f1897e2e11b
+[2026-06-21 14:37:30,749] [INFO] [Category: Memory] Deleted memory event ID=725e2d29-e80a-46f5-81b3-4f1897e2e11b from SQLite database
+[2026-06-21 14:37:30,749] [INFO] HTTP Request: DELETE http://testserver/api/v1/memory/725e2d29-e80a-46f5-81b3-4f1897e2e11b "HTTP/1.1 204 No Content"
+[2026-06-21 14:37:30,756] [INFO] [Category: API] Fetching memory event: 725e2d29-e80a-46f5-81b3-4f1897e2e11b
+[2026-06-21 14:37:30,758] [INFO] HTTP Request: GET http://testserver/api/v1/memory/725e2d29-e80a-46f5-81b3-4f1897e2e11b "HTTP/1.1 404 Not Found"
+[2026-06-21 14:37:30,758] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:30,763] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:30,771] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:30,771] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:30,773] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:30,788] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:30,788] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:30,788] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:30,788] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:30,788] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:30,788] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:30,788] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:30,788] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:30,796] [INFO] [Category: API] Fetching long-term memory lessons and project trackers
+[2026-06-21 14:37:30,809] [INFO] HTTP Request: GET http://testserver/api/v1/memory/longterm "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,809] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:30,821] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:30,821] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:30,823] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:30,823] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:30,840] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:30,840] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:30,840] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:30,840] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:30,845] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:30,845] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:30,845] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:30,845] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:30,854] [INFO] [Category: API] Creating a project record: Taksh Persist
+[2026-06-21 14:37:30,862] [INFO] HTTP Request: POST http://testserver/api/v1/projects/ "HTTP/1.1 201 Created"
+[2026-06-21 14:37:30,871] [INFO] [Category: API] Retrieving project: e3261ff4-91a0-415c-8f9a-df66f8878bfe
+[2026-06-21 14:37:30,873] [INFO] HTTP Request: GET http://testserver/api/v1/projects/e3261ff4-91a0-415c-8f9a-df66f8878bfe "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,879] [INFO] [Category: API] Updating project: e3261ff4-91a0-415c-8f9a-df66f8878bfe
+[2026-06-21 14:37:30,887] [INFO] HTTP Request: PUT http://testserver/api/v1/projects/e3261ff4-91a0-415c-8f9a-df66f8878bfe "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,895] [INFO] [Category: API] Listing project trackers
+[2026-06-21 14:37:30,895] [INFO] HTTP Request: GET http://testserver/api/v1/projects/ "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,903] [INFO] [Category: API] Deleting project: e3261ff4-91a0-415c-8f9a-df66f8878bfe
+[2026-06-21 14:37:30,907] [INFO] HTTP Request: DELETE http://testserver/api/v1/projects/e3261ff4-91a0-415c-8f9a-df66f8878bfe "HTTP/1.1 204 No Content"
+[2026-06-21 14:37:30,912] [INFO] [Category: API] Retrieving project: e3261ff4-91a0-415c-8f9a-df66f8878bfe
+[2026-06-21 14:37:30,912] [INFO] HTTP Request: GET http://testserver/api/v1/projects/e3261ff4-91a0-415c-8f9a-df66f8878bfe "HTTP/1.1 404 Not Found"
+[2026-06-21 14:37:30,912] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:30,928] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:30,928] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:30,928] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:30,928] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:30,948] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:30,948] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:30,948] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:30,953] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:30,953] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:30,953] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:30,953] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:30,953] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:30,961] [INFO] [Category: API] Creating a new session
+[2026-06-21 14:37:30,967] [INFO] HTTP Request: POST http://testserver/api/v1/sessions/ "HTTP/1.1 201 Created"
+[2026-06-21 14:37:30,969] [INFO] [Category: API] Retrieving session 09177beb-803c-4330-a09d-84a10174ecad
+[2026-06-21 14:37:30,969] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/09177beb-803c-4330-a09d-84a10174ecad "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,978] [INFO] [Category: API] Listing sessions
+[2026-06-21 14:37:30,978] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/ "HTTP/1.1 200 OK"
+[2026-06-21 14:37:30,986] [INFO] [Category: API] Updating session 09177beb-803c-4330-a09d-84a10174ecad
+[2026-06-21 14:37:30,994] [INFO] HTTP Request: PUT http://testserver/api/v1/sessions/09177beb-803c-4330-a09d-84a10174ecad "HTTP/1.1 200 OK"
+[2026-06-21 14:37:31,002] [INFO] [Category: API] Deleting session 09177beb-803c-4330-a09d-84a10174ecad
+[2026-06-21 14:37:31,010] [INFO] HTTP Request: DELETE http://testserver/api/v1/sessions/09177beb-803c-4330-a09d-84a10174ecad "HTTP/1.1 204 No Content"
+[2026-06-21 14:37:31,010] [INFO] [Category: API] Retrieving session 09177beb-803c-4330-a09d-84a10174ecad
+[2026-06-21 14:37:31,019] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/09177beb-803c-4330-a09d-84a10174ecad "HTTP/1.1 404 Not Found"
+[2026-06-21 14:37:31,019] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:31,034] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:31,034] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:31,034] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:31,035] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:31,051] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:31,051] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:31,051] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:31,051] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:31,051] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:31,057] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:31,057] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:31,057] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:31,064] [INFO] HTTP Request: GET http://testserver/api/v1/skills/info "HTTP/1.1 200 OK"
+[2026-06-21 14:37:31,068] [INFO] HTTP Request: GET http://testserver/api/v1/skills/ "HTTP/1.1 200 OK"
+[2026-06-21 14:37:31,076] [INFO] HTTP Request: GET http://testserver/api/v1/skills/embedded-systems-architect "HTTP/1.1 200 OK"
+[2026-06-21 14:37:31,076] [INFO] HTTP Request: GET http://testserver/api/v1/skills/Embedded%20Systems%20Architect "HTTP/1.1 200 OK"
+[2026-06-21 14:37:31,084] [INFO] HTTP Request: GET http://testserver/api/v1/skills/non-existent-skill "HTTP/1.1 404 Not Found"
+[2026-06-21 14:37:31,084] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:31,092] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\empty_manifests
+[2026-06-21 14:37:31,096] [INFO] [Category: Skills] Loaded 0 skill manifests successfully.
+[2026-06-21 14:37:31,096] [ERROR] [Category: Skills] Registry must contain at least one valid skill. Zero valid skills loaded!
+[2026-06-21 14:37:31,096] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\manifests
+[2026-06-21 14:37:31,101] [INFO] [Category: Skills] Loaded skill manifest: 'Embedded Systems Architect' from embedded_systems_architect.yaml
+[2026-06-21 14:37:31,110] [INFO] [Category: Skills] Loaded skill manifest: 'Full-Stack Software Architect' from fullstack_software_architect.yaml
+[2026-06-21 14:37:31,110] [INFO] [Category: Skills] Loaded 2 skill manifests successfully.
+[2026-06-21 14:37:31,118] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:31,118] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:31,118] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:31,118] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:31,143] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:31,145] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:31,145] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:31,148] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:31,148] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:31,148] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:31,148] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:31,148] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:31,159] [INFO] [Category: API] Serving health status check
+[2026-06-21 14:37:31,159] [INFO] HTTP Request: GET http://testserver/api/v1/health "HTTP/1.1 200 OK"
+[2026-06-21 14:37:31,159] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:31,186] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=10, overlap=2.
+[2026-06-21 14:37:31,190] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-1\test_markdown_structure_parser0\test_doc.md
+[2026-06-21 14:37:31,215] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:31,217] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:31,332] [INFO] [Category: Knowledge] Added 2 document chunk vectors to collection.
+[2026-06-21 14:37:31,340] [ERROR] [Category: Knowledge] Error querying similarity: 'MockEmbeddingFunction' object has no attribute 'embed_query' in query.
+[2026-06-21 14:37:31,611] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:31,615] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:31,618] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=500, overlap=50.
+[2026-06-21 14:37:31,618] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:37:31,650] [INFO] [Category: Knowledge] New document detected: Vision/identity.md
+[2026-06-21 14:37:31,657] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-1\test_ingestion_service0\Vision\identity.md
+[2026-06-21 14:37:31,691] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:37:31,708] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:37:31,710] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:37:31,718] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:37:31,720] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:37:31,741] [INFO] [Category: Knowledge] Modified document detected: Vision/identity.md
+[2026-06-21 14:37:31,764] [INFO] [Category: Knowledge] Deleted chunks for document a15ee771-73a1-4fae-a50f-923e8fcbe7fe from ChromaDB.
+[2026-06-21 14:37:31,772] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-1\test_ingestion_service0\Vision\identity.md
+[2026-06-21 14:37:31,797] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:37:31,805] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:37:31,807] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:37:31,809] [INFO] [Category: Knowledge] Deleted document detected: Vision/identity.md
+[2026-06-21 14:37:31,838] [INFO] [Category: Knowledge] Deleted chunks for document a15ee771-73a1-4fae-a50f-923e8fcbe7fe from ChromaDB.
+[2026-06-21 14:37:31,850] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:37:31,879] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:31,884] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:31,911] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:37:31,911] [INFO] [Category: Knowledge] HybridSearchEngine initialized.
+[2026-06-21 14:37:31,919] [INFO] [Category: Knowledge] Initiating hybrid search for query: 'FreeRTOS semaphores'
+[2026-06-21 14:37:31,919] [ERROR] [Category: Knowledge] Error querying similarity: 'MockEmbeddingFunction' object has no attribute 'embed_query' in query.
+[2026-06-21 14:37:31,923] [INFO] [Category: Knowledge] Hybrid search completed. Reranked 1 results.
+[2026-06-21 14:37:31,935] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:31,935] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:31,935] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:31,935] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:31,952] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:31,952] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:31,952] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:31,952] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:31,952] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:31,952] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:31,960] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:31,960] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:31,977] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/info "HTTP/1.1 200 OK"
+[2026-06-21 14:37:31,985] [INFO] [Category: API] Received request to trigger workspace RAG ingestion
+[2026-06-21 14:37:32,001] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:32,001] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:32,001] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=500, overlap=50.
+[2026-06-21 14:37:32,010] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:37:32,034] [INFO] [Category: Knowledge] New document detected: Vision/test.md
+[2026-06-21 14:37:32,044] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-1\test_knowledge_api_endpoints0\Vision\test.md
+[2026-06-21 14:37:32,076] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:37:32,109] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:37:32,111] [INFO] HTTP Request: POST http://testserver/api/v1/knowledge/ingest "HTTP/1.1 200 OK"
+[2026-06-21 14:37:32,129] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:32,133] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:32,133] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=500, overlap=50.
+[2026-06-21 14:37:32,133] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:37:32,133] [INFO] [Category: Knowledge] New document detected: Vision/test.md
+[2026-06-21 14:37:32,140] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-1\test_knowledge_api_endpoints0\Vision\test.md
+[2026-06-21 14:37:32,169] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:37:32,175] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:37:32,182] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/info "HTTP/1.1 200 OK"
+[2026-06-21 14:37:32,199] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/document/a840a7a1-5929-49b3-984b-7fee888e53cf "HTTP/1.1 200 OK"
+[2026-06-21 14:37:32,223] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:32,223] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:32,223] [INFO] [Category: Knowledge] HybridSearchEngine initialized.
+[2026-06-21 14:37:32,223] [INFO] [Category: Knowledge] Initiating hybrid search for query: 'dummy'
+[2026-06-21 14:37:32,229] [ERROR] [Category: Knowledge] Error querying similarity: 'MockEmbeddingFunction' object has no attribute 'embed_query' in query.
+[2026-06-21 14:37:32,232] [INFO] [Category: Knowledge] Hybrid search completed. Reranked 1 results.
+[2026-06-21 14:37:32,234] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/search?query=dummy "HTTP/1.1 200 OK"
+[2026-06-21 14:37:32,238] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:32,248] [INFO] [Category: Memory] Recorded sensory event 41a5f4ea-7e89-4f30-a442-e1134c41ac58 for session test-session-fifo
+[2026-06-21 14:37:32,248] [INFO] [Category: Memory] Recorded sensory event e4f5f71b-34b2-4f2d-a9d2-6b7183020f8e for session test-session-fifo
+[2026-06-21 14:37:32,257] [INFO] [Category: Memory] Recorded sensory event d3e9a50a-cae9-4712-a903-d456d780505f for session test-session-fifo
+[2026-06-21 14:37:32,261] [INFO] [Category: Memory] Recorded sensory event 25dc33b8-f685-4c3f-a687-645104a39403 for session test-session-fifo
+[2026-06-21 14:37:32,265] [INFO] [Category: Memory] Recorded sensory event e61def45-91b8-4cd2-b7f7-55a754fc5985 for session test-session-fifo
+[2026-06-21 14:37:32,281] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:32,284] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:32,284] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:32,286] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:32,299] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:32,299] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:32,299] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:32,299] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:32,304] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:32,304] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:32,305] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:32,305] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:32,314] [INFO] [Category: Memory] Recorded sensory event a3ef8e53-29ee-435e-8162-e448bc22775c for session session-test-endpoints
+[2026-06-21 14:37:32,324] [INFO] [Category: API] Fetching active working memory context
+[2026-06-21 14:37:32,330] [INFO] HTTP Request: GET http://testserver/api/v1/memory/working?session_id=session-test-endpoints "HTTP/1.1 200 OK"
+[2026-06-21 14:37:32,330] [INFO] [Category: API] Fetching long-term memory lessons and project trackers
+[2026-06-21 14:37:32,341] [INFO] HTTP Request: GET http://testserver/api/v1/memory/longterm "HTTP/1.1 200 OK"
+[2026-06-21 14:37:32,344] [INFO] [Category: API] Fetching memory infrastructure diagnostics info
+[2026-06-21 14:37:32,349] [INFO] HTTP Request: GET http://testserver/api/v1/memory/info "HTTP/1.1 200 OK"
+[2026-06-21 14:37:32,349] [INFO] [Category: API] Fetching detailed memory context for session: session-test-endpoints
+[2026-06-21 14:37:32,355] [INFO] HTTP Request: GET http://testserver/api/v1/memory/session/session-test-endpoints "HTTP/1.1 200 OK"
+[2026-06-21 14:37:32,363] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:32,376] [INFO] [Category: Memory] Recorded sensory event 6e5d3124-2e10-475a-901f-7698d7292466 for session session-test-close
+[2026-06-21 14:37:32,380] [INFO] [Category: Memory] Session session-test-close closed. Sensory cache evicted.
+[2026-06-21 14:37:32,441] [INFO] [Category: Skills] SkillsEngine initialized and manifests registry loaded.
+[2026-06-21 14:37:32,445] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:32,445] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:32,453] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:32,453] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:32,469] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:32,469] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:32,473] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:32,473] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:32,473] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:32,473] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:32,473] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:32,473] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:32,485] [INFO] [Category: WebSocket] Client WebSocket voice stream connection accepted
+[2026-06-21 14:37:32,485] [INFO] [Category: Skills] SkillsEngine initialized and manifests registry loaded.
+[2026-06-21 14:37:32,501] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:32,506] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:32,506] [INFO] [Category: Knowledge] HybridSearchEngine initialized.
+[2026-06-21 14:37:32,506] [INFO] [Category: Voice] VoiceSessionManager initialized
+[2026-06-21 14:37:32,508] [INFO] [Category: SYSTEM] Orchestrator instantiated with decoupled service managers.
+[2026-06-21 14:37:32,510] [INFO] [Category: WebSocket] Received client workspace telemetry for file: src/main.c
+[2026-06-21 14:37:32,510] [INFO] [Category: SYSTEM] Routing telemetry update for src/main.c
+[2026-06-21 14:37:32,510] [INFO] [Category: SYSTEM] Evaluated active skills: ['Embedded Systems Architect']
+[2026-06-21 14:37:32,510] [INFO] [Category: Voice] Opening connection tunnel to Gemini Live API: wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidirectionalGenerateContent
+[2026-06-21 14:37:32,510] [WARNING] [Category: WebSocket] Received client voice activity interruption event
+[2026-06-21 14:37:32,510] [WARNING] [Category: SYSTEM] Routing user interruption request
+[2026-06-21 14:37:32,510] [WARNING] [Category: Voice] Sending reset/cancel command to Gemini Live API session
+[2026-06-21 14:37:32,510] [ERROR] [Category: WebSocket] Error in client WebSocket processing: Cannot call "receive" once a disconnect message has been received.
+[2026-06-21 14:37:32,516] [INFO] [Category: SYSTEM] Cleaning up Orchestrator session
+[2026-06-21 14:37:32,516] [INFO] [Category: Voice] Closing Gemini Live WebSocket session
+[2026-06-21 14:37:32,516] [WARNING] [Category: Memory] close_session() called without db or session_id context. Skipping database updates.
+[2026-06-21 14:37:32,518] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:32,528] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:32,528] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:32,528] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:32,534] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:32,550] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:32,550] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:32,550] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:32,550] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:32,550] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:32,550] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:32,550] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:32,550] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:32,562] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:37:32,569] [INFO] WebSocket client connected: client-test-1
+[2026-06-21 14:37:32,575] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:37:32,575] [INFO] WebSocket client disconnected: client-test-1
+[2026-06-21 14:37:32,575] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:37:32,583] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:32,592] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:32,594] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:32,594] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:32,594] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:32,612] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:32,615] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:32,617] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:32,617] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:32,617] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:32,617] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:32,617] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:32,617] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:32,625] [INFO] WebSocket client connected: 5d3fc6a7-3150-4c5f-8be7-788a03cfc38d
+[2026-06-21 14:37:32,625] [INFO] WebSocket client disconnected: 5d3fc6a7-3150-4c5f-8be7-788a03cfc38d
+[2026-06-21 14:37:32,633] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:32,641] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:32,644] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:32,644] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:32,644] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:32,658] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:32,658] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:32,658] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:32,658] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:32,666] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:32,666] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:32,666] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:32,666] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:32,672] [INFO] WebSocket client connected: c6ca415b-cb62-474f-9877-1af04d28512b
+[2026-06-21 14:37:32,677] [INFO] WebSocket client disconnected: c6ca415b-cb62-474f-9877-1af04d28512b
+[2026-06-21 14:37:32,677] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:32,688] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:32,690] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:32,690] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:32,691] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:32,707] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:32,707] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:32,707] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:32,707] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:32,713] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:32,713] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:32,713] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:32,713] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:32,719] [INFO] WebSocket client connected: 9fbfae33-6e5f-42bb-89c1-9fe79058a98a
+[2026-06-21 14:37:32,726] [INFO] WebSocket client disconnected: 9fbfae33-6e5f-42bb-89c1-9fe79058a98a
+[2026-06-21 14:37:32,729] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:37:32,738] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:37:32,740] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:37:32,740] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:37:32,740] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:37:32,755] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:37:32,755] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:37:32,755] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:37:32,755] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:37:32,755] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:37:32,755] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:37:32,755] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:37:32,755] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:37:32,769] [INFO] WebSocket client connected: client-a
+[2026-06-21 14:37:32,772] [INFO] WebSocket client connected: client-b
+[2026-06-21 14:37:32,781] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:37:32,789] [INFO] WebSocket client disconnected: client-b
+[2026-06-21 14:37:32,796] [INFO] WebSocket client disconnected: client-a
+[2026-06-21 14:37:32,799] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:02,742] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:02,744] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:02,745] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:02,745] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:03,009] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:03,013] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:03,015] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:03,015] [INFO] [Category: Memory] Core Identity successfully loaded and cached in memory.
+[2026-06-21 14:38:03,018] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:03,018] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:03,018] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\manifests
+[2026-06-21 14:38:03,023] [INFO] [Category: Skills] Loaded skill manifest: 'Embedded Systems Architect' from embedded_systems_architect.yaml
+[2026-06-21 14:38:03,030] [INFO] [Category: Skills] Loaded skill manifest: 'Full-Stack Software Architect' from fullstack_software_architect.yaml
+[2026-06-21 14:38:03,030] [INFO] [Category: Skills] Loaded 2 skill manifests successfully.
+[2026-06-21 14:38:03,030] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:03,030] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:03,030] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:03,046] [INFO] [Category: API] Creating a goal record: Implement goal validation
+[2026-06-21 14:38:03,095] [INFO] HTTP Request: POST http://testserver/api/v1/goals/ "HTTP/1.1 201 Created"
+[2026-06-21 14:38:03,101] [INFO] [Category: API] Retrieving goal: 521ccd9f-6502-4513-b47f-36e737bc5303
+[2026-06-21 14:38:03,108] [INFO] HTTP Request: GET http://testserver/api/v1/goals/521ccd9f-6502-4513-b47f-36e737bc5303 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,113] [INFO] [Category: API] Updating goal: 521ccd9f-6502-4513-b47f-36e737bc5303
+[2026-06-21 14:38:03,118] [INFO] HTTP Request: PUT http://testserver/api/v1/goals/521ccd9f-6502-4513-b47f-36e737bc5303 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,126] [INFO] HTTP Request: PUT http://testserver/api/v1/goals/521ccd9f-6502-4513-b47f-36e737bc5303 "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 14:38:03,129] [INFO] [Category: API] Listing goals
+[2026-06-21 14:38:03,134] [INFO] HTTP Request: GET http://testserver/api/v1/goals/ "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,137] [INFO] [Category: API] Deleting goal: 521ccd9f-6502-4513-b47f-36e737bc5303
+[2026-06-21 14:38:03,146] [INFO] HTTP Request: DELETE http://testserver/api/v1/goals/521ccd9f-6502-4513-b47f-36e737bc5303 "HTTP/1.1 204 No Content"
+[2026-06-21 14:38:03,146] [INFO] [Category: API] Retrieving goal: 521ccd9f-6502-4513-b47f-36e737bc5303
+[2026-06-21 14:38:03,151] [INFO] HTTP Request: GET http://testserver/api/v1/goals/521ccd9f-6502-4513-b47f-36e737bc5303 "HTTP/1.1 404 Not Found"
+[2026-06-21 14:38:03,151] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:03,167] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:03,167] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:03,167] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:03,167] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:03,183] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:03,188] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:03,188] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:03,188] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:03,188] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:03,188] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:03,191] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:03,191] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:03,200] [INFO] HTTP Request: GET http://testserver/api/v1/identity/ "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,208] [INFO] HTTP Request: GET http://testserver/api/v1/identity/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,208] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:03,214] [CRITICAL] [Category: Memory] Core Identity file missing.
+[2026-06-21 14:38:03,216] [CRITICAL] [Category: Memory] Configured Path: non_existent_identity.md
+[2026-06-21 14:38:03,216] [CRITICAL] [Category: Memory] Fallback Identity Activated.
+[2026-06-21 14:38:03,218] [INFO] [Category: Memory] Core Identity successfully loaded and cached in memory.
+[2026-06-21 14:38:03,224] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:03,227] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:03,227] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:03,227] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:03,240] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:03,240] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:03,240] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:03,240] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:03,240] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:03,248] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:03,248] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:03,248] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:03,256] [INFO] [Category: API] Creating a learning history record: SQLAlchemy Declarative
+[2026-06-21 14:38:03,265] [INFO] HTTP Request: POST http://testserver/api/v1/learning-history/ "HTTP/1.1 201 Created"
+[2026-06-21 14:38:03,265] [INFO] [Category: API] Retrieving concept: 5e1663ae-2236-4e46-b49a-3f4be2017089
+[2026-06-21 14:38:03,273] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/5e1663ae-2236-4e46-b49a-3f4be2017089 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,282] [INFO] [Category: API] Updating concept: 5e1663ae-2236-4e46-b49a-3f4be2017089
+[2026-06-21 14:38:03,282] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/5e1663ae-2236-4e46-b49a-3f4be2017089 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,290] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/5e1663ae-2236-4e46-b49a-3f4be2017089 "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 14:38:03,290] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/5e1663ae-2236-4e46-b49a-3f4be2017089 "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 14:38:03,298] [INFO] [Category: API] Listing learning history
+[2026-06-21 14:38:03,307] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/ "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,307] [INFO] [Category: API] Deleting concept: 5e1663ae-2236-4e46-b49a-3f4be2017089
+[2026-06-21 14:38:03,307] [INFO] HTTP Request: DELETE http://testserver/api/v1/learning-history/5e1663ae-2236-4e46-b49a-3f4be2017089 "HTTP/1.1 204 No Content"
+[2026-06-21 14:38:03,315] [INFO] [Category: API] Retrieving concept: 5e1663ae-2236-4e46-b49a-3f4be2017089
+[2026-06-21 14:38:03,315] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/5e1663ae-2236-4e46-b49a-3f4be2017089 "HTTP/1.1 404 Not Found"
+[2026-06-21 14:38:03,324] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:03,332] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:03,332] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:03,332] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:03,332] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:03,348] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:03,348] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:03,348] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:03,348] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:03,348] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:03,348] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:03,348] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:03,357] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:03,365] [INFO] [Category: API] Creating a new session
+[2026-06-21 14:38:03,373] [INFO] HTTP Request: POST http://testserver/api/v1/sessions/ "HTTP/1.1 201 Created"
+[2026-06-21 14:38:03,381] [INFO] [Category: API] Creating memory event for session: 44d51a8a-6c35-47a6-a9fa-419ad078396b
+[2026-06-21 14:38:03,390] [INFO] [Category: Memory] Recorded sensory event 791b5079-e96c-4a27-b930-810d236c53d0 for session 44d51a8a-6c35-47a6-a9fa-419ad078396b
+[2026-06-21 14:38:03,400] [INFO] HTTP Request: POST http://testserver/api/v1/memory/ "HTTP/1.1 201 Created"
+[2026-06-21 14:38:03,406] [INFO] [Category: API] Fetching memory event: 791b5079-e96c-4a27-b930-810d236c53d0
+[2026-06-21 14:38:03,414] [INFO] HTTP Request: GET http://testserver/api/v1/memory/791b5079-e96c-4a27-b930-810d236c53d0 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,423] [INFO] [Category: API] Listing memory events
+[2026-06-21 14:38:03,423] [INFO] HTTP Request: GET http://testserver/api/v1/memory/ "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,431] [INFO] [Category: API] Listing memory events
+[2026-06-21 14:38:03,440] [INFO] HTTP Request: GET http://testserver/api/v1/memory/?session_id=44d51a8a-6c35-47a6-a9fa-419ad078396b "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,448] [INFO] [Category: API] Deleting memory event: 791b5079-e96c-4a27-b930-810d236c53d0
+[2026-06-21 14:38:03,455] [INFO] [Category: Memory] Deleted memory event ID=791b5079-e96c-4a27-b930-810d236c53d0 from SQLite database
+[2026-06-21 14:38:03,455] [INFO] HTTP Request: DELETE http://testserver/api/v1/memory/791b5079-e96c-4a27-b930-810d236c53d0 "HTTP/1.1 204 No Content"
+[2026-06-21 14:38:03,463] [INFO] [Category: API] Fetching memory event: 791b5079-e96c-4a27-b930-810d236c53d0
+[2026-06-21 14:38:03,463] [INFO] HTTP Request: GET http://testserver/api/v1/memory/791b5079-e96c-4a27-b930-810d236c53d0 "HTTP/1.1 404 Not Found"
+[2026-06-21 14:38:03,463] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:03,480] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:03,480] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:03,480] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:03,480] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:03,496] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:03,496] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:03,496] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:03,496] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:03,496] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:03,504] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:03,504] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:03,504] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:03,513] [INFO] [Category: API] Fetching long-term memory lessons and project trackers
+[2026-06-21 14:38:03,513] [INFO] HTTP Request: GET http://testserver/api/v1/memory/longterm "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,513] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:03,531] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:03,531] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:03,531] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:03,531] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:03,546] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:03,546] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:03,554] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:03,554] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:03,554] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:03,554] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:03,554] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:03,554] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:03,562] [INFO] [Category: API] Creating a project record: Taksh Persist
+[2026-06-21 14:38:03,571] [INFO] HTTP Request: POST http://testserver/api/v1/projects/ "HTTP/1.1 201 Created"
+[2026-06-21 14:38:03,579] [INFO] [Category: API] Retrieving project: 554aa27f-7935-43bd-8c0a-d104743d7766
+[2026-06-21 14:38:03,579] [INFO] HTTP Request: GET http://testserver/api/v1/projects/554aa27f-7935-43bd-8c0a-d104743d7766 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,587] [INFO] [Category: API] Updating project: 554aa27f-7935-43bd-8c0a-d104743d7766
+[2026-06-21 14:38:03,596] [INFO] HTTP Request: PUT http://testserver/api/v1/projects/554aa27f-7935-43bd-8c0a-d104743d7766 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,596] [INFO] [Category: API] Listing project trackers
+[2026-06-21 14:38:03,604] [INFO] HTTP Request: GET http://testserver/api/v1/projects/ "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,604] [INFO] [Category: API] Deleting project: 554aa27f-7935-43bd-8c0a-d104743d7766
+[2026-06-21 14:38:03,613] [INFO] HTTP Request: DELETE http://testserver/api/v1/projects/554aa27f-7935-43bd-8c0a-d104743d7766 "HTTP/1.1 204 No Content"
+[2026-06-21 14:38:03,613] [INFO] [Category: API] Retrieving project: 554aa27f-7935-43bd-8c0a-d104743d7766
+[2026-06-21 14:38:03,620] [INFO] HTTP Request: GET http://testserver/api/v1/projects/554aa27f-7935-43bd-8c0a-d104743d7766 "HTTP/1.1 404 Not Found"
+[2026-06-21 14:38:03,620] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:03,628] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:03,628] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:03,628] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:03,628] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:03,645] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:03,653] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:03,653] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:03,655] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:03,655] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:03,655] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:03,655] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:03,655] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:03,662] [INFO] [Category: API] Creating a new session
+[2026-06-21 14:38:03,662] [INFO] HTTP Request: POST http://testserver/api/v1/sessions/ "HTTP/1.1 201 Created"
+[2026-06-21 14:38:03,674] [INFO] [Category: API] Retrieving session cad8ac45-5031-4f99-a817-a3d71a4f0773
+[2026-06-21 14:38:03,678] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/cad8ac45-5031-4f99-a817-a3d71a4f0773 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,678] [INFO] [Category: API] Listing sessions
+[2026-06-21 14:38:03,687] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/ "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,695] [INFO] [Category: API] Updating session cad8ac45-5031-4f99-a817-a3d71a4f0773
+[2026-06-21 14:38:03,695] [INFO] HTTP Request: PUT http://testserver/api/v1/sessions/cad8ac45-5031-4f99-a817-a3d71a4f0773 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,705] [INFO] [Category: API] Deleting session cad8ac45-5031-4f99-a817-a3d71a4f0773
+[2026-06-21 14:38:03,711] [INFO] HTTP Request: DELETE http://testserver/api/v1/sessions/cad8ac45-5031-4f99-a817-a3d71a4f0773 "HTTP/1.1 204 No Content"
+[2026-06-21 14:38:03,711] [INFO] [Category: API] Retrieving session cad8ac45-5031-4f99-a817-a3d71a4f0773
+[2026-06-21 14:38:03,720] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/cad8ac45-5031-4f99-a817-a3d71a4f0773 "HTTP/1.1 404 Not Found"
+[2026-06-21 14:38:03,720] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:03,737] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:03,737] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:03,739] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:03,739] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:03,755] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:03,755] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:03,755] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:03,755] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:03,755] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:03,755] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:03,755] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:03,755] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:03,761] [INFO] HTTP Request: GET http://testserver/api/v1/skills/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,774] [INFO] HTTP Request: GET http://testserver/api/v1/skills/ "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,777] [INFO] HTTP Request: GET http://testserver/api/v1/skills/embedded-systems-architect "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,777] [INFO] HTTP Request: GET http://testserver/api/v1/skills/Embedded%20Systems%20Architect "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,786] [INFO] HTTP Request: GET http://testserver/api/v1/skills/non-existent-skill "HTTP/1.1 404 Not Found"
+[2026-06-21 14:38:03,786] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:03,798] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\empty_manifests
+[2026-06-21 14:38:03,798] [INFO] [Category: Skills] Loaded 0 skill manifests successfully.
+[2026-06-21 14:38:03,800] [ERROR] [Category: Skills] Registry must contain at least one valid skill. Zero valid skills loaded!
+[2026-06-21 14:38:03,800] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\manifests
+[2026-06-21 14:38:03,804] [INFO] [Category: Skills] Loaded skill manifest: 'Embedded Systems Architect' from embedded_systems_architect.yaml
+[2026-06-21 14:38:03,810] [INFO] [Category: Skills] Loaded skill manifest: 'Full-Stack Software Architect' from fullstack_software_architect.yaml
+[2026-06-21 14:38:03,810] [INFO] [Category: Skills] Loaded 2 skill manifests successfully.
+[2026-06-21 14:38:03,822] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:03,822] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:03,822] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:03,827] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:03,843] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:03,843] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:03,843] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:03,843] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:03,843] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:03,843] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:03,843] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:03,843] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:03,855] [INFO] [Category: API] Serving health status check
+[2026-06-21 14:38:03,859] [INFO] HTTP Request: GET http://testserver/api/v1/health "HTTP/1.1 200 OK"
+[2026-06-21 14:38:03,859] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:03,884] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=10, overlap=2.
+[2026-06-21 14:38:03,884] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-2\test_markdown_structure_parser0\test_doc.md
+[2026-06-21 14:38:03,908] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:03,908] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:03,983] [INFO] [Category: Knowledge] Added 2 document chunk vectors to collection.
+[2026-06-21 14:38:03,991] [ERROR] [Category: Knowledge] Error querying similarity: MockEmbeddingFunction.embed_query() got an unexpected keyword argument 'input' in query.
+[2026-06-21 14:38:04,296] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:04,304] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:04,304] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=500, overlap=50.
+[2026-06-21 14:38:04,306] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:38:04,306] [INFO] [Category: Knowledge] New document detected: Vision/identity.md
+[2026-06-21 14:38:04,313] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-2\test_ingestion_service0\Vision\identity.md
+[2026-06-21 14:38:04,346] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:38:04,362] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:38:04,362] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:38:04,374] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:38:04,374] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:38:04,378] [INFO] [Category: Knowledge] Modified document detected: Vision/identity.md
+[2026-06-21 14:38:04,405] [INFO] [Category: Knowledge] Deleted chunks for document 417c6347-fec9-4067-812a-d27fb25cffe4 from ChromaDB.
+[2026-06-21 14:38:04,411] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-2\test_ingestion_service0\Vision\identity.md
+[2026-06-21 14:38:04,441] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:38:04,445] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:38:04,445] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:38:04,445] [INFO] [Category: Knowledge] Deleted document detected: Vision/identity.md
+[2026-06-21 14:38:04,469] [INFO] [Category: Knowledge] Deleted chunks for document 417c6347-fec9-4067-812a-d27fb25cffe4 from ChromaDB.
+[2026-06-21 14:38:04,478] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:38:04,510] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:04,513] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:04,542] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:38:04,543] [INFO] [Category: Knowledge] HybridSearchEngine initialized.
+[2026-06-21 14:38:04,549] [INFO] [Category: Knowledge] Initiating hybrid search for query: 'FreeRTOS semaphores'
+[2026-06-21 14:38:04,549] [ERROR] [Category: Knowledge] Error querying similarity: MockEmbeddingFunction.embed_query() got an unexpected keyword argument 'input' in query.
+[2026-06-21 14:38:04,551] [INFO] [Category: Knowledge] Hybrid search completed. Reranked 1 results.
+[2026-06-21 14:38:04,560] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:04,560] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:04,560] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:04,560] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:04,576] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:04,584] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:04,584] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:04,584] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:04,584] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:04,584] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:04,584] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:04,584] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:04,605] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:04,609] [INFO] [Category: API] Received request to trigger workspace RAG ingestion
+[2026-06-21 14:38:04,626] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:04,626] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:04,626] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=500, overlap=50.
+[2026-06-21 14:38:04,626] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:38:04,660] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:38:04,660] [INFO] HTTP Request: POST http://testserver/api/v1/knowledge/ingest "HTTP/1.1 200 OK"
+[2026-06-21 14:38:04,682] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:04,682] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:04,682] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=500, overlap=50.
+[2026-06-21 14:38:04,682] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:38:04,690] [INFO] [Category: Knowledge] New document detected: Vision/test.md
+[2026-06-21 14:38:04,692] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-2\test_knowledge_api_endpoints0\Vision\test.md
+[2026-06-21 14:38:04,715] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:38:04,723] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:38:04,731] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:04,744] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/document/0b70e6e0-c5b4-4bde-80f3-07fe810190c3 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:04,764] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:04,764] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:04,764] [INFO] [Category: Knowledge] HybridSearchEngine initialized.
+[2026-06-21 14:38:04,764] [INFO] [Category: Knowledge] Initiating hybrid search for query: 'dummy'
+[2026-06-21 14:38:04,764] [ERROR] [Category: Knowledge] Error querying similarity: MockEmbeddingFunction.embed_query() got an unexpected keyword argument 'input' in query.
+[2026-06-21 14:38:04,772] [INFO] [Category: Knowledge] Hybrid search completed. Reranked 1 results.
+[2026-06-21 14:38:04,777] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/search?query=dummy "HTTP/1.1 200 OK"
+[2026-06-21 14:38:04,779] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:04,793] [INFO] [Category: Memory] Recorded sensory event 92afe7a7-5fb4-4ac2-8dad-f745f5032c5d for session test-session-fifo
+[2026-06-21 14:38:04,797] [INFO] [Category: Memory] Recorded sensory event 811dfd59-786d-48ff-bcf1-ae4a5ff855fa for session test-session-fifo
+[2026-06-21 14:38:04,801] [INFO] [Category: Memory] Recorded sensory event 4e576ea2-92cc-448d-9d87-269935ecd0c8 for session test-session-fifo
+[2026-06-21 14:38:04,805] [INFO] [Category: Memory] Recorded sensory event ab51e4c6-09dc-4cb2-ac02-25c4066484b6 for session test-session-fifo
+[2026-06-21 14:38:04,807] [INFO] [Category: Memory] Recorded sensory event 44ba5146-ec7f-4fd8-b9fb-72d294531998 for session test-session-fifo
+[2026-06-21 14:38:04,821] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:04,828] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:04,828] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:04,829] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:04,846] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:04,846] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:04,846] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:04,846] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:04,850] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:04,850] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:04,850] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:04,850] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:04,861] [INFO] [Category: Memory] Recorded sensory event 121e146a-3163-4432-93d4-fbe42671deb5 for session session-test-endpoints
+[2026-06-21 14:38:04,870] [INFO] [Category: API] Fetching active working memory context
+[2026-06-21 14:38:04,874] [INFO] HTTP Request: GET http://testserver/api/v1/memory/working?session_id=session-test-endpoints "HTTP/1.1 200 OK"
+[2026-06-21 14:38:04,878] [INFO] [Category: API] Fetching long-term memory lessons and project trackers
+[2026-06-21 14:38:04,881] [INFO] HTTP Request: GET http://testserver/api/v1/memory/longterm "HTTP/1.1 200 OK"
+[2026-06-21 14:38:04,887] [INFO] [Category: API] Fetching memory infrastructure diagnostics info
+[2026-06-21 14:38:04,889] [INFO] HTTP Request: GET http://testserver/api/v1/memory/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:04,894] [INFO] [Category: API] Fetching detailed memory context for session: session-test-endpoints
+[2026-06-21 14:38:04,903] [INFO] HTTP Request: GET http://testserver/api/v1/memory/session/session-test-endpoints "HTTP/1.1 200 OK"
+[2026-06-21 14:38:04,904] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:04,911] [INFO] [Category: Memory] Recorded sensory event fba595c0-08ed-4eee-af6b-10a4c87310d2 for session session-test-close
+[2026-06-21 14:38:04,919] [INFO] [Category: Memory] Session session-test-close closed. Sensory cache evicted.
+[2026-06-21 14:38:04,989] [INFO] [Category: Skills] SkillsEngine initialized and manifests registry loaded.
+[2026-06-21 14:38:04,992] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:04,992] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:04,992] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:05,000] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:05,017] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:05,019] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:05,019] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:05,022] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:05,022] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:05,022] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:05,024] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:05,024] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:05,025] [INFO] [Category: WebSocket] Client WebSocket voice stream connection accepted
+[2026-06-21 14:38:05,034] [INFO] [Category: Skills] SkillsEngine initialized and manifests registry loaded.
+[2026-06-21 14:38:05,050] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:05,050] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:05,050] [INFO] [Category: Knowledge] HybridSearchEngine initialized.
+[2026-06-21 14:38:05,050] [INFO] [Category: Voice] VoiceSessionManager initialized
+[2026-06-21 14:38:05,050] [INFO] [Category: SYSTEM] Orchestrator instantiated with decoupled service managers.
+[2026-06-21 14:38:05,056] [INFO] [Category: WebSocket] Received client workspace telemetry for file: src/main.c
+[2026-06-21 14:38:05,056] [INFO] [Category: SYSTEM] Routing telemetry update for src/main.c
+[2026-06-21 14:38:05,058] [INFO] [Category: SYSTEM] Evaluated active skills: ['Embedded Systems Architect']
+[2026-06-21 14:38:05,058] [INFO] [Category: Voice] Opening connection tunnel to Gemini Live API: wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidirectionalGenerateContent
+[2026-06-21 14:38:05,058] [WARNING] [Category: WebSocket] Received client voice activity interruption event
+[2026-06-21 14:38:05,058] [WARNING] [Category: SYSTEM] Routing user interruption request
+[2026-06-21 14:38:05,058] [WARNING] [Category: Voice] Sending reset/cancel command to Gemini Live API session
+[2026-06-21 14:38:05,062] [ERROR] [Category: WebSocket] Error in client WebSocket processing: Cannot call "receive" once a disconnect message has been received.
+[2026-06-21 14:38:05,063] [INFO] [Category: SYSTEM] Cleaning up Orchestrator session
+[2026-06-21 14:38:05,063] [INFO] [Category: Voice] Closing Gemini Live WebSocket session
+[2026-06-21 14:38:05,063] [WARNING] [Category: Memory] close_session() called without db or session_id context. Skipping database updates.
+[2026-06-21 14:38:05,067] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:05,075] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:05,075] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:05,075] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:05,075] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:05,100] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:05,100] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:05,100] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:05,104] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:05,104] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:05,104] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:05,106] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:05,106] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:05,110] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:05,116] [INFO] WebSocket client connected: client-test-1
+[2026-06-21 14:38:05,125] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:05,125] [INFO] WebSocket client disconnected: client-test-1
+[2026-06-21 14:38:05,133] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:05,133] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:05,141] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:05,141] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:05,141] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:05,141] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:05,167] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:05,167] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:05,167] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:05,167] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:05,167] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:05,167] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:05,172] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:05,172] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:05,174] [INFO] WebSocket client connected: 28e62cd5-26ec-4210-984c-5d0ff251b3f3
+[2026-06-21 14:38:05,182] [INFO] WebSocket client disconnected: 28e62cd5-26ec-4210-984c-5d0ff251b3f3
+[2026-06-21 14:38:05,183] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:05,190] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:05,190] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:05,190] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:05,190] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:05,214] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:05,214] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:05,214] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:05,214] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:05,214] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:05,214] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:05,214] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:05,214] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:05,225] [INFO] WebSocket client connected: 15f7413b-70de-4c19-acfe-93001c3cab62
+[2026-06-21 14:38:05,230] [INFO] WebSocket client disconnected: 15f7413b-70de-4c19-acfe-93001c3cab62
+[2026-06-21 14:38:05,230] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:05,242] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:05,242] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:05,247] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:05,247] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:05,263] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:05,265] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:05,265] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:05,265] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:05,265] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:05,265] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:05,265] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:05,265] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:05,271] [INFO] WebSocket client connected: aa499c4a-17a2-4718-a378-59a954192026
+[2026-06-21 14:38:05,280] [INFO] WebSocket client disconnected: aa499c4a-17a2-4718-a378-59a954192026
+[2026-06-21 14:38:05,280] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:05,294] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:05,296] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:05,296] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:05,296] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:05,313] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:05,313] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:05,313] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:05,313] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:05,313] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:05,313] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:05,313] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:05,313] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:05,330] [INFO] WebSocket client connected: client-a
+[2026-06-21 14:38:05,336] [INFO] WebSocket client connected: client-b
+[2026-06-21 14:38:05,342] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:05,347] [INFO] WebSocket client disconnected: client-b
+[2026-06-21 14:38:05,348] [INFO] WebSocket client disconnected: client-a
+[2026-06-21 14:38:05,353] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:37,761] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:37,761] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:37,761] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:37,769] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:38,004] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:38,012] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:38,012] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:38,012] [INFO] [Category: Memory] Core Identity successfully loaded and cached in memory.
+[2026-06-21 14:38:38,012] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:38,012] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:38,012] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\manifests
+[2026-06-21 14:38:38,020] [INFO] [Category: Skills] Loaded skill manifest: 'Embedded Systems Architect' from embedded_systems_architect.yaml
+[2026-06-21 14:38:38,029] [INFO] [Category: Skills] Loaded skill manifest: 'Full-Stack Software Architect' from fullstack_software_architect.yaml
+[2026-06-21 14:38:38,029] [INFO] [Category: Skills] Loaded 2 skill manifests successfully.
+[2026-06-21 14:38:38,029] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:38,029] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:38,029] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:38,045] [INFO] [Category: API] Creating a goal record: Implement goal validation
+[2026-06-21 14:38:38,096] [INFO] HTTP Request: POST http://testserver/api/v1/goals/ "HTTP/1.1 201 Created"
+[2026-06-21 14:38:38,103] [INFO] [Category: API] Retrieving goal: 3c25d5ef-c004-4128-9d48-d0ad214d3a61
+[2026-06-21 14:38:38,110] [INFO] HTTP Request: GET http://testserver/api/v1/goals/3c25d5ef-c004-4128-9d48-d0ad214d3a61 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,118] [INFO] [Category: API] Updating goal: 3c25d5ef-c004-4128-9d48-d0ad214d3a61
+[2026-06-21 14:38:38,126] [INFO] HTTP Request: PUT http://testserver/api/v1/goals/3c25d5ef-c004-4128-9d48-d0ad214d3a61 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,126] [INFO] HTTP Request: PUT http://testserver/api/v1/goals/3c25d5ef-c004-4128-9d48-d0ad214d3a61 "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 14:38:38,137] [INFO] [Category: API] Listing goals
+[2026-06-21 14:38:38,143] [INFO] HTTP Request: GET http://testserver/api/v1/goals/ "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,143] [INFO] [Category: API] Deleting goal: 3c25d5ef-c004-4128-9d48-d0ad214d3a61
+[2026-06-21 14:38:38,151] [INFO] HTTP Request: DELETE http://testserver/api/v1/goals/3c25d5ef-c004-4128-9d48-d0ad214d3a61 "HTTP/1.1 204 No Content"
+[2026-06-21 14:38:38,159] [INFO] [Category: API] Retrieving goal: 3c25d5ef-c004-4128-9d48-d0ad214d3a61
+[2026-06-21 14:38:38,159] [INFO] HTTP Request: GET http://testserver/api/v1/goals/3c25d5ef-c004-4128-9d48-d0ad214d3a61 "HTTP/1.1 404 Not Found"
+[2026-06-21 14:38:38,159] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:38,175] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:38,175] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:38,175] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:38,184] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:38,202] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:38,202] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:38,207] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:38,207] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:38,207] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:38,207] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:38,207] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:38,207] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:38,215] [INFO] HTTP Request: GET http://testserver/api/v1/identity/ "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,224] [INFO] HTTP Request: GET http://testserver/api/v1/identity/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,224] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:38,232] [CRITICAL] [Category: Memory] Core Identity file missing.
+[2026-06-21 14:38:38,232] [CRITICAL] [Category: Memory] Configured Path: non_existent_identity.md
+[2026-06-21 14:38:38,232] [CRITICAL] [Category: Memory] Fallback Identity Activated.
+[2026-06-21 14:38:38,232] [INFO] [Category: Memory] Core Identity successfully loaded and cached in memory.
+[2026-06-21 14:38:38,240] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:38,240] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:38,240] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:38,240] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:38,264] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:38,264] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:38,264] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:38,264] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:38,264] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:38,264] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:38,264] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:38,264] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:38,273] [INFO] [Category: API] Creating a learning history record: SQLAlchemy Declarative
+[2026-06-21 14:38:38,281] [INFO] HTTP Request: POST http://testserver/api/v1/learning-history/ "HTTP/1.1 201 Created"
+[2026-06-21 14:38:38,289] [INFO] [Category: API] Retrieving concept: 4162e6a2-4381-4c24-9590-1ba5d7e6d64b
+[2026-06-21 14:38:38,297] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/4162e6a2-4381-4c24-9590-1ba5d7e6d64b "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,297] [INFO] [Category: API] Updating concept: 4162e6a2-4381-4c24-9590-1ba5d7e6d64b
+[2026-06-21 14:38:38,305] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/4162e6a2-4381-4c24-9590-1ba5d7e6d64b "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,313] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/4162e6a2-4381-4c24-9590-1ba5d7e6d64b "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 14:38:38,319] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/4162e6a2-4381-4c24-9590-1ba5d7e6d64b "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 14:38:38,321] [INFO] [Category: API] Listing learning history
+[2026-06-21 14:38:38,321] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/ "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,330] [INFO] [Category: API] Deleting concept: 4162e6a2-4381-4c24-9590-1ba5d7e6d64b
+[2026-06-21 14:38:38,338] [INFO] HTTP Request: DELETE http://testserver/api/v1/learning-history/4162e6a2-4381-4c24-9590-1ba5d7e6d64b "HTTP/1.1 204 No Content"
+[2026-06-21 14:38:38,338] [INFO] [Category: API] Retrieving concept: 4162e6a2-4381-4c24-9590-1ba5d7e6d64b
+[2026-06-21 14:38:38,346] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/4162e6a2-4381-4c24-9590-1ba5d7e6d64b "HTTP/1.1 404 Not Found"
+[2026-06-21 14:38:38,346] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:38,354] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:38,354] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:38,354] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:38,354] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:38,379] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:38,379] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:38,379] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:38,379] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:38,379] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:38,379] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:38,379] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:38,379] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:38,395] [INFO] [Category: API] Creating a new session
+[2026-06-21 14:38:38,403] [INFO] HTTP Request: POST http://testserver/api/v1/sessions/ "HTTP/1.1 201 Created"
+[2026-06-21 14:38:38,411] [INFO] [Category: API] Creating memory event for session: 851323d8-4211-4c2d-8487-c7c28ecbf68f
+[2026-06-21 14:38:38,419] [INFO] [Category: Memory] Recorded sensory event 5f95259b-3bc8-40d7-bab9-92566f355e44 for session 851323d8-4211-4c2d-8487-c7c28ecbf68f
+[2026-06-21 14:38:38,428] [INFO] HTTP Request: POST http://testserver/api/v1/memory/ "HTTP/1.1 201 Created"
+[2026-06-21 14:38:38,436] [INFO] [Category: API] Fetching memory event: 5f95259b-3bc8-40d7-bab9-92566f355e44
+[2026-06-21 14:38:38,444] [INFO] HTTP Request: GET http://testserver/api/v1/memory/5f95259b-3bc8-40d7-bab9-92566f355e44 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,452] [INFO] [Category: API] Listing memory events
+[2026-06-21 14:38:38,460] [INFO] HTTP Request: GET http://testserver/api/v1/memory/ "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,460] [INFO] [Category: API] Listing memory events
+[2026-06-21 14:38:38,468] [INFO] HTTP Request: GET http://testserver/api/v1/memory/?session_id=851323d8-4211-4c2d-8487-c7c28ecbf68f "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,477] [INFO] [Category: API] Deleting memory event: 5f95259b-3bc8-40d7-bab9-92566f355e44
+[2026-06-21 14:38:38,485] [INFO] [Category: Memory] Deleted memory event ID=5f95259b-3bc8-40d7-bab9-92566f355e44 from SQLite database
+[2026-06-21 14:38:38,485] [INFO] HTTP Request: DELETE http://testserver/api/v1/memory/5f95259b-3bc8-40d7-bab9-92566f355e44 "HTTP/1.1 204 No Content"
+[2026-06-21 14:38:38,485] [INFO] [Category: API] Fetching memory event: 5f95259b-3bc8-40d7-bab9-92566f355e44
+[2026-06-21 14:38:38,493] [INFO] HTTP Request: GET http://testserver/api/v1/memory/5f95259b-3bc8-40d7-bab9-92566f355e44 "HTTP/1.1 404 Not Found"
+[2026-06-21 14:38:38,493] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:38,501] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:38,501] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:38,501] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:38,509] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:38,527] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:38,527] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:38,527] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:38,527] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:38,527] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:38,527] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:38,527] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:38,527] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:38,537] [INFO] [Category: API] Fetching long-term memory lessons and project trackers
+[2026-06-21 14:38:38,542] [INFO] HTTP Request: GET http://testserver/api/v1/memory/longterm "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,542] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:38,558] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:38,558] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:38,558] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:38,558] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:38,575] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:38,575] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:38,575] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:38,583] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:38,583] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:38,583] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:38,583] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:38,583] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:38,591] [INFO] [Category: API] Creating a project record: Taksh Persist
+[2026-06-21 14:38:38,604] [INFO] HTTP Request: POST http://testserver/api/v1/projects/ "HTTP/1.1 201 Created"
+[2026-06-21 14:38:38,607] [INFO] [Category: API] Retrieving project: 297a5da6-e926-431f-a813-23b03e2d97fd
+[2026-06-21 14:38:38,607] [INFO] HTTP Request: GET http://testserver/api/v1/projects/297a5da6-e926-431f-a813-23b03e2d97fd "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,616] [INFO] [Category: API] Updating project: 297a5da6-e926-431f-a813-23b03e2d97fd
+[2026-06-21 14:38:38,624] [INFO] HTTP Request: PUT http://testserver/api/v1/projects/297a5da6-e926-431f-a813-23b03e2d97fd "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,632] [INFO] [Category: API] Listing project trackers
+[2026-06-21 14:38:38,632] [INFO] HTTP Request: GET http://testserver/api/v1/projects/ "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,642] [INFO] [Category: API] Deleting project: 297a5da6-e926-431f-a813-23b03e2d97fd
+[2026-06-21 14:38:38,644] [INFO] HTTP Request: DELETE http://testserver/api/v1/projects/297a5da6-e926-431f-a813-23b03e2d97fd "HTTP/1.1 204 No Content"
+[2026-06-21 14:38:38,649] [INFO] [Category: API] Retrieving project: 297a5da6-e926-431f-a813-23b03e2d97fd
+[2026-06-21 14:38:38,649] [INFO] HTTP Request: GET http://testserver/api/v1/projects/297a5da6-e926-431f-a813-23b03e2d97fd "HTTP/1.1 404 Not Found"
+[2026-06-21 14:38:38,657] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:38,665] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:38,665] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:38,665] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:38,665] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:38,683] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:38,690] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:38,690] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:38,690] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:38,690] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:38,690] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:38,690] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:38,690] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:38,698] [INFO] [Category: API] Creating a new session
+[2026-06-21 14:38:38,706] [INFO] HTTP Request: POST http://testserver/api/v1/sessions/ "HTTP/1.1 201 Created"
+[2026-06-21 14:38:38,706] [INFO] [Category: API] Retrieving session c67f134f-b85a-4da8-9b48-a869af9a55f6
+[2026-06-21 14:38:38,714] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/c67f134f-b85a-4da8-9b48-a869af9a55f6 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,722] [INFO] [Category: API] Listing sessions
+[2026-06-21 14:38:38,722] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/ "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,730] [INFO] [Category: API] Updating session c67f134f-b85a-4da8-9b48-a869af9a55f6
+[2026-06-21 14:38:38,739] [INFO] HTTP Request: PUT http://testserver/api/v1/sessions/c67f134f-b85a-4da8-9b48-a869af9a55f6 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,747] [INFO] [Category: API] Deleting session c67f134f-b85a-4da8-9b48-a869af9a55f6
+[2026-06-21 14:38:38,755] [INFO] HTTP Request: DELETE http://testserver/api/v1/sessions/c67f134f-b85a-4da8-9b48-a869af9a55f6 "HTTP/1.1 204 No Content"
+[2026-06-21 14:38:38,755] [INFO] [Category: API] Retrieving session c67f134f-b85a-4da8-9b48-a869af9a55f6
+[2026-06-21 14:38:38,763] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/c67f134f-b85a-4da8-9b48-a869af9a55f6 "HTTP/1.1 404 Not Found"
+[2026-06-21 14:38:38,763] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:38,779] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:38,779] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:38,779] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:38,779] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:38,798] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:38,800] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:38,800] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:38,800] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:38,800] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:38,800] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:38,801] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:38,801] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:38,811] [INFO] HTTP Request: GET http://testserver/api/v1/skills/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,819] [INFO] HTTP Request: GET http://testserver/api/v1/skills/ "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,819] [INFO] HTTP Request: GET http://testserver/api/v1/skills/embedded-systems-architect "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,827] [INFO] HTTP Request: GET http://testserver/api/v1/skills/Embedded%20Systems%20Architect "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,827] [INFO] HTTP Request: GET http://testserver/api/v1/skills/non-existent-skill "HTTP/1.1 404 Not Found"
+[2026-06-21 14:38:38,835] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:38,835] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\empty_manifests
+[2026-06-21 14:38:38,844] [INFO] [Category: Skills] Loaded 0 skill manifests successfully.
+[2026-06-21 14:38:38,844] [ERROR] [Category: Skills] Registry must contain at least one valid skill. Zero valid skills loaded!
+[2026-06-21 14:38:38,844] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\manifests
+[2026-06-21 14:38:38,852] [INFO] [Category: Skills] Loaded skill manifest: 'Embedded Systems Architect' from embedded_systems_architect.yaml
+[2026-06-21 14:38:38,854] [INFO] [Category: Skills] Loaded skill manifest: 'Full-Stack Software Architect' from fullstack_software_architect.yaml
+[2026-06-21 14:38:38,854] [INFO] [Category: Skills] Loaded 2 skill manifests successfully.
+[2026-06-21 14:38:38,860] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:38,869] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:38,869] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:38,869] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:38,884] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:38,884] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:38,884] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:38,884] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:38,884] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:38,884] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:38,884] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:38,884] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:38,892] [INFO] [Category: API] Serving health status check
+[2026-06-21 14:38:38,901] [INFO] HTTP Request: GET http://testserver/api/v1/health "HTTP/1.1 200 OK"
+[2026-06-21 14:38:38,901] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:38,920] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=10, overlap=2.
+[2026-06-21 14:38:38,920] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-3\test_markdown_structure_parser0\test_doc.md
+[2026-06-21 14:38:38,941] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:38,941] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:39,015] [INFO] [Category: Knowledge] Added 2 document chunk vectors to collection.
+[2026-06-21 14:38:39,025] [ERROR] [Category: Knowledge] Error querying similarity: can only concatenate list (not "str") to list in query.
+[2026-06-21 14:38:39,319] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:39,323] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:39,323] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=500, overlap=50.
+[2026-06-21 14:38:39,323] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:38:39,332] [INFO] [Category: Knowledge] New document detected: Vision/identity.md
+[2026-06-21 14:38:39,332] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-3\test_ingestion_service0\Vision\identity.md
+[2026-06-21 14:38:39,364] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:38:39,380] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:38:39,389] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:38:39,389] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:38:39,397] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:38:39,397] [INFO] [Category: Knowledge] Modified document detected: Vision/identity.md
+[2026-06-21 14:38:39,422] [INFO] [Category: Knowledge] Deleted chunks for document f3219377-907a-440a-a7d8-6b7df14a1c60 from ChromaDB.
+[2026-06-21 14:38:39,430] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-3\test_ingestion_service0\Vision\identity.md
+[2026-06-21 14:38:39,463] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:38:39,471] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:38:39,471] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:38:39,471] [INFO] [Category: Knowledge] Deleted document detected: Vision/identity.md
+[2026-06-21 14:38:39,503] [INFO] [Category: Knowledge] Deleted chunks for document f3219377-907a-440a-a7d8-6b7df14a1c60 from ChromaDB.
+[2026-06-21 14:38:39,511] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:38:39,537] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:39,544] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:39,569] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:38:39,577] [INFO] [Category: Knowledge] HybridSearchEngine initialized.
+[2026-06-21 14:38:39,577] [INFO] [Category: Knowledge] Initiating hybrid search for query: 'FreeRTOS semaphores'
+[2026-06-21 14:38:39,577] [ERROR] [Category: Knowledge] Error querying similarity: can only concatenate list (not "str") to list in query.
+[2026-06-21 14:38:39,577] [INFO] [Category: Knowledge] Hybrid search completed. Reranked 1 results.
+[2026-06-21 14:38:39,594] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:39,594] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:39,594] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:39,594] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:39,610] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:39,618] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:39,618] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:39,618] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:39,618] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:39,618] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:39,618] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:39,618] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:39,643] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:39,651] [INFO] [Category: API] Received request to trigger workspace RAG ingestion
+[2026-06-21 14:38:39,667] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:39,667] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:39,667] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=500, overlap=50.
+[2026-06-21 14:38:39,667] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:38:39,708] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:38:39,708] [INFO] HTTP Request: POST http://testserver/api/v1/knowledge/ingest "HTTP/1.1 200 OK"
+[2026-06-21 14:38:39,725] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:39,725] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:39,725] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=500, overlap=50.
+[2026-06-21 14:38:39,725] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:38:39,733] [INFO] [Category: Knowledge] New document detected: Vision/test.md
+[2026-06-21 14:38:39,733] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-3\test_knowledge_api_endpoints0\Vision\test.md
+[2026-06-21 14:38:39,757] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:38:39,765] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:38:39,773] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:39,790] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/document/ffe0fd13-0d7c-4637-b6da-4b3bc0c50360 "HTTP/1.1 200 OK"
+[2026-06-21 14:38:39,814] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:39,814] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:39,814] [INFO] [Category: Knowledge] HybridSearchEngine initialized.
+[2026-06-21 14:38:39,814] [INFO] [Category: Knowledge] Initiating hybrid search for query: 'dummy'
+[2026-06-21 14:38:39,814] [ERROR] [Category: Knowledge] Error querying similarity: can only concatenate list (not "str") to list in query.
+[2026-06-21 14:38:39,823] [INFO] [Category: Knowledge] Hybrid search completed. Reranked 1 results.
+[2026-06-21 14:38:39,824] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/search?query=dummy "HTTP/1.1 200 OK"
+[2026-06-21 14:38:39,824] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:39,839] [INFO] [Category: Memory] Recorded sensory event 70806283-ad0b-4004-b4a2-a25ca8146d58 for session test-session-fifo
+[2026-06-21 14:38:39,847] [INFO] [Category: Memory] Recorded sensory event 2d25a711-441b-4e3e-affd-26f7477f9bf1 for session test-session-fifo
+[2026-06-21 14:38:39,847] [INFO] [Category: Memory] Recorded sensory event 5762d7cf-9ffd-4f39-bc43-71380892e267 for session test-session-fifo
+[2026-06-21 14:38:39,847] [INFO] [Category: Memory] Recorded sensory event 86dcae8b-66b1-45fb-8454-0f86b20a98e9 for session test-session-fifo
+[2026-06-21 14:38:39,855] [INFO] [Category: Memory] Recorded sensory event 3061a303-300f-4ced-8e40-51efdf31b7ea for session test-session-fifo
+[2026-06-21 14:38:39,872] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:39,872] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:39,872] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:39,872] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:39,888] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:39,896] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:39,896] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:39,896] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:39,896] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:39,896] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:39,896] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:39,896] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:39,904] [INFO] [Category: Memory] Recorded sensory event 545ef24a-7638-4214-a01a-d4015db78a1e for session session-test-endpoints
+[2026-06-21 14:38:39,913] [INFO] [Category: API] Fetching active working memory context
+[2026-06-21 14:38:39,921] [INFO] HTTP Request: GET http://testserver/api/v1/memory/working?session_id=session-test-endpoints "HTTP/1.1 200 OK"
+[2026-06-21 14:38:39,921] [INFO] [Category: API] Fetching long-term memory lessons and project trackers
+[2026-06-21 14:38:39,929] [INFO] HTTP Request: GET http://testserver/api/v1/memory/longterm "HTTP/1.1 200 OK"
+[2026-06-21 14:38:39,929] [INFO] [Category: API] Fetching memory infrastructure diagnostics info
+[2026-06-21 14:38:39,937] [INFO] HTTP Request: GET http://testserver/api/v1/memory/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:39,937] [INFO] [Category: API] Fetching detailed memory context for session: session-test-endpoints
+[2026-06-21 14:38:39,946] [INFO] HTTP Request: GET http://testserver/api/v1/memory/session/session-test-endpoints "HTTP/1.1 200 OK"
+[2026-06-21 14:38:39,953] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:39,961] [INFO] [Category: Memory] Recorded sensory event 8a20639c-27cf-4b95-8dce-60033192eb36 for session session-test-close
+[2026-06-21 14:38:39,961] [INFO] [Category: Memory] Session session-test-close closed. Sensory cache evicted.
+[2026-06-21 14:38:40,026] [INFO] [Category: Skills] SkillsEngine initialized and manifests registry loaded.
+[2026-06-21 14:38:40,035] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:40,035] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:40,035] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:40,043] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:40,060] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:40,060] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:40,060] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:40,060] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:40,060] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:40,060] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:40,068] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:40,068] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:40,076] [INFO] [Category: WebSocket] Client WebSocket voice stream connection accepted
+[2026-06-21 14:38:40,076] [INFO] [Category: Skills] SkillsEngine initialized and manifests registry loaded.
+[2026-06-21 14:38:40,098] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:40,101] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:40,101] [INFO] [Category: Knowledge] HybridSearchEngine initialized.
+[2026-06-21 14:38:40,101] [INFO] [Category: Voice] VoiceSessionManager initialized
+[2026-06-21 14:38:40,101] [INFO] [Category: SYSTEM] Orchestrator instantiated with decoupled service managers.
+[2026-06-21 14:38:40,101] [INFO] [Category: WebSocket] Received client workspace telemetry for file: src/main.c
+[2026-06-21 14:38:40,101] [INFO] [Category: SYSTEM] Routing telemetry update for src/main.c
+[2026-06-21 14:38:40,101] [INFO] [Category: SYSTEM] Evaluated active skills: ['Embedded Systems Architect']
+[2026-06-21 14:38:40,101] [INFO] [Category: Voice] Opening connection tunnel to Gemini Live API: wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidirectionalGenerateContent
+[2026-06-21 14:38:40,108] [WARNING] [Category: WebSocket] Received client voice activity interruption event
+[2026-06-21 14:38:40,108] [WARNING] [Category: SYSTEM] Routing user interruption request
+[2026-06-21 14:38:40,108] [WARNING] [Category: Voice] Sending reset/cancel command to Gemini Live API session
+[2026-06-21 14:38:40,108] [ERROR] [Category: WebSocket] Error in client WebSocket processing: Cannot call "receive" once a disconnect message has been received.
+[2026-06-21 14:38:40,108] [INFO] [Category: SYSTEM] Cleaning up Orchestrator session
+[2026-06-21 14:38:40,108] [INFO] [Category: Voice] Closing Gemini Live WebSocket session
+[2026-06-21 14:38:40,108] [WARNING] [Category: Memory] close_session() called without db or session_id context. Skipping database updates.
+[2026-06-21 14:38:40,108] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:40,124] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:40,124] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:40,124] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:40,124] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:40,141] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:40,148] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:40,149] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:40,149] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:40,149] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:40,149] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:40,149] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:40,149] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:40,157] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:40,166] [INFO] WebSocket client connected: client-test-1
+[2026-06-21 14:38:40,171] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:40,171] [INFO] WebSocket client disconnected: client-test-1
+[2026-06-21 14:38:40,174] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:40,174] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:40,190] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:40,190] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:40,190] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:40,190] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:40,207] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:40,207] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:40,207] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:40,207] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:40,214] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:40,214] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:40,214] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:40,214] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:40,223] [INFO] WebSocket client connected: baf39ef6-d14b-4bcb-943f-8dc4bf3b3af2
+[2026-06-21 14:38:40,223] [INFO] WebSocket client disconnected: baf39ef6-d14b-4bcb-943f-8dc4bf3b3af2
+[2026-06-21 14:38:40,223] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:40,239] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:40,239] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:40,239] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:40,239] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:40,255] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:40,255] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:40,255] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:40,255] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:40,263] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:40,263] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:40,263] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:40,263] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:40,271] [INFO] WebSocket client connected: 6d05e633-b60b-4e12-ac9f-6ba8ce262b07
+[2026-06-21 14:38:40,271] [INFO] WebSocket client disconnected: 6d05e633-b60b-4e12-ac9f-6ba8ce262b07
+[2026-06-21 14:38:40,271] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:40,288] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:40,288] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:40,288] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:40,288] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:40,304] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:40,304] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:40,304] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:40,304] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:40,304] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:40,304] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:40,304] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:40,312] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:40,312] [INFO] WebSocket client connected: 25a9130a-750b-4b11-9c9d-ad8f4a5b6798
+[2026-06-21 14:38:40,325] [INFO] WebSocket client disconnected: 25a9130a-750b-4b11-9c9d-ad8f4a5b6798
+[2026-06-21 14:38:40,325] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:38:40,337] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:38:40,337] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:38:40,337] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:38:40,337] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:38:40,353] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:38:40,353] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:38:40,353] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:38:40,353] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:38:40,353] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:38:40,353] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:38:40,353] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:38:40,353] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:38:40,370] [INFO] WebSocket client connected: client-a
+[2026-06-21 14:38:40,370] [INFO] WebSocket client connected: client-b
+[2026-06-21 14:38:40,378] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:38:40,378] [INFO] WebSocket client disconnected: client-b
+[2026-06-21 14:38:40,378] [INFO] WebSocket client disconnected: client-a
+[2026-06-21 14:38:40,386] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:08,792] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:08,794] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:08,794] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:08,796] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:09,040] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:09,044] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:09,044] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:09,046] [INFO] [Category: Memory] Core Identity successfully loaded and cached in memory.
+[2026-06-21 14:40:09,046] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:09,046] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:09,047] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\manifests
+[2026-06-21 14:40:09,056] [INFO] [Category: Skills] Loaded skill manifest: 'Embedded Systems Architect' from embedded_systems_architect.yaml
+[2026-06-21 14:40:09,060] [INFO] [Category: Skills] Loaded skill manifest: 'Full-Stack Software Architect' from fullstack_software_architect.yaml
+[2026-06-21 14:40:09,062] [INFO] [Category: Skills] Loaded 2 skill manifests successfully.
+[2026-06-21 14:40:09,062] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:09,062] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:09,062] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:09,077] [INFO] [Category: API] Creating a goal record: Implement goal validation
+[2026-06-21 14:40:09,122] [INFO] HTTP Request: POST http://testserver/api/v1/goals/ "HTTP/1.1 201 Created"
+[2026-06-21 14:40:09,128] [INFO] [Category: API] Retrieving goal: 45086cee-db1f-4f0d-8a67-460358cf121e
+[2026-06-21 14:40:09,135] [INFO] HTTP Request: GET http://testserver/api/v1/goals/45086cee-db1f-4f0d-8a67-460358cf121e "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,140] [INFO] [Category: API] Updating goal: 45086cee-db1f-4f0d-8a67-460358cf121e
+[2026-06-21 14:40:09,147] [INFO] HTTP Request: PUT http://testserver/api/v1/goals/45086cee-db1f-4f0d-8a67-460358cf121e "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,153] [INFO] HTTP Request: PUT http://testserver/api/v1/goals/45086cee-db1f-4f0d-8a67-460358cf121e "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 14:40:09,158] [INFO] [Category: API] Listing goals
+[2026-06-21 14:40:09,163] [INFO] HTTP Request: GET http://testserver/api/v1/goals/ "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,168] [INFO] [Category: API] Deleting goal: 45086cee-db1f-4f0d-8a67-460358cf121e
+[2026-06-21 14:40:09,173] [INFO] HTTP Request: DELETE http://testserver/api/v1/goals/45086cee-db1f-4f0d-8a67-460358cf121e "HTTP/1.1 204 No Content"
+[2026-06-21 14:40:09,176] [INFO] [Category: API] Retrieving goal: 45086cee-db1f-4f0d-8a67-460358cf121e
+[2026-06-21 14:40:09,178] [INFO] HTTP Request: GET http://testserver/api/v1/goals/45086cee-db1f-4f0d-8a67-460358cf121e "HTTP/1.1 404 Not Found"
+[2026-06-21 14:40:09,183] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:09,198] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:09,198] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:09,198] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:09,200] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:09,218] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:09,219] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:09,220] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:09,221] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:09,221] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:09,221] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:09,221] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:09,223] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:09,232] [INFO] HTTP Request: GET http://testserver/api/v1/identity/ "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,238] [INFO] HTTP Request: GET http://testserver/api/v1/identity/info "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,240] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:09,244] [CRITICAL] [Category: Memory] Core Identity file missing.
+[2026-06-21 14:40:09,244] [CRITICAL] [Category: Memory] Configured Path: non_existent_identity.md
+[2026-06-21 14:40:09,246] [CRITICAL] [Category: Memory] Fallback Identity Activated.
+[2026-06-21 14:40:09,246] [INFO] [Category: Memory] Core Identity successfully loaded and cached in memory.
+[2026-06-21 14:40:09,255] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:09,255] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:09,255] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:09,257] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:09,274] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:09,275] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:09,276] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:09,276] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:09,276] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:09,276] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:09,276] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:09,278] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:09,286] [INFO] [Category: API] Creating a learning history record: SQLAlchemy Declarative
+[2026-06-21 14:40:09,294] [INFO] HTTP Request: POST http://testserver/api/v1/learning-history/ "HTTP/1.1 201 Created"
+[2026-06-21 14:40:09,300] [INFO] [Category: API] Retrieving concept: 055d3a3e-1861-4071-a4e2-139ff78ab226
+[2026-06-21 14:40:09,307] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/055d3a3e-1861-4071-a4e2-139ff78ab226 "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,311] [INFO] [Category: API] Updating concept: 055d3a3e-1861-4071-a4e2-139ff78ab226
+[2026-06-21 14:40:09,319] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/055d3a3e-1861-4071-a4e2-139ff78ab226 "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,319] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/055d3a3e-1861-4071-a4e2-139ff78ab226 "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 14:40:09,327] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/055d3a3e-1861-4071-a4e2-139ff78ab226 "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 14:40:09,331] [INFO] [Category: API] Listing learning history
+[2026-06-21 14:40:09,335] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/ "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,343] [INFO] [Category: API] Deleting concept: 055d3a3e-1861-4071-a4e2-139ff78ab226
+[2026-06-21 14:40:09,343] [INFO] HTTP Request: DELETE http://testserver/api/v1/learning-history/055d3a3e-1861-4071-a4e2-139ff78ab226 "HTTP/1.1 204 No Content"
+[2026-06-21 14:40:09,351] [INFO] [Category: API] Retrieving concept: 055d3a3e-1861-4071-a4e2-139ff78ab226
+[2026-06-21 14:40:09,351] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/055d3a3e-1861-4071-a4e2-139ff78ab226 "HTTP/1.1 404 Not Found"
+[2026-06-21 14:40:09,356] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:09,367] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:09,367] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:09,367] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:09,367] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:09,388] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:09,388] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:09,388] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:09,388] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:09,388] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:09,388] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:09,392] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:09,392] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:09,401] [INFO] [Category: API] Creating a new session
+[2026-06-21 14:40:09,410] [INFO] HTTP Request: POST http://testserver/api/v1/sessions/ "HTTP/1.1 201 Created"
+[2026-06-21 14:40:09,418] [INFO] [Category: API] Creating memory event for session: 350d6e77-ead6-4014-9b28-95d7cdf1a4c5
+[2026-06-21 14:40:09,425] [INFO] [Category: Memory] Recorded sensory event a951fbde-57cd-4279-a959-6d5c9c187a47 for session 350d6e77-ead6-4014-9b28-95d7cdf1a4c5
+[2026-06-21 14:40:09,435] [INFO] HTTP Request: POST http://testserver/api/v1/memory/ "HTTP/1.1 201 Created"
+[2026-06-21 14:40:09,441] [INFO] [Category: API] Fetching memory event: a951fbde-57cd-4279-a959-6d5c9c187a47
+[2026-06-21 14:40:09,441] [INFO] HTTP Request: GET http://testserver/api/v1/memory/a951fbde-57cd-4279-a959-6d5c9c187a47 "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,453] [INFO] [Category: API] Listing memory events
+[2026-06-21 14:40:09,460] [INFO] HTTP Request: GET http://testserver/api/v1/memory/ "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,467] [INFO] [Category: API] Listing memory events
+[2026-06-21 14:40:09,481] [INFO] HTTP Request: GET http://testserver/api/v1/memory/?session_id=350d6e77-ead6-4014-9b28-95d7cdf1a4c5 "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,481] [INFO] [Category: API] Deleting memory event: a951fbde-57cd-4279-a959-6d5c9c187a47
+[2026-06-21 14:40:09,489] [INFO] [Category: Memory] Deleted memory event ID=a951fbde-57cd-4279-a959-6d5c9c187a47 from SQLite database
+[2026-06-21 14:40:09,489] [INFO] HTTP Request: DELETE http://testserver/api/v1/memory/a951fbde-57cd-4279-a959-6d5c9c187a47 "HTTP/1.1 204 No Content"
+[2026-06-21 14:40:09,503] [INFO] [Category: API] Fetching memory event: a951fbde-57cd-4279-a959-6d5c9c187a47
+[2026-06-21 14:40:09,505] [INFO] HTTP Request: GET http://testserver/api/v1/memory/a951fbde-57cd-4279-a959-6d5c9c187a47 "HTTP/1.1 404 Not Found"
+[2026-06-21 14:40:09,506] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:09,516] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:09,516] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:09,516] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:09,516] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:09,536] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:09,538] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:09,538] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:09,538] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:09,538] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:09,538] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:09,538] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:09,538] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:09,551] [INFO] [Category: API] Fetching long-term memory lessons and project trackers
+[2026-06-21 14:40:09,557] [INFO] HTTP Request: GET http://testserver/api/v1/memory/longterm "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,559] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:09,569] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:09,571] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:09,571] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:09,571] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:09,590] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:09,590] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:09,592] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:09,593] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:09,593] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:09,593] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:09,593] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:09,593] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:09,604] [INFO] [Category: API] Creating a project record: Taksh Persist
+[2026-06-21 14:40:09,611] [INFO] HTTP Request: POST http://testserver/api/v1/projects/ "HTTP/1.1 201 Created"
+[2026-06-21 14:40:09,618] [INFO] [Category: API] Retrieving project: 58711897-972f-42a8-be36-21b194f191bf
+[2026-06-21 14:40:09,621] [INFO] HTTP Request: GET http://testserver/api/v1/projects/58711897-972f-42a8-be36-21b194f191bf "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,627] [INFO] [Category: API] Updating project: 58711897-972f-42a8-be36-21b194f191bf
+[2026-06-21 14:40:09,634] [INFO] HTTP Request: PUT http://testserver/api/v1/projects/58711897-972f-42a8-be36-21b194f191bf "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,639] [INFO] [Category: API] Listing project trackers
+[2026-06-21 14:40:09,643] [INFO] HTTP Request: GET http://testserver/api/v1/projects/ "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,647] [INFO] [Category: API] Deleting project: 58711897-972f-42a8-be36-21b194f191bf
+[2026-06-21 14:40:09,653] [INFO] HTTP Request: DELETE http://testserver/api/v1/projects/58711897-972f-42a8-be36-21b194f191bf "HTTP/1.1 204 No Content"
+[2026-06-21 14:40:09,655] [INFO] [Category: API] Retrieving project: 58711897-972f-42a8-be36-21b194f191bf
+[2026-06-21 14:40:09,660] [INFO] HTTP Request: GET http://testserver/api/v1/projects/58711897-972f-42a8-be36-21b194f191bf "HTTP/1.1 404 Not Found"
+[2026-06-21 14:40:09,662] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:09,673] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:09,673] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:09,675] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:09,675] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:09,693] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:09,695] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:09,697] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:09,697] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:09,698] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:09,699] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:09,700] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:09,700] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:09,707] [INFO] [Category: API] Creating a new session
+[2026-06-21 14:40:09,714] [INFO] HTTP Request: POST http://testserver/api/v1/sessions/ "HTTP/1.1 201 Created"
+[2026-06-21 14:40:09,720] [INFO] [Category: API] Retrieving session d6f9c6b6-a2e7-464f-ae65-9dbfabadb667
+[2026-06-21 14:40:09,724] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/d6f9c6b6-a2e7-464f-ae65-9dbfabadb667 "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,732] [INFO] [Category: API] Listing sessions
+[2026-06-21 14:40:09,736] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/ "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,741] [INFO] [Category: API] Updating session d6f9c6b6-a2e7-464f-ae65-9dbfabadb667
+[2026-06-21 14:40:09,748] [INFO] HTTP Request: PUT http://testserver/api/v1/sessions/d6f9c6b6-a2e7-464f-ae65-9dbfabadb667 "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,754] [INFO] [Category: API] Deleting session d6f9c6b6-a2e7-464f-ae65-9dbfabadb667
+[2026-06-21 14:40:09,760] [INFO] HTTP Request: DELETE http://testserver/api/v1/sessions/d6f9c6b6-a2e7-464f-ae65-9dbfabadb667 "HTTP/1.1 204 No Content"
+[2026-06-21 14:40:09,765] [INFO] [Category: API] Retrieving session d6f9c6b6-a2e7-464f-ae65-9dbfabadb667
+[2026-06-21 14:40:09,768] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/d6f9c6b6-a2e7-464f-ae65-9dbfabadb667 "HTTP/1.1 404 Not Found"
+[2026-06-21 14:40:09,772] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:09,784] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:09,784] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:09,786] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:09,786] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:09,804] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:09,806] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:09,806] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:09,806] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:09,806] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:09,806] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:09,806] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:09,808] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:09,817] [INFO] HTTP Request: GET http://testserver/api/v1/skills/info "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,823] [INFO] HTTP Request: GET http://testserver/api/v1/skills/ "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,829] [INFO] HTTP Request: GET http://testserver/api/v1/skills/embedded-systems-architect "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,836] [INFO] HTTP Request: GET http://testserver/api/v1/skills/Embedded%20Systems%20Architect "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,840] [INFO] HTTP Request: GET http://testserver/api/v1/skills/non-existent-skill "HTTP/1.1 404 Not Found"
+[2026-06-21 14:40:09,842] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:09,847] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\empty_manifests
+[2026-06-21 14:40:09,847] [INFO] [Category: Skills] Loaded 0 skill manifests successfully.
+[2026-06-21 14:40:09,847] [ERROR] [Category: Skills] Registry must contain at least one valid skill. Zero valid skills loaded!
+[2026-06-21 14:40:09,847] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\manifests
+[2026-06-21 14:40:09,851] [INFO] [Category: Skills] Loaded skill manifest: 'Embedded Systems Architect' from embedded_systems_architect.yaml
+[2026-06-21 14:40:09,859] [INFO] [Category: Skills] Loaded skill manifest: 'Full-Stack Software Architect' from fullstack_software_architect.yaml
+[2026-06-21 14:40:09,859] [INFO] [Category: Skills] Loaded 2 skill manifests successfully.
+[2026-06-21 14:40:09,868] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:09,868] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:09,868] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:09,868] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:09,884] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:09,892] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:09,892] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:09,892] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:09,892] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:09,892] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:09,892] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:09,892] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:09,900] [INFO] [Category: API] Serving health status check
+[2026-06-21 14:40:09,900] [INFO] HTTP Request: GET http://testserver/api/v1/health "HTTP/1.1 200 OK"
+[2026-06-21 14:40:09,900] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:09,925] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=10, overlap=2.
+[2026-06-21 14:40:09,925] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-4\test_markdown_structure_parser0\test_doc.md
+[2026-06-21 14:40:09,957] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:09,957] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:10,041] [INFO] [Category: Knowledge] Added 2 document chunk vectors to collection.
+[2026-06-21 14:40:10,079] [INFO] [Category: Knowledge] Deleted chunks for document test_doc_123 from ChromaDB.
+[2026-06-21 14:40:10,113] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:10,113] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:10,113] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=500, overlap=50.
+[2026-06-21 14:40:10,113] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:40:10,123] [INFO] [Category: Knowledge] New document detected: Vision/identity.md
+[2026-06-21 14:40:10,123] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-4\test_ingestion_service0\Vision\identity.md
+[2026-06-21 14:40:10,156] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:40:10,176] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:40:10,187] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:40:10,191] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:40:10,193] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:40:10,197] [INFO] [Category: Knowledge] Modified document detected: Vision/identity.md
+[2026-06-21 14:40:10,228] [INFO] [Category: Knowledge] Deleted chunks for document 6b9d1189-f52f-4b40-8019-7fb0aa7f790c from ChromaDB.
+[2026-06-21 14:40:10,233] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-4\test_ingestion_service0\Vision\identity.md
+[2026-06-21 14:40:10,267] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:40:10,272] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:40:10,274] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:40:10,276] [INFO] [Category: Knowledge] Deleted document detected: Vision/identity.md
+[2026-06-21 14:40:10,306] [INFO] [Category: Knowledge] Deleted chunks for document 6b9d1189-f52f-4b40-8019-7fb0aa7f790c from ChromaDB.
+[2026-06-21 14:40:10,319] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:40:10,352] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:10,353] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:10,385] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:40:10,387] [INFO] [Category: Knowledge] HybridSearchEngine initialized.
+[2026-06-21 14:40:10,392] [INFO] [Category: Knowledge] Initiating hybrid search for query: 'FreeRTOS semaphores'
+[2026-06-21 14:40:10,400] [INFO] [Category: Knowledge] Hybrid search completed. Reranked 2 results.
+[2026-06-21 14:40:10,412] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:10,414] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:10,414] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:10,417] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:10,436] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:10,438] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:10,438] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:10,439] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:10,439] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:10,439] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:10,439] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:10,439] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:10,461] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/info "HTTP/1.1 200 OK"
+[2026-06-21 14:40:10,470] [INFO] [Category: API] Received request to trigger workspace RAG ingestion
+[2026-06-21 14:40:10,492] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:10,493] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:10,495] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=500, overlap=50.
+[2026-06-21 14:40:10,495] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:40:10,527] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:40:10,529] [INFO] HTTP Request: POST http://testserver/api/v1/knowledge/ingest "HTTP/1.1 200 OK"
+[2026-06-21 14:40:10,545] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:10,550] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:10,552] [INFO] [Category: Knowledge] MarkdownStructureParser initialized with chunk_size=500, overlap=50.
+[2026-06-21 14:40:10,552] [INFO] [Category: Knowledge] Starting knowledge ingestion pipeline...
+[2026-06-21 14:40:10,555] [INFO] [Category: Knowledge] New document detected: Vision/test.md
+[2026-06-21 14:40:10,557] [INFO] [Category: Knowledge] Parsing document filepath: C:\Users\Akash\AppData\Local\Temp\pytest-of-Akash\pytest-4\test_knowledge_api_endpoints0\Vision\test.md
+[2026-06-21 14:40:10,584] [INFO] [Category: Knowledge] Added 1 document chunk vectors to collection.
+[2026-06-21 14:40:10,586] [INFO] [Category: Knowledge] Knowledge ingestion pipeline completed successfully.
+[2026-06-21 14:40:10,596] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/info "HTTP/1.1 200 OK"
+[2026-06-21 14:40:10,613] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/document/30a2afc8-da16-45bb-8c76-fe052b9175c8 "HTTP/1.1 200 OK"
+[2026-06-21 14:40:10,641] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:10,643] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:10,643] [INFO] [Category: Knowledge] HybridSearchEngine initialized.
+[2026-06-21 14:40:10,643] [INFO] [Category: Knowledge] Initiating hybrid search for query: 'dummy'
+[2026-06-21 14:40:10,657] [INFO] [Category: Knowledge] Hybrid search completed. Reranked 5 results.
+[2026-06-21 14:40:10,661] [INFO] HTTP Request: GET http://testserver/api/v1/knowledge/search?query=dummy "HTTP/1.1 200 OK"
+[2026-06-21 14:40:10,665] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:10,684] [INFO] [Category: Memory] Recorded sensory event 075a4674-605b-4343-b3f7-33837c31b4f1 for session test-session-fifo
+[2026-06-21 14:40:10,688] [INFO] [Category: Memory] Recorded sensory event 6d0512a3-2679-438a-a956-cbd1a4ee3a7d for session test-session-fifo
+[2026-06-21 14:40:10,692] [INFO] [Category: Memory] Recorded sensory event d05d9550-cf24-4269-bdf8-956a81892194 for session test-session-fifo
+[2026-06-21 14:40:10,694] [INFO] [Category: Memory] Recorded sensory event 443a5236-d0e1-4154-9216-da5e64f5e946 for session test-session-fifo
+[2026-06-21 14:40:10,698] [INFO] [Category: Memory] Recorded sensory event b3f54104-e9a9-4aea-8642-b5654f381bf6 for session test-session-fifo
+[2026-06-21 14:40:10,716] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:10,717] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:10,718] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:10,718] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:10,737] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:10,739] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:10,739] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:10,739] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:10,741] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:10,741] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:10,741] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:10,741] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:10,751] [INFO] [Category: Memory] Recorded sensory event 6410b35d-d712-4080-916c-3b18b76b74ed for session session-test-endpoints
+[2026-06-21 14:40:10,757] [INFO] [Category: API] Fetching active working memory context
+[2026-06-21 14:40:10,765] [INFO] HTTP Request: GET http://testserver/api/v1/memory/working?session_id=session-test-endpoints "HTTP/1.1 200 OK"
+[2026-06-21 14:40:10,765] [INFO] [Category: API] Fetching long-term memory lessons and project trackers
+[2026-06-21 14:40:10,773] [INFO] HTTP Request: GET http://testserver/api/v1/memory/longterm "HTTP/1.1 200 OK"
+[2026-06-21 14:40:10,781] [INFO] [Category: API] Fetching memory infrastructure diagnostics info
+[2026-06-21 14:40:10,781] [INFO] HTTP Request: GET http://testserver/api/v1/memory/info "HTTP/1.1 200 OK"
+[2026-06-21 14:40:10,790] [INFO] [Category: API] Fetching detailed memory context for session: session-test-endpoints
+[2026-06-21 14:40:10,801] [INFO] HTTP Request: GET http://testserver/api/v1/memory/session/session-test-endpoints "HTTP/1.1 200 OK"
+[2026-06-21 14:40:10,803] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:10,812] [INFO] [Category: Memory] Recorded sensory event 9ccc29ca-46e2-482e-8d13-74e35301536b for session session-test-close
+[2026-06-21 14:40:10,817] [INFO] [Category: Memory] Session session-test-close closed. Sensory cache evicted.
+[2026-06-21 14:40:10,875] [INFO] [Category: Skills] SkillsEngine initialized and manifests registry loaded.
+[2026-06-21 14:40:10,888] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:10,888] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:10,888] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:10,890] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:10,906] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:10,908] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:10,910] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:10,911] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:10,911] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:10,911] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:10,911] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:10,911] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:10,924] [INFO] [Category: WebSocket] Client WebSocket voice stream connection accepted
+[2026-06-21 14:40:10,924] [INFO] [Category: Skills] SkillsEngine initialized and manifests registry loaded.
+[2026-06-21 14:40:10,937] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:10,945] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:10,946] [INFO] [Category: Knowledge] HybridSearchEngine initialized.
+[2026-06-21 14:40:10,946] [INFO] [Category: Voice] VoiceSessionManager initialized
+[2026-06-21 14:40:10,947] [INFO] [Category: SYSTEM] Orchestrator instantiated with decoupled service managers.
+[2026-06-21 14:40:10,949] [INFO] [Category: WebSocket] Received client workspace telemetry for file: src/main.c
+[2026-06-21 14:40:10,950] [INFO] [Category: SYSTEM] Routing telemetry update for src/main.c
+[2026-06-21 14:40:10,950] [INFO] [Category: SYSTEM] Evaluated active skills: ['Embedded Systems Architect']
+[2026-06-21 14:40:10,951] [INFO] [Category: Voice] Opening connection tunnel to Gemini Live API: wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidirectionalGenerateContent
+[2026-06-21 14:40:10,969] [WARNING] [Category: WebSocket] Received client voice activity interruption event
+[2026-06-21 14:40:10,970] [WARNING] [Category: SYSTEM] Routing user interruption request
+[2026-06-21 14:40:10,970] [WARNING] [Category: Voice] Sending reset/cancel command to Gemini Live API session
+[2026-06-21 14:40:10,972] [ERROR] [Category: WebSocket] Error in client WebSocket processing: Cannot call "receive" once a disconnect message has been received.
+[2026-06-21 14:40:10,972] [INFO] [Category: SYSTEM] Cleaning up Orchestrator session
+[2026-06-21 14:40:10,974] [INFO] [Category: Voice] Closing Gemini Live WebSocket session
+[2026-06-21 14:40:10,975] [WARNING] [Category: Memory] close_session() called without db or session_id context. Skipping database updates.
+[2026-06-21 14:40:10,983] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:10,995] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:10,996] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:10,996] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:10,998] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:11,017] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:11,018] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:11,019] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:11,019] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:11,019] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:11,019] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:11,021] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:11,021] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:11,029] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:40:11,034] [INFO] WebSocket client connected: client-test-1
+[2026-06-21 14:40:11,038] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:40:11,040] [INFO] WebSocket client disconnected: client-test-1
+[2026-06-21 14:40:11,044] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:40:11,046] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:11,054] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:11,056] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:11,056] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:11,056] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:11,075] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:11,075] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:11,077] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:11,077] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:11,077] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:11,077] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:11,077] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:11,077] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:11,086] [INFO] WebSocket client connected: e4b55010-e7ae-41aa-9bb8-2ddbe1c45c33
+[2026-06-21 14:40:11,091] [INFO] WebSocket client disconnected: e4b55010-e7ae-41aa-9bb8-2ddbe1c45c33
+[2026-06-21 14:40:11,093] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:11,105] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:11,105] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:11,106] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:11,108] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:11,123] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:11,123] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:11,123] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:11,123] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:11,123] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:11,123] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:11,123] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:11,130] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:11,137] [INFO] WebSocket client connected: c897eea3-0fad-4038-9a34-151bc82f3e18
+[2026-06-21 14:40:11,140] [INFO] WebSocket client disconnected: c897eea3-0fad-4038-9a34-151bc82f3e18
+[2026-06-21 14:40:11,142] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:11,151] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:11,151] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:11,151] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:11,153] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:11,172] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:11,174] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:11,174] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:11,174] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:11,176] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:11,176] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:11,176] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:11,176] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:11,182] [INFO] WebSocket client connected: 204362b5-d47f-4a8b-a6f1-f867c42b1a88
+[2026-06-21 14:40:11,188] [INFO] WebSocket client disconnected: 204362b5-d47f-4a8b-a6f1-f867c42b1a88
+[2026-06-21 14:40:11,188] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 14:40:11,204] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 14:40:11,204] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 14:40:11,204] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-21 14:40:11,204] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-21 14:40:11,229] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-21 14:40:11,230] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: D:\Taksh\backend\.taksh\chroma
+[2026-06-21 14:40:11,232] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-21 14:40:11,232] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 14:40:11,233] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 14:40:11,233] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 14:40:11,234] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 14:40:11,234] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 14:40:11,243] [INFO] WebSocket client connected: client-a
+[2026-06-21 14:40:11,249] [INFO] WebSocket client connected: client-b
+[2026-06-21 14:40:11,256] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 14:40:11,258] [INFO] WebSocket client disconnected: client-b
+[2026-06-21 14:40:11,260] [INFO] WebSocket client disconnected: client-a
+[2026-06-21 14:40:11,265] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...

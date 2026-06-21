@@ -91,3 +91,41 @@ class LearningHistory(Base):
     concept_name: Mapped[str] = mapped_column(String, nullable=False)
     mastery_score: Mapped[int] = mapped_column(Integer, default=0)
     last_reviewed: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+class KnowledgeDocument(Base):
+    __tablename__ = "knowledge_documents"
+    
+    document_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    filepath: Mapped[str] = mapped_column(String, unique=True, index=True, nullable=False)
+    file_hash: Mapped[str] = mapped_column(String, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    chunks: Mapped[List["KnowledgeChunk"]] = relationship(
+        "KnowledgeChunk", back_populates="document", cascade="all, delete-orphan"
+    )
+
+class KnowledgeChunk(Base):
+    __tablename__ = "knowledge_chunks"
+    
+    chunk_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    document_id: Mapped[str] = mapped_column(ForeignKey("knowledge_documents.document_id", ondelete="CASCADE"), nullable=False)
+    chunk_index: Mapped[int] = mapped_column(Integer, nullable=False)
+    content: Mapped[str] = mapped_column(Text, nullable=False)
+    heading_hierarchy: Mapped[List[str]] = mapped_column(JSON, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+    document: Mapped["KnowledgeDocument"] = relationship("KnowledgeDocument", back_populates="chunks")
+
+class KnowledgeIngestionMetrics(Base):
+    __tablename__ = "knowledge_ingestion_metrics"
+    
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    total_documents: Mapped[int] = mapped_column(Integer, default=0)
+    total_chunks: Mapped[int] = mapped_column(Integer, default=0)
+    indexed_documents: Mapped[int] = mapped_column(Integer, default=0)
+    skipped_documents: Mapped[int] = mapped_column(Integer, default=0)
+    reindexed_documents: Mapped[int] = mapped_column(Integer, default=0)
+    deleted_documents: Mapped[int] = mapped_column(Integer, default=0)
+    last_ingested_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
