@@ -20,6 +20,7 @@ class MemoryItemsUsed(BaseModel):
     recent_events: List[str]
 
 class DecisionTrace(BaseModel):
+    trace_id: str
     selected_skills: List[SkillConfidence]
     knowledge_chunks_used: List[str]
     memory_items_used: MemoryItemsUsed

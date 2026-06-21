@@ -38,6 +38,12 @@ class Settings(BaseSettings):
     MAX_RECENT_EVENTS: int = 10
     PROMPT_VERSION: str = "v1"
     
+    # LLM Gateway configurations
+    DEFAULT_LLM_PROVIDER: str = "mock"
+    DEFAULT_LLM_MODEL: str = "gemini-1.5-flash"
+    DEFAULT_MAX_TOKENS: int = 1024
+    DEFAULT_TEMPERATURE: float = 0.2
+    
     # Skill Registry configurations
     SKILLS_MANIFEST_DIR: Path = Path("./app/services/skills/manifests")
 

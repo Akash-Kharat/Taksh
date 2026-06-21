@@ -4,7 +4,7 @@ from app.core.config import settings
 from app.core.logger import setup_logging, system_logger
 from app.core.security import enforce_local_loopback
 from app.services.memory.identity import CoreIdentityManager
-from app.api.endpoints import health, settings as settings_api, knowledge, memory, session, project, goal, learning, identity, skills, orchestrator
+from app.api.endpoints import health, settings as settings_api, knowledge, memory, session, project, goal, learning, identity, skills, orchestrator, chat, llm
 from app.api.websockets import voice, connection
 
 @asynccontextmanager
@@ -80,6 +80,8 @@ app.include_router(learning.router, prefix=settings.API_V1_STR, tags=["Learning 
 app.include_router(identity.router, prefix=settings.API_V1_STR, tags=["Identity"])
 app.include_router(skills.router, prefix=settings.API_V1_STR, tags=["Skills"])
 app.include_router(orchestrator.router, prefix=settings.API_V1_STR, tags=["Orchestrator"])
+app.include_router(chat.router, prefix=settings.API_V1_STR, tags=["Chat"])
+app.include_router(llm.router, prefix=settings.API_V1_STR, tags=["LLM"])
 
 # Mount WebSocket Router
 app.include_router(voice.router, prefix=settings.API_V1_STR)

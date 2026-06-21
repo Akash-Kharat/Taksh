@@ -139,6 +139,30 @@ class CognitiveTrace(Base):
     knowledge_chunks: Mapped[List[str]] = mapped_column(JSON, nullable=False)  # list of chunk_ids
     memory_items: Mapped[dict] = mapped_column(JSON, nullable=False)  # {"active_goals": [...], "recent_events": [...]}
     prompt_version: Mapped[str] = mapped_column(String, nullable=False)
+    prompt_hash: Mapped[str] = mapped_column(String, nullable=False)
     final_prompt_preview: Mapped[str] = mapped_column(Text, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+class AIResponse(Base):
+    __tablename__ = "ai_responses"
+    
+    response_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    trace_id: Mapped[str] = mapped_column(ForeignKey("cognitive_traces.trace_id", ondelete="CASCADE"), unique=True, nullable=False)
+    content: Mapped[str] = mapped_column(Text, nullable=False)
+    provider: Mapped[str] = mapped_column(String, nullable=False)
+    model_name: Mapped[str] = mapped_column(String, nullable=False)
+    prompt_tokens: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    completion_tokens: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    latency_ms: Mapped[int] = mapped_column(Integer, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+class ConversationMessage(Base):
+    __tablename__ = "conversation_messages"
+    
+    message_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    session_id: Mapped[str] = mapped_column(ForeignKey("sessions.session_id", ondelete="CASCADE"), nullable=False)
+    role: Mapped[str] = mapped_column(String, nullable=False)  # 'system', 'user', 'assistant'
+    content: Mapped[str] = mapped_column(Text, nullable=False)
+    trace_id: Mapped[Optional[str]] = mapped_column(ForeignKey("cognitive_traces.trace_id", ondelete="SET NULL"), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 

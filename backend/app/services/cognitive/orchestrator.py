@@ -59,6 +59,11 @@ class CognitiveOrchestrator:
             "memory_items_used": memory_items_used
         }
 
+        # Calculate prompt hash
+        import hashlib
+        combined_prompts = prompt_package["system_prompt"] + prompt_package["user_prompt"]
+        prompt_hash = hashlib.sha256(combined_prompts.encode("utf-8")).hexdigest()
+
         # 6. Persist trace log record in database
         try:
             trace_record = CognitiveTrace(
@@ -68,14 +73,19 @@ class CognitiveOrchestrator:
                 knowledge_chunks=knowledge_chunks_used,
                 memory_items=memory_items_used,
                 prompt_version=prompt_package["prompt_version"],
+                prompt_hash=prompt_hash,
                 final_prompt_preview=prompt_package["preview"]
             )
             db.add(trace_record)
+            db.flush() # Populate trace_record.trace_id
             db.commit()
             system_logger.info(f"Persisted CognitiveTrace {trace_record.trace_id} in database")
+            # Expose trace_id in decision trace
+            decision_trace["trace_id"] = trace_record.trace_id
         except Exception as e:
             db.rollback()
             system_logger.error(f"Failed to persist CognitiveTrace: {e}")
+            decision_trace["trace_id"] = "failed-to-save"
 
         # 7. Format output payload
         return {
