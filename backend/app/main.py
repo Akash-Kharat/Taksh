@@ -5,7 +5,7 @@ from app.core.logger import setup_logging, system_logger
 from app.core.security import enforce_local_loopback
 from app.services.memory.identity import CoreIdentityManager
 from app.api.endpoints import health, settings as settings_api, knowledge, memory, session, project, goal, learning, identity, skills
-from app.api.websockets import voice
+from app.api.websockets import voice, connection
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -52,3 +52,4 @@ app.include_router(skills.router, prefix=settings.API_V1_STR, tags=["Skills"])
 
 # Mount WebSocket Router
 app.include_router(voice.router, prefix=settings.API_V1_STR)
+app.include_router(connection.router, prefix=settings.API_V1_STR, tags=["WebSocket Transport"])

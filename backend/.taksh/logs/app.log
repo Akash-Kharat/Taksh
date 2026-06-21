@@ -777,3 +777,258 @@
 [2026-06-21 12:50:30,274] [INFO] [Category: Voice] Closing Gemini Live WebSocket session
 [2026-06-21 12:50:30,279] [INFO] [Category: Memory] Closing active memory context. Archiving session events.
 [2026-06-21 12:50:30,284] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:26,172] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:26,174] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:26,174] [INFO] [Category: Memory] Core Identity successfully loaded and cached in memory.
+[2026-06-21 13:10:26,174] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:26,176] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:26,176] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\manifests
+[2026-06-21 13:10:26,182] [INFO] [Category: Skills] Loaded skill manifest: 'Embedded Systems Architect' from embedded_systems_architect.yaml
+[2026-06-21 13:10:26,182] [INFO] [Category: Skills] Loaded skill manifest: 'Full-Stack Software Architect' from fullstack_software_architect.yaml
+[2026-06-21 13:10:26,190] [INFO] [Category: Skills] Loaded 2 skill manifests successfully.
+[2026-06-21 13:10:26,190] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:26,190] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:26,190] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:26,207] [INFO] [Category: API] Creating a goal record: Implement goal validation
+[2026-06-21 13:10:26,256] [INFO] HTTP Request: POST http://testserver/api/v1/goals/ "HTTP/1.1 201 Created"
+[2026-06-21 13:10:26,272] [INFO] [Category: API] Retrieving goal: e413a976-412a-4d7b-9329-cfbfaf134c0d
+[2026-06-21 13:10:26,280] [INFO] HTTP Request: GET http://testserver/api/v1/goals/e413a976-412a-4d7b-9329-cfbfaf134c0d "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,288] [INFO] [Category: API] Updating goal: e413a976-412a-4d7b-9329-cfbfaf134c0d
+[2026-06-21 13:10:26,297] [INFO] HTTP Request: PUT http://testserver/api/v1/goals/e413a976-412a-4d7b-9329-cfbfaf134c0d "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,311] [INFO] HTTP Request: PUT http://testserver/api/v1/goals/e413a976-412a-4d7b-9329-cfbfaf134c0d "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 13:10:26,319] [INFO] [Category: API] Listing goals
+[2026-06-21 13:10:26,321] [INFO] HTTP Request: GET http://testserver/api/v1/goals/ "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,329] [INFO] [Category: API] Deleting goal: e413a976-412a-4d7b-9329-cfbfaf134c0d
+[2026-06-21 13:10:26,337] [INFO] HTTP Request: DELETE http://testserver/api/v1/goals/e413a976-412a-4d7b-9329-cfbfaf134c0d "HTTP/1.1 204 No Content"
+[2026-06-21 13:10:26,337] [INFO] [Category: API] Retrieving goal: e413a976-412a-4d7b-9329-cfbfaf134c0d
+[2026-06-21 13:10:26,346] [INFO] HTTP Request: GET http://testserver/api/v1/goals/e413a976-412a-4d7b-9329-cfbfaf134c0d "HTTP/1.1 404 Not Found"
+[2026-06-21 13:10:26,350] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:26,378] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:26,378] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:26,378] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:26,378] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:26,378] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:26,378] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:26,386] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:26,395] [INFO] HTTP Request: GET http://testserver/api/v1/identity/ "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,403] [INFO] HTTP Request: GET http://testserver/api/v1/identity/info "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,408] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:26,411] [CRITICAL] [Category: Memory] Core Identity file missing.
+[2026-06-21 13:10:26,411] [CRITICAL] [Category: Memory] Configured Path: non_existent_identity.md
+[2026-06-21 13:10:26,411] [CRITICAL] [Category: Memory] Fallback Identity Activated.
+[2026-06-21 13:10:26,416] [INFO] [Category: Memory] Core Identity successfully loaded and cached in memory.
+[2026-06-21 13:10:26,419] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:26,419] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:26,427] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:26,427] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:26,427] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:26,427] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:26,427] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:26,436] [INFO] [Category: API] Creating a learning history record: SQLAlchemy Declarative
+[2026-06-21 13:10:26,448] [INFO] HTTP Request: POST http://testserver/api/v1/learning-history/ "HTTP/1.1 201 Created"
+[2026-06-21 13:10:26,453] [INFO] [Category: API] Retrieving concept: e7020977-67b5-46cc-bae7-dcc2ec6c840d
+[2026-06-21 13:10:26,460] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/e7020977-67b5-46cc-bae7-dcc2ec6c840d "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,470] [INFO] [Category: API] Updating concept: e7020977-67b5-46cc-bae7-dcc2ec6c840d
+[2026-06-21 13:10:26,476] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/e7020977-67b5-46cc-bae7-dcc2ec6c840d "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,482] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/e7020977-67b5-46cc-bae7-dcc2ec6c840d "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 13:10:26,488] [INFO] HTTP Request: PUT http://testserver/api/v1/learning-history/e7020977-67b5-46cc-bae7-dcc2ec6c840d "HTTP/1.1 422 Unprocessable Entity"
+[2026-06-21 13:10:26,493] [INFO] [Category: API] Listing learning history
+[2026-06-21 13:10:26,493] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/ "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,503] [INFO] [Category: API] Deleting concept: e7020977-67b5-46cc-bae7-dcc2ec6c840d
+[2026-06-21 13:10:26,510] [INFO] HTTP Request: DELETE http://testserver/api/v1/learning-history/e7020977-67b5-46cc-bae7-dcc2ec6c840d "HTTP/1.1 204 No Content"
+[2026-06-21 13:10:26,510] [INFO] [Category: API] Retrieving concept: e7020977-67b5-46cc-bae7-dcc2ec6c840d
+[2026-06-21 13:10:26,510] [INFO] HTTP Request: GET http://testserver/api/v1/learning-history/e7020977-67b5-46cc-bae7-dcc2ec6c840d "HTTP/1.1 404 Not Found"
+[2026-06-21 13:10:26,520] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:26,531] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:26,534] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:26,535] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:26,535] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:26,535] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:26,535] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:26,535] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:26,542] [INFO] [Category: API] Creating a new session
+[2026-06-21 13:10:26,557] [INFO] HTTP Request: POST http://testserver/api/v1/sessions/ "HTTP/1.1 201 Created"
+[2026-06-21 13:10:26,566] [INFO] [Category: API] Creating memory event for session: 4d2f5a92-22f9-4f92-82e0-476964a7c501
+[2026-06-21 13:10:26,578] [INFO] [Category: Memory] Created memory event c0f8904e-e771-4f2b-98cb-95e8cf4ca381 in SQLite
+[2026-06-21 13:10:26,590] [INFO] HTTP Request: POST http://testserver/api/v1/memory/ "HTTP/1.1 201 Created"
+[2026-06-21 13:10:26,595] [INFO] [Category: API] Fetching memory event: c0f8904e-e771-4f2b-98cb-95e8cf4ca381
+[2026-06-21 13:10:26,600] [INFO] HTTP Request: GET http://testserver/api/v1/memory/c0f8904e-e771-4f2b-98cb-95e8cf4ca381 "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,606] [INFO] [Category: API] Listing memory events
+[2026-06-21 13:10:26,615] [INFO] HTTP Request: GET http://testserver/api/v1/memory/ "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,615] [INFO] [Category: API] Listing memory events
+[2026-06-21 13:10:26,623] [INFO] HTTP Request: GET http://testserver/api/v1/memory/?session_id=4d2f5a92-22f9-4f92-82e0-476964a7c501 "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,631] [INFO] [Category: API] Deleting memory event: c0f8904e-e771-4f2b-98cb-95e8cf4ca381
+[2026-06-21 13:10:26,640] [INFO] [Category: Memory] Deleted memory event ID=c0f8904e-e771-4f2b-98cb-95e8cf4ca381 from SQLite database
+[2026-06-21 13:10:26,648] [INFO] HTTP Request: DELETE http://testserver/api/v1/memory/c0f8904e-e771-4f2b-98cb-95e8cf4ca381 "HTTP/1.1 204 No Content"
+[2026-06-21 13:10:26,648] [INFO] [Category: API] Fetching memory event: c0f8904e-e771-4f2b-98cb-95e8cf4ca381
+[2026-06-21 13:10:26,648] [INFO] HTTP Request: GET http://testserver/api/v1/memory/c0f8904e-e771-4f2b-98cb-95e8cf4ca381 "HTTP/1.1 404 Not Found"
+[2026-06-21 13:10:26,657] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:26,665] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:26,669] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:26,669] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:26,669] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:26,669] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:26,673] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:26,673] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:26,673] [INFO] [Category: API] Fetching long-term memory episodes list
+[2026-06-21 13:10:26,681] [INFO] HTTP Request: GET http://testserver/api/v1/memory/longterm "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,685] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:26,698] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:26,698] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:26,698] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:26,698] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:26,698] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:26,698] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:26,698] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:26,706] [INFO] [Category: API] Creating a project record: Taksh Persist
+[2026-06-21 13:10:26,723] [INFO] HTTP Request: POST http://testserver/api/v1/projects/ "HTTP/1.1 201 Created"
+[2026-06-21 13:10:26,728] [INFO] [Category: API] Retrieving project: 7e1f7be3-2524-4ffb-a3cd-40d4f22999a2
+[2026-06-21 13:10:26,736] [INFO] HTTP Request: GET http://testserver/api/v1/projects/7e1f7be3-2524-4ffb-a3cd-40d4f22999a2 "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,739] [INFO] [Category: API] Updating project: 7e1f7be3-2524-4ffb-a3cd-40d4f22999a2
+[2026-06-21 13:10:26,747] [INFO] HTTP Request: PUT http://testserver/api/v1/projects/7e1f7be3-2524-4ffb-a3cd-40d4f22999a2 "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,757] [INFO] [Category: API] Listing project trackers
+[2026-06-21 13:10:26,757] [INFO] HTTP Request: GET http://testserver/api/v1/projects/ "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,764] [INFO] [Category: API] Deleting project: 7e1f7be3-2524-4ffb-a3cd-40d4f22999a2
+[2026-06-21 13:10:26,773] [INFO] HTTP Request: DELETE http://testserver/api/v1/projects/7e1f7be3-2524-4ffb-a3cd-40d4f22999a2 "HTTP/1.1 204 No Content"
+[2026-06-21 13:10:26,779] [INFO] [Category: API] Retrieving project: 7e1f7be3-2524-4ffb-a3cd-40d4f22999a2
+[2026-06-21 13:10:26,779] [INFO] HTTP Request: GET http://testserver/api/v1/projects/7e1f7be3-2524-4ffb-a3cd-40d4f22999a2 "HTTP/1.1 404 Not Found"
+[2026-06-21 13:10:26,788] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:26,805] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:26,805] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:26,805] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:26,805] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:26,805] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:26,805] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:26,805] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:26,815] [INFO] [Category: API] Creating a new session
+[2026-06-21 13:10:26,821] [INFO] HTTP Request: POST http://testserver/api/v1/sessions/ "HTTP/1.1 201 Created"
+[2026-06-21 13:10:26,828] [INFO] [Category: API] Retrieving session 2a3f5c27-b2c1-4ba3-84c1-ab5f530d76a0
+[2026-06-21 13:10:26,846] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/2a3f5c27-b2c1-4ba3-84c1-ab5f530d76a0 "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,852] [INFO] [Category: API] Listing sessions
+[2026-06-21 13:10:26,854] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/ "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,862] [INFO] [Category: API] Updating session 2a3f5c27-b2c1-4ba3-84c1-ab5f530d76a0
+[2026-06-21 13:10:26,870] [INFO] HTTP Request: PUT http://testserver/api/v1/sessions/2a3f5c27-b2c1-4ba3-84c1-ab5f530d76a0 "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,879] [INFO] [Category: API] Deleting session 2a3f5c27-b2c1-4ba3-84c1-ab5f530d76a0
+[2026-06-21 13:10:26,887] [INFO] HTTP Request: DELETE http://testserver/api/v1/sessions/2a3f5c27-b2c1-4ba3-84c1-ab5f530d76a0 "HTTP/1.1 204 No Content"
+[2026-06-21 13:10:26,891] [INFO] [Category: API] Retrieving session 2a3f5c27-b2c1-4ba3-84c1-ab5f530d76a0
+[2026-06-21 13:10:26,895] [INFO] HTTP Request: GET http://testserver/api/v1/sessions/2a3f5c27-b2c1-4ba3-84c1-ab5f530d76a0 "HTTP/1.1 404 Not Found"
+[2026-06-21 13:10:26,895] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:26,915] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:26,915] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:26,915] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:26,915] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:26,915] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:26,915] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:26,915] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:26,928] [INFO] HTTP Request: GET http://testserver/api/v1/skills/info "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,928] [INFO] HTTP Request: GET http://testserver/api/v1/skills/ "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,936] [INFO] HTTP Request: GET http://testserver/api/v1/skills/embedded-systems-architect "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,944] [INFO] HTTP Request: GET http://testserver/api/v1/skills/Embedded%20Systems%20Architect "HTTP/1.1 200 OK"
+[2026-06-21 13:10:26,944] [INFO] HTTP Request: GET http://testserver/api/v1/skills/non-existent-skill "HTTP/1.1 404 Not Found"
+[2026-06-21 13:10:26,953] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:26,961] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\empty_manifests
+[2026-06-21 13:10:26,961] [INFO] [Category: Skills] Loaded 0 skill manifests successfully.
+[2026-06-21 13:10:26,961] [ERROR] [Category: Skills] Registry must contain at least one valid skill. Zero valid skills loaded!
+[2026-06-21 13:10:26,963] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\manifests
+[2026-06-21 13:10:26,969] [INFO] [Category: Skills] Loaded skill manifest: 'Embedded Systems Architect' from embedded_systems_architect.yaml
+[2026-06-21 13:10:26,977] [INFO] [Category: Skills] Loaded skill manifest: 'Full-Stack Software Architect' from fullstack_software_architect.yaml
+[2026-06-21 13:10:26,977] [INFO] [Category: Skills] Loaded 2 skill manifests successfully.
+[2026-06-21 13:10:26,989] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:26,993] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:26,993] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:26,993] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:26,993] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:26,993] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:26,993] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:27,002] [INFO] [Category: API] Serving health status check
+[2026-06-21 13:10:27,002] [INFO] HTTP Request: GET http://testserver/api/v1/health "HTTP/1.1 200 OK"
+[2026-06-21 13:10:27,006] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:27,010] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: .taksh\chroma
+[2026-06-21 13:10:27,010] [INFO] [Category: Knowledge] HybridSearchEngine initialized.
+[2026-06-21 13:10:27,010] [INFO] [Category: Knowledge] Initiating hybrid search for query: 'FreeRTOS Task Notifications'
+[2026-06-21 13:10:27,010] [INFO] [Category: Knowledge] Hybrid search completed and results reranked.
+[2026-06-21 13:10:27,018] [INFO] [Category: Memory] MemoryManager initialized.
+[2026-06-21 13:10:27,068] [INFO] [Category: Skills] SkillsEngine initialized and manifests registry loaded.
+[2026-06-21 13:10:27,068] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:27,068] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:27,068] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:27,068] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:27,076] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:27,076] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:27,076] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:27,078] [INFO] [Category: WebSocket] Client WebSocket voice stream connection accepted
+[2026-06-21 13:10:27,078] [INFO] [Category: Memory] MemoryManager initialized.
+[2026-06-21 13:10:27,078] [INFO] [Category: Skills] SkillsEngine initialized and manifests registry loaded.
+[2026-06-21 13:10:27,084] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: .taksh\chroma
+[2026-06-21 13:10:27,084] [INFO] [Category: Knowledge] HybridSearchEngine initialized.
+[2026-06-21 13:10:27,084] [INFO] [Category: Voice] VoiceSessionManager initialized
+[2026-06-21 13:10:27,084] [INFO] [Category: SYSTEM] Orchestrator instantiated with decoupled service managers.
+[2026-06-21 13:10:27,084] [INFO] [Category: WebSocket] Received client workspace telemetry for file: src/main.c
+[2026-06-21 13:10:27,084] [INFO] [Category: SYSTEM] Routing telemetry update for src/main.c
+[2026-06-21 13:10:27,084] [INFO] [Category: SYSTEM] Evaluated active skills: ['Embedded Systems Architect']
+[2026-06-21 13:10:27,084] [INFO] [Category: Voice] Opening connection tunnel to Gemini Live API: wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidirectionalGenerateContent
+[2026-06-21 13:10:27,084] [WARNING] [Category: WebSocket] Received client voice activity interruption event
+[2026-06-21 13:10:27,084] [WARNING] [Category: SYSTEM] Routing user interruption request
+[2026-06-21 13:10:27,084] [WARNING] [Category: Voice] Sending reset/cancel command to Gemini Live API session
+[2026-06-21 13:10:27,084] [INFO] [Category: Memory] Marking current session context event as interrupted in database.
+[2026-06-21 13:10:27,084] [ERROR] [Category: WebSocket] Error in client WebSocket processing: Cannot call "receive" once a disconnect message has been received.
+[2026-06-21 13:10:27,092] [INFO] [Category: SYSTEM] Cleaning up Orchestrator session
+[2026-06-21 13:10:27,092] [INFO] [Category: Voice] Closing Gemini Live WebSocket session
+[2026-06-21 13:10:27,092] [INFO] [Category: Memory] Closing active memory context. Archiving session events.
+[2026-06-21 13:10:27,096] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:27,125] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:27,125] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:27,125] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:27,125] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:27,125] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:27,125] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:27,125] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:27,134] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 13:10:27,142] [INFO] WebSocket client connected: client-test-1
+[2026-06-21 13:10:27,142] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 13:10:27,142] [INFO] WebSocket client disconnected: client-test-1
+[2026-06-21 13:10:27,150] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 13:10:27,150] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:27,166] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:27,166] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:27,166] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:27,166] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:27,166] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:27,166] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:27,166] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:27,175] [INFO] WebSocket client connected: 888e1e33-a7cc-4f41-99db-ecf80274cff7
+[2026-06-21 13:10:27,183] [INFO] WebSocket client disconnected: 888e1e33-a7cc-4f41-99db-ecf80274cff7
+[2026-06-21 13:10:27,191] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:27,208] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:27,208] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:27,208] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:27,208] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:27,208] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:27,208] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:27,208] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:27,224] [INFO] WebSocket client connected: e90dc16c-6a30-4d9b-8924-756f5ad3f51f
+[2026-06-21 13:10:27,227] [INFO] WebSocket client disconnected: e90dc16c-6a30-4d9b-8924-756f5ad3f51f
+[2026-06-21 13:10:27,233] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:27,248] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:27,248] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:27,248] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:27,248] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:27,248] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:27,248] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:27,248] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:27,257] [INFO] WebSocket client connected: da20c5ea-7be4-4877-b404-a2da0db1bcf3
+[2026-06-21 13:10:27,265] [INFO] WebSocket client disconnected: da20c5ea-7be4-4877-b404-a2da0db1bcf3
+[2026-06-21 13:10:27,265] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-21 13:10:27,290] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-21 13:10:27,290] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-21 13:10:27,290] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-21 13:10:27,290] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-21 13:10:27,290] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-21 13:10:27,290] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-21 13:10:27,290] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-21 13:10:27,322] [INFO] WebSocket client connected: client-a
+[2026-06-21 13:10:27,331] [INFO] WebSocket client connected: client-b
+[2026-06-21 13:10:27,339] [INFO] HTTP Request: GET http://testserver/api/v1/ws/info "HTTP/1.1 200 OK"
+[2026-06-21 13:10:27,339] [INFO] WebSocket client disconnected: client-b
+[2026-06-21 13:10:27,339] [INFO] WebSocket client disconnected: client-a
+[2026-06-21 13:10:27,350] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
