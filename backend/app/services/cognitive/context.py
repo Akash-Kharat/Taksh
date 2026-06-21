@@ -16,6 +16,8 @@ class ContextBuilder:
         self.identity_manager = CoreIdentityManager()
         self.memory_manager = MemoryManager()
         self.search_engine = HybridSearchEngine(chroma_client=chroma_client)
+        from app.services.workspace.manager import WorkspaceManager
+        self.workspace_manager = WorkspaceManager()
 
     def build_context(
         self,
@@ -59,6 +61,53 @@ class ContextBuilder:
             events = self.memory_manager.get_recent_context(session_id, limit=settings.MAX_RECENT_EVENTS)
             recent_events = events
 
+        # 6. Workspace Context (Enforcing budgets)
+        latest_snap = self.workspace_manager.get_latest_snapshot(db, session_id=session_id)
+        active_errors = self.workspace_manager.get_active_errors(db, session_id=session_id)
+
+        workspace_data = None
+        if latest_snap:
+            workspace_data = {
+                "repo_name": latest_snap.repo_name,
+                "repo_path": latest_snap.repo_path,
+                "active_file_path": latest_snap.active_file_path,
+                "active_file_language": latest_snap.active_file_language,
+                "cursor_line": latest_snap.cursor_line,
+                "cursor_column": latest_snap.cursor_column,
+                "selection_content": latest_snap.selection_content,
+                "selection_truncated": latest_snap.selection_truncated,
+                "git_branch": latest_snap.git_branch,
+                "git_status": latest_snap.git_status,
+                "git_recent_commits": latest_snap.git_recent_commits[:settings.MAX_RECENT_COMMITS],
+                "detected_languages": latest_snap.detected_languages,
+                "detected_frameworks": latest_snap.detected_frameworks[:settings.MAX_FRAMEWORKS],
+                "scan_limit_reached": latest_snap.scan_limit_reached,
+                "workspace_hash": latest_snap.workspace_hash,
+                "errors": [
+                    {
+                        "event_id": err.event_id,
+                        "event_type": err.event_type,
+                        "source": err.source,
+                        "severity": err.severity,
+                        "message": err.message,
+                        "details": err.details
+                    } for err in active_errors[:settings.MAX_WORKSPACE_ERRORS]
+                ]
+            }
+        elif active_errors:
+            workspace_data = {
+                "errors": [
+                    {
+                        "event_id": err.event_id,
+                        "event_type": err.event_type,
+                        "source": err.source,
+                        "severity": err.severity,
+                        "message": err.message,
+                        "details": err.details
+                    } for err in active_errors[:settings.MAX_WORKSPACE_ERRORS]
+                ]
+            }
+
         return {
             "identity": identity_text,
             "skills": skills_overlays,
@@ -75,5 +124,7 @@ class ContextBuilder:
                     {"project_name": p.project_name, "tech_stack": p.tech_stack} for p in projects
                 ]
             },
-            "sensory_memory": recent_events
+            "sensory_memory": recent_events,
+            "workspace": workspace_data
         }
+

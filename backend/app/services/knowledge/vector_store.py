@@ -6,6 +6,9 @@ from app.core.config import settings
 
 class MockEmbeddingFunction(chromadb.EmbeddingFunction):
     """Offline, deterministic embedding generator for testing without internet."""
+    def __init__(self) -> None:
+        pass
+
     def __call__(self, input: List[str]) -> List[List[float]]:
         import hashlib
         embeddings = []
@@ -24,6 +27,15 @@ class MockEmbeddingFunction(chromadb.EmbeddingFunction):
 
     def name(self) -> str:
         return "MockEmbeddingFunction"
+
+    def get_config(self) -> Dict[str, Any]:
+        return {}
+
+    @classmethod
+    def build_from_config(cls, config: Dict[str, Any]) -> "MockEmbeddingFunction":
+        return cls()
+
+
 
 class ChromaDBClient:
     """Wrapper around local ChromaDB persistent vector database client."""

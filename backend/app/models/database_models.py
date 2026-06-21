@@ -1,7 +1,7 @@
 import uuid
 from datetime import datetime
 from typing import List, Optional
-from sqlalchemy import String, DateTime, ForeignKey, Text, JSON, Integer
+from sqlalchemy import String, DateTime, ForeignKey, Text, JSON, Integer, Boolean
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.core.database import Base
 
@@ -141,6 +141,7 @@ class CognitiveTrace(Base):
     prompt_version: Mapped[str] = mapped_column(String, nullable=False)
     prompt_hash: Mapped[str] = mapped_column(String, nullable=False)
     final_prompt_preview: Mapped[str] = mapped_column(Text, nullable=False)
+    workspace_snapshot_id: Mapped[Optional[str]] = mapped_column(ForeignKey("workspace_snapshots.snapshot_id", ondelete="SET NULL"), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
 class AIResponse(Base):
@@ -165,4 +166,43 @@ class ConversationMessage(Base):
     content: Mapped[str] = mapped_column(Text, nullable=False)
     trace_id: Mapped[Optional[str]] = mapped_column(ForeignKey("cognitive_traces.trace_id", ondelete="SET NULL"), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+
+class WorkspaceSnapshot(Base):
+    __tablename__ = "workspace_snapshots"
+
+    snapshot_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    session_id: Mapped[Optional[str]] = mapped_column(ForeignKey("sessions.session_id", ondelete="SET NULL"), nullable=True)
+    repo_name: Mapped[str] = mapped_column(String, nullable=False)
+    repo_path: Mapped[str] = mapped_column(String, nullable=False)
+    active_file_path: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    active_file_language: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    cursor_line: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    cursor_column: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    selection_content: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    selection_truncated: Mapped[bool] = mapped_column(Boolean, default=False)
+    git_branch: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    git_status: Mapped[dict] = mapped_column(JSON, nullable=False)
+    git_recent_commits: Mapped[list] = mapped_column(JSON, nullable=False)
+    detected_languages: Mapped[list] = mapped_column(JSON, nullable=False)
+    detected_frameworks: Mapped[list] = mapped_column(JSON, nullable=False)
+    scan_limit_reached: Mapped[bool] = mapped_column(Boolean, default=False)
+    workspace_hash: Mapped[str] = mapped_column(String, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+
+class WorkspaceEvent(Base):
+    __tablename__ = "workspace_events"
+
+    event_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    session_id: Mapped[Optional[str]] = mapped_column(ForeignKey("sessions.session_id", ondelete="SET NULL"), nullable=True)
+    snapshot_id: Mapped[Optional[str]] = mapped_column(ForeignKey("workspace_snapshots.snapshot_id", ondelete="SET NULL"), nullable=True)
+    event_type: Mapped[str] = mapped_column(String, nullable=False)
+    source: Mapped[str] = mapped_column(String, nullable=False)
+    severity: Mapped[str] = mapped_column(String, nullable=False)
+    message: Mapped[str] = mapped_column(Text, nullable=False)
+    details: Mapped[dict] = mapped_column(JSON, nullable=False)
+    resolved: Mapped[bool] = mapped_column(Boolean, default=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
 

@@ -59,3 +59,5 @@ skills_logger = get_category_logger("Skills")
 knowledge_logger = get_category_logger("Knowledge")
 db_logger = get_category_logger("Database")
 system_logger = get_category_logger("SYSTEM")
+workspace_logger = get_category_logger("Workspace")
+

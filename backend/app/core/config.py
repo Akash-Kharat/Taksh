@@ -47,6 +47,17 @@ class Settings(BaseSettings):
     # Skill Registry configurations
     SKILLS_MANIFEST_DIR: Path = Path("./app/services/skills/manifests")
 
+    # Workspace Intelligence configurations
+    WORKSPACE_DIR: Path = Path("..")
+    MAX_SELECTION_CONTENT_CHARS: int = 5000
+    MIN_SNAPSHOT_INTERVAL_SECONDS: int = 5
+    MAX_SCAN_FILES: int = 10000
+    MAX_SCAN_DEPTH: int = 20
+    ERROR_RETENTION_DAYS: int = 30
+    MAX_WORKSPACE_ERRORS: int = 5
+    MAX_RECENT_COMMITS: int = 5
+    MAX_FRAMEWORKS: int = 10
+
     # API keys loaded safely from environment
     GEMINI_API_KEY: str = ""
     GEMINI_LIVE_API_URL: str = "wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidirectionalGenerateContent"

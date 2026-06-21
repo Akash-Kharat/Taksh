@@ -75,6 +75,63 @@ class PromptBuilder:
         
         user_sections.append("")
 
+        # Workspace Environment Status
+        ws = context.get("workspace")
+        if ws:
+            ws_sections = ["=== WORKSPACE ENVIRONMENT STATUS ==="]
+            ws_sections.append(f"Repository: {ws['repo_name']} at {ws['repo_path']}")
+            if ws.get("git_branch"):
+                ws_sections.append(f"Git Branch: {ws['git_branch']}")
+            
+            git_status = ws.get("git_status") or {}
+            mod = git_status.get("modified", [])
+            stg = git_status.get("staged", [])
+            utr = git_status.get("untracked", [])
+            if mod or stg or utr:
+                ws_sections.append("Git Status:")
+                if stg:
+                    ws_sections.append(f"  Staged: {', '.join(stg)}")
+                if mod:
+                    ws_sections.append(f"  Modified: {', '.join(mod)}")
+                if utr:
+                    ws_sections.append(f"  Untracked: {', '.join(utr)}")
+            
+            commits = ws.get("git_recent_commits")
+            if commits:
+                ws_sections.append("Recent Commits:")
+                for c in commits[:settings.MAX_RECENT_COMMITS]:
+                    ws_sections.append(f"  - {c['sha'][:7]} {c['author']}: {c['message']}")
+            
+            langs = ws.get("detected_languages")
+            if langs:
+                langs_str = ", ".join([f"{l['language']} ({l['file_count']})" for l in langs])
+                ws_sections.append(f"Detected Languages: {langs_str}")
+            
+            frameworks = ws.get("detected_frameworks")
+            if frameworks:
+                ws_sections.append(f"Detected Frameworks: {', '.join(frameworks)}")
+            
+            if ws.get("scan_limit_reached"):
+                ws_sections.append("Warning: Workspace scan limit reached during collection.")
+
+            active_file = ws.get("active_file_path")
+            if active_file:
+                ws_sections.append(f"Active File: {active_file} ({ws.get('active_file_language') or 'Unknown'})")
+                if ws.get("cursor_line"):
+                    ws_sections.append(f"Cursor: line {ws['cursor_line']}, column {ws.get('cursor_column') or 0}")
+                if ws.get("selection_content"):
+                    trunc_str = " (truncated)" if ws.get("selection_truncated") else ""
+                    ws_sections.append(f"Selected Code Segment{trunc_str}:\n{ws['selection_content']}")
+            
+            errors = ws.get("errors")
+            if errors:
+                ws_sections.append("Active Environment Errors / Failures:")
+                for err in errors[:settings.MAX_WORKSPACE_ERRORS]:
+                    ws_sections.append(f"  - [{err['source']} {err['severity'].upper()}] {err['message']}")
+            
+            user_sections.append("\n".join(ws_sections))
+            user_sections.append("")
+
         # Include Retrieved Knowledge Context
         user_sections.append("=== RETRIEVED KNOWLEDGE CHUNKS ===")
         if context["knowledge"]:

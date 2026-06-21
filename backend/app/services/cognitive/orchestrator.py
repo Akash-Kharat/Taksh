@@ -21,15 +21,20 @@ class CognitiveOrchestrator:
     def generate_plan(self, db: DbSession, query: str, session_id: Optional[str] = None) -> Dict[str, Any]:
         system_logger.info(f"Generating cognitive plan for query='{query}', session_id='{session_id}'")
         
-        # 1. Determine active file from workspace telemetry in memory
-        active_file = None
-        working_mem = self.context_builder.memory_manager.get_working_memory(db, session_id=session_id)
-        active_ctx = working_mem.get("active_context")
-        if active_ctx:
-            active_file = active_ctx.get("active_file")
+        # 1. Retrieve latest workspace snapshot and active errors
+        wm_manager = self.context_builder.workspace_manager
+        latest_snap = wm_manager.get_latest_snapshot(db, session_id=session_id)
+        active_errors = wm_manager.get_active_errors(db, session_id=session_id)
+        
+        active_file = latest_snap.active_file_path if latest_snap else None
 
-        # 2. Select top skills (max 3, sorted by score descending)
-        selected_skills = self.selector.select_skills(query, active_file=active_file)
+        # 2. Select top skills (max 3, sorted by score descending, factoring in workspace telemetry)
+        selected_skills = self.selector.select_skills(
+            query,
+            active_file=active_file,
+            workspace_snapshot=latest_snap,
+            active_errors=active_errors
+        )
         
         # 3. Assemble structured context under budget limits
         context = self.context_builder.build_context(
@@ -74,7 +79,8 @@ class CognitiveOrchestrator:
                 memory_items=memory_items_used,
                 prompt_version=prompt_package["prompt_version"],
                 prompt_hash=prompt_hash,
-                final_prompt_preview=prompt_package["preview"]
+                final_prompt_preview=prompt_package["preview"],
+                workspace_snapshot_id=latest_snap.snapshot_id if latest_snap else None
             )
             db.add(trace_record)
             db.flush() # Populate trace_record.trace_id
