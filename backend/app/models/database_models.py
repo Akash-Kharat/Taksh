@@ -129,3 +129,16 @@ class KnowledgeIngestionMetrics(Base):
     deleted_documents: Mapped[int] = mapped_column(Integer, default=0)
     last_ingested_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
+class CognitiveTrace(Base):
+    __tablename__ = "cognitive_traces"
+    
+    trace_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    session_id: Mapped[Optional[str]] = mapped_column(ForeignKey("sessions.session_id", ondelete="SET NULL"), nullable=True)
+    query: Mapped[str] = mapped_column(Text, nullable=False)
+    selected_skills: Mapped[List[dict]] = mapped_column(JSON, nullable=False)  # stores list of dicts: [{"skill": name, "score": score}]
+    knowledge_chunks: Mapped[List[str]] = mapped_column(JSON, nullable=False)  # list of chunk_ids
+    memory_items: Mapped[dict] = mapped_column(JSON, nullable=False)  # {"active_goals": [...], "recent_events": [...]}
+    prompt_version: Mapped[str] = mapped_column(String, nullable=False)
+    final_prompt_preview: Mapped[str] = mapped_column(Text, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+

@@ -4,7 +4,13 @@ from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+import tempfile
+from pathlib import Path
 from app.core.config import settings
+
+# Create temporary directory for tests to prevent ChromaDB cross-test pollution
+temp_chroma_dir = tempfile.TemporaryDirectory()
+settings.CHROMA_DIR = Path(temp_chroma_dir.name)
 settings.MOCK_EMBEDDINGS = True
 
 from app.main import app

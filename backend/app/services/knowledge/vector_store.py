@@ -7,12 +7,14 @@ from app.core.config import settings
 class MockEmbeddingFunction(chromadb.EmbeddingFunction):
     """Offline, deterministic embedding generator for testing without internet."""
     def __call__(self, input: List[str]) -> List[List[float]]:
+        import hashlib
         embeddings = []
         for text in input:
             vector = []
             for i in range(384):
-                # Deterministic value based on characters of text
-                val = hash(text + str(i)) % 1000 / 1000.0
+                # Deterministic value using hashlib.md5
+                h = hashlib.md5(f"{text}_{i}".encode("utf-8")).hexdigest()
+                val = int(h[:8], 16) / 4294967295.0
                 vector.append(val)
             norm = sum(x*x for x in vector) ** 0.5
             if norm > 0:

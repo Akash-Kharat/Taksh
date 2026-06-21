@@ -33,6 +33,11 @@ class Settings(BaseSettings):
     KNOWLEDGE_CHUNK_OVERLAP: int = 50
     MOCK_EMBEDDINGS: bool = False
     
+    # Cognitive / Orchestration configurations
+    MAX_KNOWLEDGE_CHUNKS: int = 5
+    MAX_RECENT_EVENTS: int = 10
+    PROMPT_VERSION: str = "v1"
+    
     # Skill Registry configurations
     SKILLS_MANIFEST_DIR: Path = Path("./app/services/skills/manifests")
 
