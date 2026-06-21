@@ -4,7 +4,7 @@ from app.core.config import settings
 from app.core.logger import setup_logging, system_logger
 from app.core.security import enforce_local_loopback
 from app.services.memory.identity import CoreIdentityManager
-from app.api.endpoints import health, settings as settings_api, knowledge, memory
+from app.api.endpoints import health, settings as settings_api, knowledge, memory, session, project, goal, learning
 from app.api.websockets import voice
 
 @asynccontextmanager
@@ -32,7 +32,11 @@ app = FastAPI(
 app.include_router(health.router, prefix=settings.API_V1_STR)
 app.include_router(settings_api.router, prefix=settings.API_V1_STR)
 app.include_router(knowledge.router, prefix=settings.API_V1_STR)
-app.include_router(memory.router, prefix=settings.API_V1_STR)
+app.include_router(memory.router, prefix=settings.API_V1_STR, tags=["Memory"])
+app.include_router(session.router, prefix=settings.API_V1_STR, tags=["Sessions"])
+app.include_router(project.router, prefix=settings.API_V1_STR, tags=["Projects"])
+app.include_router(goal.router, prefix=settings.API_V1_STR, tags=["Goals"])
+app.include_router(learning.router, prefix=settings.API_V1_STR, tags=["Learning History"])
 
 # Mount WebSocket Router
 app.include_router(voice.router, prefix=settings.API_V1_STR)

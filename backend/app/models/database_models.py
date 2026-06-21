@@ -1,83 +1,92 @@
+import uuid
 from datetime import datetime
-from sqlalchemy import Column, String, Float, Integer, ForeignKey, DateTime, Text
-from sqlalchemy.orm import relationship
+from typing import List, Optional
+from sqlalchemy import String, DateTime, ForeignKey, Text, JSON, Integer
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.core.database import Base
+
+def generate_uuid() -> str:
+    return str(uuid.uuid4())
 
 class Session(Base):
     __tablename__ = "sessions"
     
-    session_id = Column(String, primary_key=True, index=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    closed_at = Column(DateTime, nullable=True)
+    session_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    closed_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
 
-    memory_events = relationship("MemoryEvent", back_populates="session", cascade="all, delete-orphan")
+    memory_events: Mapped[List["MemoryEvent"]] = relationship(
+        "MemoryEvent", back_populates="session", cascade="all, delete-orphan"
+    )
 
 class MemoryEvent(Base):
     __tablename__ = "memory_events"
     
-    event_id = Column(String, primary_key=True, index=True)
-    session_id = Column(String, ForeignKey("sessions.session_id"), nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    importance_score = Column(Float, default=0.0)
-    retrievability = Column(Float, default=1.0)
-    primary_modality = Column(String, nullable=False)  # 'text', 'voice', 'workspace'
-    summary = Column(Text, nullable=True)
+    event_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    session_id: Mapped[str] = mapped_column(ForeignKey("sessions.session_id"), nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    primary_modality: Mapped[str] = mapped_column(String)  # 'text', 'voice', 'workspace'
+    summary: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
 
-    session = relationship("Session", back_populates="memory_events")
-    text_payload = relationship("TextPayload", back_populates="event", uselist=False, cascade="all, delete-orphan")
-    audio_payload = relationship("AudioPayload", back_populates="event", uselist=False, cascade="all, delete-orphan")
-    workspace_payload = relationship("WorkspacePayload", back_populates="event", uselist=False, cascade="all, delete-orphan")
+    session: Mapped["Session"] = relationship("Session", back_populates="memory_events")
+    text_payload: Mapped[Optional["TextPayload"]] = relationship(
+        "TextPayload", back_populates="event", uselist=False, cascade="all, delete-orphan"
+    )
+    audio_payload: Mapped[Optional["AudioPayload"]] = relationship(
+        "AudioPayload", back_populates="event", uselist=False, cascade="all, delete-orphan"
+    )
+    workspace_payload: Mapped[Optional["WorkspacePayload"]] = relationship(
+        "WorkspacePayload", back_populates="event", uselist=False, cascade="all, delete-orphan"
+    )
 
 class TextPayload(Base):
     __tablename__ = "event_payloads_text"
     
-    event_id = Column(String, ForeignKey("memory_events.event_id"), primary_key=True)
-    transcript = Column(Text, nullable=True)
-    system_prompt_injected = Column(Text, nullable=True)
+    event_id: Mapped[str] = mapped_column(ForeignKey("memory_events.event_id"), primary_key=True)
+    transcript: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    system_prompt_injected: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
 
-    event = relationship("MemoryEvent", back_populates="text_payload")
+    event: Mapped["MemoryEvent"] = relationship("MemoryEvent", back_populates="text_payload")
 
 class AudioPayload(Base):
     __tablename__ = "event_payloads_audio"
     
-    event_id = Column(String, ForeignKey("memory_events.event_id"), primary_key=True)
-    audio_file_path = Column(String, nullable=True)
-    vocal_tension = Column(Float, nullable=True)
-    voiceprint_hash = Column(String, nullable=True)
+    event_id: Mapped[str] = mapped_column(ForeignKey("memory_events.event_id"), primary_key=True)
+    audio_file_path: Mapped[Optional[str]] = mapped_column(String, nullable=True)
 
-    event = relationship("MemoryEvent", back_populates="audio_payload")
+    event: Mapped["MemoryEvent"] = relationship("MemoryEvent", back_populates="audio_payload")
 
 class WorkspacePayload(Base):
     __tablename__ = "event_payloads_workspace"
     
-    event_id = Column(String, ForeignKey("memory_events.event_id"), primary_key=True)
-    active_file = Column(String, nullable=True)
-    cursor_line = Column(Integer, nullable=True)
-    selected_code = Column(Text, nullable=True)
-    terminal_stderr = Column(Text, nullable=True)
+    event_id: Mapped[str] = mapped_column(ForeignKey("memory_events.event_id"), primary_key=True)
+    active_file: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    cursor_line: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    selected_code: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    terminal_stderr: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
 
-    event = relationship("MemoryEvent", back_populates="workspace_payload")
-
-class LearningHistory(Base):
-    __tablename__ = "learning_history"
-    
-    concept_id = Column(String, primary_key=True, index=True)
-    concept_name = Column(String, nullable=False)
-    mastery_score = Column(Integer, default=0)
-    last_reviewed = Column(DateTime, default=datetime.utcnow)
-
-class GoalTracker(Base):
-    __tablename__ = "goal_tracker"
-    
-    goal_id = Column(String, primary_key=True, index=True)
-    description = Column(Text, nullable=False)
-    status = Column(String, default="active")
-    target_date = Column(DateTime, nullable=True)
+    event: Mapped["MemoryEvent"] = relationship("MemoryEvent", back_populates="workspace_payload")
 
 class ProjectTracker(Base):
     __tablename__ = "project_tracker"
     
-    project_id = Column(String, primary_key=True, index=True)
-    project_name = Column(String, nullable=False)
-    tech_stack = Column(Text, nullable=True)
-    historical_adr_keys = Column(Text, nullable=True)
+    project_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    project_name: Mapped[str] = mapped_column(String, nullable=False)
+    tech_stack: Mapped[Optional[List[str]]] = mapped_column(JSON, nullable=True)
+    historical_adr_keys: Mapped[Optional[List[str]]] = mapped_column(JSON, nullable=True)
+
+class GoalTracker(Base):
+    __tablename__ = "goal_tracker"
+    
+    goal_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    description: Mapped[str] = mapped_column(Text, nullable=False)
+    status: Mapped[str] = mapped_column(String, default="active")  # 'active', 'completed', 'paused', 'cancelled'
+    target_date: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+
+class LearningHistory(Base):
+    __tablename__ = "learning_history"
+    
+    concept_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    concept_name: Mapped[str] = mapped_column(String, nullable=False)
+    mastery_score: Mapped[int] = mapped_column(Integer, default=0)
+    last_reviewed: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
