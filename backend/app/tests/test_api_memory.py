@@ -51,4 +51,4 @@ def test_memory_api_crud(client: TestClient):
 def test_longterm_memory_compatibility(client: TestClient):
     response = client.get("/api/v1/memory/longterm")
     assert response.status_code == 200
-    assert response.json() == []
+    assert response.json() == {"lessons": [], "projects": []}

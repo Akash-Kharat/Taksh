@@ -14,6 +14,7 @@ class Session(Base):
     session_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     closed_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+    summary: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
 
     memory_events: Mapped[List["MemoryEvent"]] = relationship(
         "MemoryEvent", back_populates="session", cascade="all, delete-orphan"
