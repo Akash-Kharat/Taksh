@@ -1,0 +1,8 @@
+[tool.pytest.ini_options]
+testpaths = ["app/tests"]
+python_files = "test_*.py"
+addopts = "--cov=app --cov-report=term-missing"
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
