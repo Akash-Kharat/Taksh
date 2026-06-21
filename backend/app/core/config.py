@@ -24,9 +24,8 @@ class Settings(BaseSettings):
     LOG_FILE_NAME: str = "app.log"
     LOG_LEVEL: str = "INFO"
     
-    # Core Identity path
-    IDENTITY_DIR: Path = Path("./.taksh/identity")
-    IDENTITY_FILE_NAME: str = "core_identity.md"
+    # Source of truth core identity path (relative to backend/)
+    IDENTITY_PATH: Path = Path("../docs/Vision/taksh_identity.md")
     
     # Skill Registry configurations
     SKILLS_MANIFEST_DIR: Path = Path("./app/services/skills/manifests")
