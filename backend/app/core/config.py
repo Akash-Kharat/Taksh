@@ -58,6 +58,10 @@ class Settings(BaseSettings):
     MAX_RECENT_COMMITS: int = 5
     MAX_FRAMEWORKS: int = 10
 
+    # Tool & Action Framework configurations
+    MAX_TOOL_OUTPUT_CHARS: int = 10000
+    APPROVAL_EXPIRATION_HOURS: int = 24
+
     # API keys loaded safely from environment
     GEMINI_API_KEY: str = ""
     GEMINI_LIVE_API_URL: str = "wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidirectionalGenerateContent"

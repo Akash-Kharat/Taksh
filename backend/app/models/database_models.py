@@ -206,3 +206,38 @@ class WorkspaceEvent(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
 
+class ToolExecution(Base):
+    __tablename__ = "tool_executions"
+
+    execution_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    trace_id: Mapped[Optional[str]] = mapped_column(
+        ForeignKey("cognitive_traces.trace_id", ondelete="SET NULL"), nullable=True, index=True
+    )
+    tool_name: Mapped[str] = mapped_column(String, nullable=False)
+    tool_version: Mapped[str] = mapped_column(String, nullable=False, default="1.0.0")
+    capability_level: Mapped[str] = mapped_column(String, nullable=False)  # read | analyze | modify | execute
+    category: Mapped[str] = mapped_column(String, nullable=False)
+    parameters: Mapped[dict] = mapped_column(JSON, nullable=False)
+    status: Mapped[str] = mapped_column(String, nullable=False)  # success | error | rejected | pending_approval
+    output_summary: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    output_truncated: Mapped[bool] = mapped_column(Boolean, default=False)
+    error_message: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    duration_ms: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+
+class ApprovalRequest(Base):
+    __tablename__ = "approval_requests"
+
+    approval_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    execution_id: Mapped[str] = mapped_column(
+        ForeignKey("tool_executions.execution_id", ondelete="CASCADE"), nullable=False, unique=True
+    )
+    tool_name: Mapped[str] = mapped_column(String, nullable=False)
+    capability_level: Mapped[str] = mapped_column(String, nullable=False)
+    parameters: Mapped[dict] = mapped_column(JSON, nullable=False)
+    reason: Mapped[str] = mapped_column(Text, nullable=False)
+    status: Mapped[str] = mapped_column(String, default="pending")  # pending | approved | denied | expired
+    decided_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+    expires_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
