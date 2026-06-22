@@ -344,6 +344,14 @@ class ConversationCoordinator:
             session_rec.session_summary_status = "failed"
             db.commit()
 
+        # Invoke Episodic Memory Consolidation safely (Milestone-18)
+        try:
+            from app.services.conversation.episodic_memory_service import episodic_memory_service
+            await episodic_memory_service.consolidate_episodic_memory(db, runtime_session_id)
+            logger.info(f"Successfully consolidated episodic memory for session {runtime_session_id}")
+        except Exception as e:
+            logger.error(f"Episodic memory consolidation failed for session {runtime_session_id}: {e}")
+
 
 # Global conversation coordinator singleton instance
 conversation_coordinator = ConversationCoordinator()

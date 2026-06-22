@@ -211,6 +211,20 @@ class ContextBuilder:
                 } for t in turns
             ]
 
+        # 8b. Retrieve relevant episodic memories (Milestone-18)
+        # Avoid unnecessary token usage by retrieving relevant memories only if similarity score is high or explicit keywords matched
+        episodic_memories_data = []
+        try:
+            from app.services.conversation.episodic_memory_service import episodic_memory_service
+            episodic_memories_data = episodic_memory_service.retrieve_relevant_memories(
+                db=db,
+                query=query,
+                session_id=session_id,
+                limit=settings.MEMORY_RETRIEVAL_LIMIT
+            )
+        except Exception as e:
+            system_logger.error(f"Failed to retrieve episodic memories: {e}")
+
         return {
             "identity": identity_text,
             "skills": skills_overlays,
@@ -235,6 +249,7 @@ class ContextBuilder:
             "project_snapshots": snapshots_data,
             "preferences": preferences_data,
             "relationship_context": rel_context,
-            "conversation_turns": turns_data
+            "conversation_turns": turns_data,
+            "episodic_memories": episodic_memories_data
         }
 

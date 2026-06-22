@@ -112,6 +112,7 @@ class Settings(BaseSettings):
     MAX_RESPONSE_SEGMENTS: int = 50
     MAX_RESPONSE_CHARS: int = 10000
     MAX_PLAYBACK_QUEUE_ITEMS: int = 100
+    MEMORY_RETRIEVAL_LIMIT: int = 5
 
     model_config = SettingsConfigDict(
         env_file=".env",

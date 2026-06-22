@@ -353,6 +353,10 @@ class ConversationRuntimeSession(Base):
     conversation_session_state: Mapped[str] = mapped_column(String, nullable=False, default="active")  # active, recovering, closed, failed
     session_summary_status: Mapped[Optional[str]] = mapped_column(String, nullable=True)  # completed, failed
 
+    memory_episode: Mapped[Optional["MemoryEpisode"]] = relationship(
+        "MemoryEpisode", back_populates="runtime_session", uselist=False, cascade="all, delete-orphan"
+    )
+
 
 class ConversationRuntimeTrace(Base):
     __tablename__ = "conversation_runtime_traces"
@@ -464,6 +468,73 @@ class ConversationMetrics(Base):
     average_tts_latency_ms: Mapped[float] = mapped_column(Float, default=0.0)
     total_interruptions: Mapped[int] = mapped_column(Integer, default=0)
     playback_dropped_chunks: Mapped[int] = mapped_column(Integer, default=0)
+
+
+class MemoryEpisode(Base):
+    __tablename__ = "memory_episodes"
+
+    id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    session_id: Mapped[str] = mapped_column(
+        ForeignKey("conversation_runtime_sessions.runtime_session_id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    project_id: Mapped[Optional[str]] = mapped_column(
+        ForeignKey("project_memories.project_memory_id", ondelete="SET NULL"), nullable=True, index=True
+    )
+    memory_type: Mapped[str] = mapped_column(String, nullable=False, default="episodic")
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    last_accessed_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    recall_count: Mapped[int] = mapped_column(Integer, default=0)
+    title: Mapped[str] = mapped_column(String, nullable=False)
+    summary: Mapped[str] = mapped_column(Text, nullable=False)
+    key_decisions: Mapped[list] = mapped_column(JSON, default=list)
+    important_facts: Mapped[list] = mapped_column(JSON, default=list)
+    open_tasks: Mapped[list] = mapped_column(JSON, default=list)
+    importance_score: Mapped[float] = mapped_column(Float, default=0.0)
+    embedding_vector: Mapped[list] = mapped_column(JSON, nullable=False)
+
+    runtime_session: Mapped["ConversationRuntimeSession"] = relationship(
+        "ConversationRuntimeSession", back_populates="memory_episode"
+    )
+    project: Mapped[Optional["ProjectMemory"]] = relationship("ProjectMemory")
+    recalls: Mapped[List["MemoryRecall"]] = relationship(
+        "MemoryRecall", back_populates="episode", cascade="all, delete-orphan"
+    )
+    tasks: Mapped[List["OpenTask"]] = relationship(
+        "OpenTask", back_populates="episode", cascade="all, delete-orphan"
+    )
+
+
+class MemoryRecall(Base):
+    __tablename__ = "memory_recalls"
+
+    recall_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    session_id: Mapped[str] = mapped_column(
+        ForeignKey("conversation_runtime_sessions.runtime_session_id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    episode_id: Mapped[str] = mapped_column(
+        ForeignKey("memory_episodes.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    recalled_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    query: Mapped[str] = mapped_column(Text, nullable=False)
+    similarity_score: Mapped[float] = mapped_column(Float, nullable=False)
+    retrieval_reason: Mapped[str] = mapped_column(String, nullable=False)
+
+    episode: Mapped["MemoryEpisode"] = relationship("MemoryEpisode", back_populates="recalls")
+
+
+class OpenTask(Base):
+    __tablename__ = "open_tasks"
+
+    id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    episode_id: Mapped[str] = mapped_column(
+        ForeignKey("memory_episodes.id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    description: Mapped[str] = mapped_column(Text, nullable=False)
+    status: Mapped[str] = mapped_column(String, nullable=False, default="OPEN")  # OPEN, IN_PROGRESS, DONE, CANCELLED
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    resolved_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+
+    episode: Mapped["MemoryEpisode"] = relationship("MemoryEpisode", back_populates="tasks")
 
 
 

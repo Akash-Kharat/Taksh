@@ -83,6 +83,24 @@ class PromptBuilder:
         
         user_sections.append("")
 
+        # Include Retrieved Episodic Memories (Milestone-18)
+        episodic_memories = context.get("episodic_memories")
+        if episodic_memories:
+            user_sections.append("=== RECALLED PRIOR CONVERSATIONS (EPISODIC MEMORY) ===")
+            for mem in episodic_memories:
+                mem_block = (
+                    f"Topic: {mem['title']}\n"
+                    f"Summary: {mem['summary']}"
+                )
+                if mem.get("key_decisions"):
+                    mem_block += f"\nDecisions Made: {', '.join(mem['key_decisions'])}"
+                if mem.get("important_facts"):
+                    mem_block += f"\nFacts Recalled: {', '.join(mem['important_facts'])}"
+                if mem.get("open_tasks"):
+                    mem_block += f"\nOpen Tasks from Session: {', '.join(mem['open_tasks'])}"
+                user_sections.append(mem_block)
+                user_sections.append("")
+
         # Workspace Environment Status
         ws = context.get("workspace")
         if ws:
