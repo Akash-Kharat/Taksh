@@ -72,6 +72,11 @@ def client(db_session) -> Generator[TestClient, None, None]:
             pass
     
     app.dependency_overrides[get_db] = override_get_db
-    with TestClient(app) as test_client:
-        yield test_client
-    app.dependency_overrides.clear()
+    old_value = settings.ENABLE_PROVIDER_HEALTH_CHECKS
+    settings.ENABLE_PROVIDER_HEALTH_CHECKS = False
+    try:
+        with TestClient(app) as test_client:
+            yield test_client
+    finally:
+        settings.ENABLE_PROVIDER_HEALTH_CHECKS = old_value
+        app.dependency_overrides.clear()

@@ -4,7 +4,7 @@ from app.core.config import settings
 from app.core.logger import setup_logging, system_logger
 from app.core.security import enforce_local_loopback
 from app.services.memory.identity import CoreIdentityManager
-from app.api.endpoints import health, settings as settings_api, knowledge, memory, session, project, goal, learning, identity, skills, orchestrator, chat, llm, workspace, tools, conversation, voice as voice_endpoints, runtime
+from app.api.endpoints import health, settings as settings_api, knowledge, memory, session, project, goal, learning, identity, skills, orchestrator, chat, llm, workspace, tools, conversation, voice as voice_endpoints, runtime, providers
 from app.api.websockets import voice, connection, voice_transport
 
 @asynccontextmanager
@@ -58,8 +58,23 @@ async def lifespan(app: FastAPI):
     system_logger.info("✓ Skill Registry Loaded")
     system_logger.info(f"✓ Total Skills Registered: {len(skills_registry.skills)}")
 
+    health_task = None
+    if settings.ENABLE_PROVIDER_HEALTH_CHECKS:
+        import asyncio
+        from app.services.providers.health import start_health_monitor_loop
+        health_task = asyncio.create_task(start_health_monitor_loop())
+        system_logger.info("✓ Started Provider Health Monitor Background Task")
+
     system_logger.info("Taksh Backend initialization completed. Ready to serve.")
     yield
+    
+    if health_task:
+        system_logger.info("Stopping Provider Health Monitor Background Task...")
+        health_task.cancel()
+        try:
+            await health_task
+        except Exception:
+            pass
     system_logger.info("Shutting down Taksh Backend...")
 
 app = FastAPI(
@@ -86,6 +101,7 @@ app.include_router(workspace.router, prefix=settings.API_V1_STR, tags=["Workspac
 app.include_router(tools.router, prefix=settings.API_V1_STR, tags=["Tools"])
 app.include_router(conversation.router, prefix=settings.API_V1_STR)
 app.include_router(runtime.router, prefix=settings.API_V1_STR, tags=["Conversation Runtime"])
+app.include_router(providers.router, prefix=settings.API_V1_STR, tags=["Provider Diagnostics"])
 
 # Mount WebSocket Router
 app.include_router(voice.router, prefix=settings.API_V1_STR)

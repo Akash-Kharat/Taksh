@@ -365,3 +365,21 @@ class ConversationRuntimeTrace(Base):
     event_metadata: Mapped[dict] = mapped_column(JSON, nullable=False, default=dict)
 
 
+class ProviderHealthRecord(Base):
+    __tablename__ = "provider_health_records"
+
+    record_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    provider_name: Mapped[str] = mapped_column(String, nullable=False)
+    provider_type: Mapped[str] = mapped_column(String, nullable=False)
+    healthy: Mapped[bool] = mapped_column(Boolean, nullable=False)
+    latency_ms: Mapped[float] = mapped_column(Float, default=0.0)
+    error_message: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    timeout_count: Mapped[int] = mapped_column(Integer, default=0)
+    failure_count: Mapped[int] = mapped_column(Integer, default=0)
+    success_count: Mapped[int] = mapped_column(Integer, default=0)
+    runtime_session_id: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    voice_session_id: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+
+

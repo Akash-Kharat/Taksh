@@ -84,6 +84,15 @@ class Settings(BaseSettings):
     VOICE_IDLE_TIMEOUT_SECONDS: int = 30
 
 
+    # Provider Integration Layer (MS-15) configurations
+    DEFAULT_STT_PROVIDER: str = "mock"
+    DEFAULT_TTS_PROVIDER: str = "mock"
+    DEFAULT_REALTIME_PROVIDER: str = "mock"
+    ENABLE_PROVIDER_HEALTH_CHECKS: bool = True
+    PROVIDER_REQUEST_TIMEOUT_SECONDS: int = 30
+    PROVIDER_HEALTH_RETENTION_DAYS: int = 30
+    MAX_PROVIDER_QUEUE_SIZE: int = 100
+
     # API keys loaded safely from environment
     GEMINI_API_KEY: str = ""
     GEMINI_LIVE_API_URL: str = "wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidirectionalGenerateContent"
