@@ -350,6 +350,8 @@ class ConversationRuntimeSession(Base):
     total_speaking_ms: Mapped[int] = mapped_column(Integer, default=0)
     started_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     ended_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+    conversation_session_state: Mapped[str] = mapped_column(String, nullable=False, default="active")  # active, recovering, closed, failed
+    session_summary_status: Mapped[Optional[str]] = mapped_column(String, nullable=True)  # completed, failed
 
 
 class ConversationRuntimeTrace(Base):
@@ -419,6 +421,49 @@ class ProviderConversationMessage(Base):
     content: Mapped[str] = mapped_column(Text, nullable=False)
     timestamp: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     latency_ms: Mapped[float] = mapped_column(Float, default=0.0)
+
+
+class ConversationTurn(Base):
+    __tablename__ = "conversation_turns"
+
+    turn_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    runtime_session_id: Mapped[str] = mapped_column(
+        ForeignKey("conversation_runtime_sessions.runtime_session_id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    voice_session_id: Mapped[Optional[str]] = mapped_column(
+        ForeignKey("voice_sessions.voice_session_id", ondelete="SET NULL"), nullable=True, index=True
+    )
+    user_text: Mapped[str] = mapped_column(Text, nullable=False)
+    assistant_text: Mapped[str] = mapped_column(Text, nullable=False)
+    prompt_hash: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    provider_name: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    latency_ms: Mapped[float] = mapped_column(Float, default=0.0)
+    started_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    completed_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    cognitive_trace_id: Mapped[Optional[str]] = mapped_column(
+        ForeignKey("cognitive_traces.trace_id", ondelete="SET NULL"), nullable=True, index=True
+    )
+    ai_response_id: Mapped[Optional[str]] = mapped_column(
+        ForeignKey("ai_responses.response_id", ondelete="SET NULL"), nullable=True, index=True
+    )
+    segment_count: Mapped[int] = mapped_column(Integer, default=0)
+    response_truncated: Mapped[bool] = mapped_column(Boolean, default=False)
+
+
+class ConversationMetrics(Base):
+    __tablename__ = "conversation_metrics"
+
+    metrics_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    runtime_session_id: Mapped[str] = mapped_column(
+        ForeignKey("conversation_runtime_sessions.runtime_session_id", ondelete="CASCADE"), nullable=False, unique=True, index=True
+    )
+    total_turns: Mapped[int] = mapped_column(Integer, default=0)
+    average_turn_latency_ms: Mapped[float] = mapped_column(Float, default=0.0)
+    average_stt_latency_ms: Mapped[float] = mapped_column(Float, default=0.0)
+    average_llm_latency_ms: Mapped[float] = mapped_column(Float, default=0.0)
+    average_tts_latency_ms: Mapped[float] = mapped_column(Float, default=0.0)
+    total_interruptions: Mapped[int] = mapped_column(Integer, default=0)
+    playback_dropped_chunks: Mapped[int] = mapped_column(Integer, default=0)
 
 
 

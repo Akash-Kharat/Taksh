@@ -107,6 +107,12 @@ class Settings(BaseSettings):
     GEMINI_API_KEY: str = ""
     GEMINI_LIVE_API_URL: str = "wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidirectionalGenerateContent"
 
+    # End-to-End Voice Conversation (MS-17) configurations
+    MAX_CONVERSATION_TURNS: int = 10
+    MAX_RESPONSE_SEGMENTS: int = 50
+    MAX_RESPONSE_CHARS: int = 10000
+    MAX_PLAYBACK_QUEUE_ITEMS: int = 100
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",

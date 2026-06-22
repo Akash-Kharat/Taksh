@@ -123,34 +123,7 @@ class RealtimeStateMachine:
                     {"duration_ms": duration_ms}
                 )
 
-    async def transcribe(self, audio_bytes: bytes, provider_name: Optional[str] = None, db: Optional[Session] = None) -> str:
-        """Transcribes user speech audio bytes using ProviderManager."""
-        from app.services.providers.manager import provider_manager
-        return await provider_manager.transcribe_audio(
-            runtime_session_id=self.runtime_session_id,
-            audio_bytes=audio_bytes,
-            provider_name=provider_name,
-            db=db
-        )
 
-    async def synthesize(self, text: str, provider_name: Optional[str] = None, db: Optional[Session] = None) -> bytes:
-        """Synthesizes text response to speech audio bytes using ProviderManager."""
-        from app.services.providers.manager import provider_manager
-        return await provider_manager.synthesize_speech(
-            runtime_session_id=self.runtime_session_id,
-            text=text,
-            provider_name=provider_name,
-            db=db
-        )
-
-    async def get_realtime_provider(self, provider_name: Optional[str] = None, db: Optional[Session] = None):
-        """Retrieves active realtime conversation provider instance via ProviderManager."""
-        from app.services.providers.manager import provider_manager
-        return await provider_manager.get_realtime_provider(
-            runtime_session_id=self.runtime_session_id,
-            provider_name=provider_name,
-            db=db
-        )
 
 
 # In-memory active state machines cache: runtime_session_id -> RealtimeStateMachine

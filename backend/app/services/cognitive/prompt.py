@@ -62,16 +62,24 @@ class PromptBuilder:
             projects_str = "\n".join([f"- {p['project_name']} (Tech: {', '.join(p['tech_stack']) if p['tech_stack'] else 'N/A'})" for p in lt["projects"]])
             user_sections.append(f"Associated Projects:\n{projects_str}")
             
-        # Sensory Memory Events
-        sensory = context["sensory_memory"]
-        if sensory:
-            user_sections.append("\n=== RECENT DIALOGUE HISTORY ===")
-            for event in sensory:
-                mod = event.get("primary_modality", "text")
-                summary = event.get("summary") or ""
-                text_payload = event.get("text_payload") or {}
-                transcript = text_payload.get("transcript") or ""
-                user_sections.append(f"[{mod.upper()}] {summary or transcript}")
+        # Conversation History (Milestone-17)
+        turns = context.get("conversation_turns")
+        if turns:
+            user_sections.append("\n=== CONVERSATION HISTORY ===")
+            for turn in turns:
+                user_sections.append(f"User: {turn['user_text']}")
+                user_sections.append(f"Assistant: {turn['assistant_text']}")
+        else:
+            # Sensory Memory Events fallback
+            sensory = context["sensory_memory"]
+            if sensory:
+                user_sections.append("\n=== RECENT DIALOGUE HISTORY ===")
+                for event in sensory:
+                    mod = event.get("primary_modality", "text")
+                    summary = event.get("summary") or ""
+                    text_payload = event.get("text_payload") or {}
+                    transcript = text_payload.get("transcript") or ""
+                    user_sections.append(f"[{mod.upper()}] {summary or transcript}")
         
         user_sections.append("")
 

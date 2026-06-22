@@ -188,6 +188,29 @@ class ContextBuilder:
                 ]
             }
 
+        # 8. Retrieve recent conversation turns up to settings.MAX_CONVERSATION_TURNS (Revision 3)
+        turns_data = []
+        if session_id:
+            from app.models.database_models import ConversationTurn
+            turns = (
+                db.query(ConversationTurn)
+                .filter(ConversationTurn.runtime_session_id == session_id)
+                .order_by(ConversationTurn.started_at.desc())
+                .limit(settings.MAX_CONVERSATION_TURNS)
+                .all()
+            )
+            turns.reverse()  # Make it chronological
+            turns_data = [
+                {
+                    "user_text": t.user_text,
+                    "assistant_text": t.assistant_text,
+                    "cognitive_trace_id": t.cognitive_trace_id,
+                    "ai_response_id": t.ai_response_id,
+                    "segment_count": t.segment_count,
+                    "response_truncated": t.response_truncated
+                } for t in turns
+            ]
+
         return {
             "identity": identity_text,
             "skills": skills_overlays,
@@ -211,6 +234,7 @@ class ContextBuilder:
             "project_summary": project_summary_data,
             "project_snapshots": snapshots_data,
             "preferences": preferences_data,
-            "relationship_context": rel_context
+            "relationship_context": rel_context,
+            "conversation_turns": turns_data
         }
 
