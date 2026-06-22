@@ -334,3 +334,34 @@ class VoiceSession(Base):
     started_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     ended_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
 
+
+class ConversationRuntimeSession(Base):
+    __tablename__ = "conversation_runtime_sessions"
+
+    runtime_session_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    voice_session_id: Mapped[Optional[str]] = mapped_column(
+        ForeignKey("voice_sessions.voice_session_id", ondelete="SET NULL"), nullable=True
+    )
+    conversation_state: Mapped[str] = mapped_column(String, nullable=False, default="idle")
+    current_turn_owner: Mapped[str] = mapped_column(String, nullable=False, default="none")
+    interruption_count: Mapped[int] = mapped_column(Integer, default=0)
+    total_listening_ms: Mapped[int] = mapped_column(Integer, default=0)
+    total_thinking_ms: Mapped[int] = mapped_column(Integer, default=0)
+    total_speaking_ms: Mapped[int] = mapped_column(Integer, default=0)
+    started_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    ended_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+
+
+class ConversationRuntimeTrace(Base):
+    __tablename__ = "conversation_runtime_traces"
+
+    trace_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    runtime_session_id: Mapped[str] = mapped_column(
+        ForeignKey("conversation_runtime_sessions.runtime_session_id", ondelete="CASCADE"), nullable=False
+    )
+    event_type: Mapped[str] = mapped_column(String, nullable=False)
+    event_sequence: Mapped[int] = mapped_column(Integer, nullable=False)
+    timestamp: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    event_metadata: Mapped[dict] = mapped_column(JSON, nullable=False, default=dict)
+
+

@@ -15,12 +15,13 @@ settings.MOCK_EMBEDDINGS = True
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.pool import StaticPool
+from sqlalchemy.pool import NullPool
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///file:testdb?mode=memory&cache=shared"
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL,
-    connect_args={"check_same_thread": False, "uri": True}
+    connect_args={"check_same_thread": False, "uri": True},
+    poolclass=NullPool
 )
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
@@ -34,9 +35,17 @@ from app.core.database import Base, get_db
 
 @pytest.fixture(scope="session", autouse=True)
 def init_test_db():
+    keep_alive_conn = engine.connect()
     Base.metadata.create_all(bind=engine)
     yield
-    Base.metadata.drop_all(bind=engine)
+    try:
+        Base.metadata.drop_all(bind=engine)
+    except Exception:
+        pass
+    try:
+        keep_alive_conn.close()
+    except Exception:
+        pass
 
 @pytest.fixture
 def db_session() -> Generator:
