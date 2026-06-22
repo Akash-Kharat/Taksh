@@ -1,7 +1,7 @@
 import uuid
 from datetime import datetime
 from typing import List, Optional
-from sqlalchemy import String, DateTime, ForeignKey, Text, JSON, Integer, Boolean
+from sqlalchemy import String, DateTime, ForeignKey, Text, JSON, Integer, Boolean, Float
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.core.database import Base
 
@@ -249,4 +249,63 @@ class ApprovalRequest(Base):
     status: Mapped[str] = mapped_column(String, default="pending")  # pending | approved | denied | expired
     decided_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
     expires_at: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+
+class ConversationProfile(Base):
+    __tablename__ = "conversation_profiles"
+
+    profile_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    interaction_count: Mapped[int] = mapped_column(Integer, default=0)
+    first_seen_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    last_seen_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    active_project_id: Mapped[Optional[str]] = mapped_column(
+        ForeignKey("project_memories.project_memory_id", ondelete="SET NULL"), nullable=True
+    )
+    current_focus: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
+class PreferenceMemory(Base):
+    __tablename__ = "preference_memories"
+
+    preference_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    category: Mapped[str] = mapped_column(String, nullable=False)
+    value: Mapped[str] = mapped_column(Text, nullable=False)
+    confidence_score: Mapped[float] = mapped_column(Float, default=1.0)
+    source_session_id: Mapped[Optional[str]] = mapped_column(
+        ForeignKey("sessions.session_id", ondelete="SET NULL"), nullable=True
+    )
+    source_trace_id: Mapped[Optional[str]] = mapped_column(
+        ForeignKey("cognitive_traces.trace_id", ondelete="SET NULL"), nullable=True
+    )
+    last_confirmed_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+
+class ProjectMemory(Base):
+    __tablename__ = "project_memories"
+
+    project_memory_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    project_name: Mapped[str] = mapped_column(String, unique=True, index=True, nullable=False)
+    status: Mapped[str] = mapped_column(String, default="inactive")  # 'active', 'inactive', 'completed', 'paused'
+    current_milestone: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    summary: Mapped[str] = mapped_column(Text, default="")
+    active_goals: Mapped[list] = mapped_column(JSON, default=list)
+    open_questions: Mapped[list] = mapped_column(JSON, default=list)
+    next_steps: Mapped[list] = mapped_column(JSON, default=list)
+    last_updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
+class ProjectSnapshot(Base):
+    __tablename__ = "project_snapshots"
+
+    snapshot_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    project_name: Mapped[str] = mapped_column(String, index=True, nullable=False)
+    milestone: Mapped[str] = mapped_column(String, nullable=False)
+    summary: Mapped[str] = mapped_column(Text, default="")
+    decisions: Mapped[list] = mapped_column(JSON, default=list)
+    open_questions: Mapped[list] = mapped_column(JSON, default=list)
+    next_steps: Mapped[list] = mapped_column(JSON, default=list)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)

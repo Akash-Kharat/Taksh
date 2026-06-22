@@ -71,6 +71,10 @@ class Settings(BaseSettings):
     MAX_PYTEST_ARGUMENTS: int = 5
     MAX_TEST_PATH_DEPTH: int = 5
 
+    # Conversation Intelligence Layer (MS-12) configurations
+    MAX_PROJECT_SNAPSHOTS: int = 3
+    MAX_PREFERENCES: int = 10
+
     # API keys loaded safely from environment
     GEMINI_API_KEY: str = ""
     GEMINI_LIVE_API_URL: str = "wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidirectionalGenerateContent"

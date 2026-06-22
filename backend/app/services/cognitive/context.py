@@ -9,6 +9,15 @@ from app.services.knowledge.search import HybridSearchEngine
 from app.repositories.learning import learning_repo
 from app.repositories.project import project_repo
 
+from app.models.database_models import (
+    ConversationProfile,
+    PreferenceMemory,
+    ProjectMemory,
+    ProjectSnapshot,
+)
+from app.services.conversation.relationship import RelationshipTracker
+
+
 class ContextBuilder:
     """Aggregates multi-source information into structured, budget-bounded context blocks."""
     
@@ -44,24 +53,95 @@ class ContextBuilder:
                 "technical_constraints": constraints
             })
 
-        # 3. Knowledge Context (RRF search limited to budget)
+        # 3. Conversation Intelligence Context (MS-12)
+        profile = db.query(ConversationProfile).first()
+        active_project = None
+        if profile and profile.active_project_id:
+            active_project = (
+                db.query(ProjectMemory)
+                .filter(ProjectMemory.project_memory_id == profile.active_project_id)
+                .first()
+            )
+        
+        active_project_data = {}
+        project_summary_data = {}
+        snapshots_data = []
+
+        if active_project:
+            active_project_data = {
+                "project_memory_id": active_project.project_memory_id,
+                "project_name": active_project.project_name,
+                "status": active_project.status,
+                "current_milestone": active_project.current_milestone,
+                "active_goals": active_project.active_goals,
+                "open_questions": active_project.open_questions,
+                "next_steps": active_project.next_steps,
+            }
+            project_summary_data = {
+                "project_name": active_project.project_name,
+                "summary": active_project.summary
+            }
+            
+            # Retrieve project snapshots up to budget limit
+            snapshots = (
+                db.query(ProjectSnapshot)
+                .filter(ProjectSnapshot.project_name == active_project.project_name)
+                .order_by(ProjectSnapshot.created_at.desc())
+                .limit(settings.MAX_PROJECT_SNAPSHOTS)
+                .all()
+            )
+            snapshots_data = [
+                {
+                    "snapshot_id": s.snapshot_id,
+                    "project_name": s.project_name,
+                    "milestone": s.milestone,
+                    "summary": s.summary,
+                    "decisions": s.decisions,
+                    "open_questions": s.open_questions,
+                    "next_steps": s.next_steps,
+                    "created_at": s.created_at.isoformat()
+                } for s in snapshots
+            ]
+
+        # Retrieve preferences up to budget limit
+        prefs = (
+            db.query(PreferenceMemory)
+            .order_by(PreferenceMemory.confidence_score.desc())
+            .limit(settings.MAX_PREFERENCES)
+            .all()
+        )
+        preferences_data = [
+            {
+                "preference_id": p.preference_id,
+                "category": p.category,
+                "value": p.value,
+                "confidence_score": p.confidence_score,
+                "source_session_id": p.source_session_id,
+                "source_trace_id": p.source_trace_id,
+                "last_confirmed_at": p.last_confirmed_at.isoformat()
+            } for p in prefs
+        ]
+
+        # Relationship context
+        rel_context = RelationshipTracker.get_relationship_context(db)
+
+        # 4. Knowledge Context (RRF search limited to budget)
         search_results = self.search_engine.search(db, query, limit=settings.MAX_KNOWLEDGE_CHUNKS)
         
-        # 4. Working & Long-Term Memory Context
+        # 5. Working & Long-Term Memory Context
         working_mem = self.memory_manager.get_working_memory(db, session_id=session_id)
         
         # Fetch long-term items from repositories
         lessons = learning_repo.get_multi(db)
         projects = project_repo.get_multi(db)
 
-        # 5. Sensory Memory Context (Recent events limited to budget)
+        # 6. Sensory Memory Context (Recent events limited to budget)
         recent_events = []
         if session_id:
-            # get all recent events from sensory cache
             events = self.memory_manager.get_recent_context(session_id, limit=settings.MAX_RECENT_EVENTS)
             recent_events = events
 
-        # 6. Workspace Context (Enforcing budgets)
+        # 7. Workspace Context (Enforcing budgets)
         latest_snap = self.workspace_manager.get_latest_snapshot(db, session_id=session_id)
         active_errors = self.workspace_manager.get_active_errors(db, session_id=session_id)
 
@@ -125,6 +205,12 @@ class ContextBuilder:
                 ]
             },
             "sensory_memory": recent_events,
-            "workspace": workspace_data
+            "workspace": workspace_data,
+            # Conversation Intelligence outputs (MS-12)
+            "active_project": active_project_data,
+            "project_summary": project_summary_data,
+            "project_snapshots": snapshots_data,
+            "preferences": preferences_data,
+            "relationship_context": rel_context
         }
 
