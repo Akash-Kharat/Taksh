@@ -7304,3 +7304,215 @@
 [2026-06-21 16:19:01,130] [INFO] [Category: Tools] Auto-executing tool 'read_file' (level=CapabilityLevel.READ)
 [2026-06-21 16:19:01,139] [INFO] HTTP Request: POST http://testserver/api/v1/tools/execute "HTTP/1.1 200 OK"
 [2026-06-21 16:19:01,142] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-22 07:17:34,859] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-22 07:17:34,860] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-22 07:17:34,860] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-22 07:17:34,863] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-22 07:17:35,079] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-22 07:17:35,097] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: C:\Users\Akash\AppData\Local\Temp\tmpea1z0dto
+[2026-06-22 07:17:35,098] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-22 07:17:35,110] [INFO] [Category: Memory] Core Identity successfully loaded and cached in memory.
+[2026-06-22 07:17:35,111] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-22 07:17:35,112] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-22 07:17:35,112] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\manifests
+[2026-06-22 07:17:35,131] [INFO] [Category: Skills] Loaded skill manifest: 'Embedded Systems Architect' from embedded_systems_architect.yaml
+[2026-06-22 07:17:35,143] [INFO] [Category: Skills] Loaded skill manifest: 'Full-Stack Software Architect' from fullstack_software_architect.yaml
+[2026-06-22 07:17:35,143] [INFO] [Category: Skills] Loaded 2 skill manifests successfully.
+[2026-06-22 07:17:35,144] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-22 07:17:35,144] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-22 07:17:35,145] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-22 07:17:35,152] [INFO] [Category: Tools] Auto-executing tool 'git_diff' (level=CapabilityLevel.READ)
+[2026-06-22 07:17:35,155] [INFO] HTTP Request: POST http://testserver/api/v1/tools/execute "HTTP/1.1 200 OK"
+[2026-06-22 07:17:35,164] [INFO] HTTP Request: GET http://testserver/api/v1/tools/executions?limit=1 "HTTP/1.1 200 OK"
+[2026-06-22 07:17:35,170] [INFO] HTTP Request: GET http://testserver/api/v1/tools/executions/dfa24fb4-0c18-4011-aac1-22cf71e184f8 "HTTP/1.1 200 OK"
+[2026-06-22 07:17:35,171] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-22 07:17:35,177] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-22 07:17:35,178] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-22 07:17:35,178] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-22 07:17:35,179] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-22 07:17:35,188] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-22 07:17:35,189] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: C:\Users\Akash\AppData\Local\Temp\tmpea1z0dto
+[2026-06-22 07:17:35,189] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-22 07:17:35,189] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-22 07:17:35,190] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-22 07:17:35,190] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-22 07:17:35,190] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-22 07:17:35,190] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-22 07:17:35,195] [INFO] [Category: Tools] Auto-executing tool 'git_diff' (level=CapabilityLevel.READ)
+[2026-06-22 07:17:35,196] [INFO] HTTP Request: POST http://testserver/api/v1/tools/execute "HTTP/1.1 429 Too Many Requests"
+[2026-06-22 07:17:35,197] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-22 07:17:53,442] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-22 07:17:53,443] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-22 07:17:53,443] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-22 07:17:53,444] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-22 07:17:53,604] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-22 07:17:53,613] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: C:\Users\Akash\AppData\Local\Temp\tmpxr3otqps
+[2026-06-22 07:17:53,614] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-22 07:17:53,614] [INFO] [Category: Memory] Core Identity successfully loaded and cached in memory.
+[2026-06-22 07:17:53,614] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-22 07:17:53,615] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-22 07:17:53,615] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\manifests
+[2026-06-22 07:17:53,618] [INFO] [Category: Skills] Loaded skill manifest: 'Embedded Systems Architect' from embedded_systems_architect.yaml
+[2026-06-22 07:17:53,621] [INFO] [Category: Skills] Loaded skill manifest: 'Full-Stack Software Architect' from fullstack_software_architect.yaml
+[2026-06-22 07:17:53,621] [INFO] [Category: Skills] Loaded 2 skill manifests successfully.
+[2026-06-22 07:17:53,621] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-22 07:17:53,622] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-22 07:17:53,622] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-22 07:17:53,629] [INFO] [Category: Tools] Auto-executing tool 'git_diff' (level=CapabilityLevel.READ)
+[2026-06-22 07:17:53,632] [INFO] HTTP Request: POST http://testserver/api/v1/tools/execute "HTTP/1.1 200 OK"
+[2026-06-22 07:17:53,638] [INFO] HTTP Request: GET http://testserver/api/v1/tools/executions?limit=1 "HTTP/1.1 200 OK"
+[2026-06-22 07:17:53,644] [INFO] HTTP Request: GET http://testserver/api/v1/tools/executions/8744ce6c-a25e-461e-ba64-1fadea9a3b68 "HTTP/1.1 200 OK"
+[2026-06-22 07:17:53,646] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-22 07:17:53,651] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-22 07:17:53,651] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-22 07:17:53,651] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-22 07:17:53,652] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-22 07:17:53,661] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-22 07:17:53,663] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: C:\Users\Akash\AppData\Local\Temp\tmpxr3otqps
+[2026-06-22 07:17:53,663] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-22 07:17:53,663] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-22 07:17:53,663] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-22 07:17:53,664] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-22 07:17:53,664] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-22 07:17:53,664] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-22 07:17:53,669] [INFO] [Category: Tools] Auto-executing tool 'git_diff' (level=CapabilityLevel.READ)
+[2026-06-22 07:17:53,670] [INFO] HTTP Request: POST http://testserver/api/v1/tools/execute "HTTP/1.1 429 Too Many Requests"
+[2026-06-22 07:17:53,671] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-22 07:18:05,547] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-22 07:18:05,548] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-22 07:18:05,548] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-22 07:18:05,550] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-22 07:18:05,714] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-22 07:18:05,723] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: C:\Users\Akash\AppData\Local\Temp\tmpwad4cd8g
+[2026-06-22 07:18:05,724] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-22 07:18:05,725] [INFO] [Category: Memory] Core Identity successfully loaded and cached in memory.
+[2026-06-22 07:18:05,725] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-22 07:18:05,726] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-22 07:18:05,726] [INFO] [Category: Skills] Scanning for skill manifests in: app\services\skills\manifests
+[2026-06-22 07:18:05,730] [INFO] [Category: Skills] Loaded skill manifest: 'Embedded Systems Architect' from embedded_systems_architect.yaml
+[2026-06-22 07:18:05,733] [INFO] [Category: Skills] Loaded skill manifest: 'Full-Stack Software Architect' from fullstack_software_architect.yaml
+[2026-06-22 07:18:05,733] [INFO] [Category: Skills] Loaded 2 skill manifests successfully.
+[2026-06-22 07:18:05,734] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-22 07:18:05,734] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-22 07:18:05,734] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-22 07:18:05,742] [INFO] HTTP Request: GET http://testserver/api/v1/tools/info "HTTP/1.1 200 OK"
+[2026-06-22 07:18:05,744] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-22 07:18:05,750] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-22 07:18:05,750] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-22 07:18:05,750] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-22 07:18:05,751] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-22 07:18:05,760] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-22 07:18:05,761] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: C:\Users\Akash\AppData\Local\Temp\tmpwad4cd8g
+[2026-06-22 07:18:05,761] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-22 07:18:05,761] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-22 07:18:05,761] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-22 07:18:05,762] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-22 07:18:05,762] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-22 07:18:05,762] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-22 07:18:05,770] [INFO] [Category: Tools] Auto-executing tool 'list_directory' (level=CapabilityLevel.READ)
+[2026-06-22 07:18:05,773] [INFO] HTTP Request: POST http://testserver/api/v1/tools/execute "HTTP/1.1 200 OK"
+[2026-06-22 07:18:05,774] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-22 07:18:05,779] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-22 07:18:05,779] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-22 07:18:05,780] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-22 07:18:05,780] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-22 07:18:05,789] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-22 07:18:05,789] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: C:\Users\Akash\AppData\Local\Temp\tmpwad4cd8g
+[2026-06-22 07:18:05,790] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-22 07:18:05,790] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-22 07:18:05,790] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-22 07:18:05,790] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-22 07:18:05,790] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-22 07:18:05,790] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-22 07:18:05,796] [INFO] [Category: Tools] Tool 'approval_test_tool' requires approval (level=CapabilityLevel.MODIFY). Creating ApprovalRequest.
+[2026-06-22 07:18:05,799] [INFO] HTTP Request: POST http://testserver/api/v1/tools/execute "HTTP/1.1 200 OK"
+[2026-06-22 07:18:05,801] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-22 07:18:05,806] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-22 07:18:05,806] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-22 07:18:05,806] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-22 07:18:05,808] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-22 07:18:05,816] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-22 07:18:05,817] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: C:\Users\Akash\AppData\Local\Temp\tmpwad4cd8g
+[2026-06-22 07:18:05,817] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-22 07:18:05,818] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-22 07:18:05,818] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-22 07:18:05,818] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-22 07:18:05,818] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-22 07:18:05,819] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-22 07:18:05,826] [INFO] HTTP Request: POST http://testserver/api/v1/tools/execute "HTTP/1.1 200 OK"
+[2026-06-22 07:18:05,828] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-22 07:18:05,833] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-22 07:18:05,833] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-22 07:18:05,834] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-22 07:18:05,834] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-22 07:18:05,844] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-22 07:18:05,845] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: C:\Users\Akash\AppData\Local\Temp\tmpwad4cd8g
+[2026-06-22 07:18:05,845] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-22 07:18:05,846] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-22 07:18:05,846] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-22 07:18:05,846] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-22 07:18:05,846] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-22 07:18:05,847] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-22 07:18:05,854] [INFO] HTTP Request: GET http://testserver/api/v1/tools/executions "HTTP/1.1 200 OK"
+[2026-06-22 07:18:05,855] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-22 07:18:05,860] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-22 07:18:05,860] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-22 07:18:05,861] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-22 07:18:05,861] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-22 07:18:05,870] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-22 07:18:05,870] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: C:\Users\Akash\AppData\Local\Temp\tmpwad4cd8g
+[2026-06-22 07:18:05,871] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-22 07:18:05,871] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-22 07:18:05,871] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-22 07:18:05,871] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-22 07:18:05,871] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-22 07:18:05,872] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-22 07:18:05,879] [INFO] HTTP Request: GET http://testserver/api/v1/tools/approvals "HTTP/1.1 200 OK"
+[2026-06-22 07:18:05,880] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-22 07:18:05,885] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-22 07:18:05,885] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-22 07:18:05,885] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-22 07:18:05,886] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-22 07:18:05,895] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-22 07:18:05,896] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: C:\Users\Akash\AppData\Local\Temp\tmpwad4cd8g
+[2026-06-22 07:18:05,896] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-22 07:18:05,896] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-22 07:18:05,897] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-22 07:18:05,897] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-22 07:18:05,897] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-22 07:18:05,897] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-22 07:18:05,902] [INFO] [Category: Tools] Tool 'approval_test_tool' requires approval (level=CapabilityLevel.MODIFY). Creating ApprovalRequest.
+[2026-06-22 07:18:05,905] [INFO] HTTP Request: POST http://testserver/api/v1/tools/execute "HTTP/1.1 200 OK"
+[2026-06-22 07:18:05,911] [INFO] HTTP Request: GET http://testserver/api/v1/tools/approvals?status=pending&limit=1 "HTTP/1.1 200 OK"
+[2026-06-22 07:18:05,916] [INFO] [Category: Tools] Approval '75c459d3-64d1-4d54-8ab3-47462360d393' granted. Executing 'approval_test_tool'.
+[2026-06-22 07:18:05,919] [INFO] HTTP Request: POST http://testserver/api/v1/tools/approvals/75c459d3-64d1-4d54-8ab3-47462360d393/decide "HTTP/1.1 200 OK"
+[2026-06-22 07:18:05,920] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-22 07:18:05,925] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-22 07:18:05,925] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-22 07:18:05,926] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-22 07:18:05,927] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-22 07:18:05,935] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-22 07:18:05,936] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: C:\Users\Akash\AppData\Local\Temp\tmpwad4cd8g
+[2026-06-22 07:18:05,937] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-22 07:18:05,937] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-22 07:18:05,937] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-22 07:18:05,938] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-22 07:18:05,938] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-22 07:18:05,938] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-22 07:18:05,942] [INFO] HTTP Request: GET http://testserver/api/v1/tools/info "HTTP/1.1 200 OK"
+[2026-06-22 07:18:05,944] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...
+[2026-06-22 07:18:05,949] [INFO] [Category: SYSTEM] Initializing Taksh Backend...
+[2026-06-22 07:18:05,949] [INFO] [Category: SYSTEM] Running database initializations...
+[2026-06-22 07:18:05,949] [INFO] [Category: SYSTEM] ✓ Docs Directory Found
+[2026-06-22 07:18:05,950] [INFO] [Category: SYSTEM] ✓ FTS5 Available
+[2026-06-22 07:18:05,958] [INFO] [Category: Knowledge] Using offline MockEmbeddingFunction for ChromaDB.
+[2026-06-22 07:18:05,959] [INFO] [Category: Knowledge] ChromaDBClient initialized at storage path: C:\Users\Akash\AppData\Local\Temp\tmpwad4cd8g
+[2026-06-22 07:18:05,960] [INFO] [Category: SYSTEM] ✓ ChromaDB Initialized
+[2026-06-22 07:18:05,960] [INFO] [Category: SYSTEM] ✓ Identity Loaded
+[2026-06-22 07:18:05,960] [INFO] [Category: SYSTEM] ✓ Identity Hash Generated: 09e5d981df59f1f467b17d02ab261f086299d3f3883ec00c86136f9ff2592c8c
+[2026-06-22 07:18:05,960] [INFO] [Category: SYSTEM] ✓ Skill Registry Loaded
+[2026-06-22 07:18:05,960] [INFO] [Category: SYSTEM] ✓ Total Skills Registered: 2
+[2026-06-22 07:18:05,961] [INFO] [Category: SYSTEM] Taksh Backend initialization completed. Ready to serve.
+[2026-06-22 07:18:05,967] [INFO] [Category: Tools] Auto-executing tool 'read_file' (level=CapabilityLevel.READ)
+[2026-06-22 07:18:05,972] [INFO] HTTP Request: POST http://testserver/api/v1/tools/execute "HTTP/1.1 200 OK"
+[2026-06-22 07:18:05,973] [INFO] [Category: SYSTEM] Shutting down Taksh Backend...

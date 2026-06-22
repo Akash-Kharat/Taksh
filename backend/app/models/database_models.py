@@ -225,6 +225,15 @@ class ToolExecution(Base):
     duration_ms: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
+    # Controlled Execution Layer (MS-11) extensions
+    exit_code: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    stdout: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    stderr: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    stdout_truncated: Mapped[bool] = mapped_column(Boolean, default=False)
+    stderr_truncated: Mapped[bool] = mapped_column(Boolean, default=False)
+    timed_out: Mapped[bool] = mapped_column(Boolean, default=False)
+    requested_by: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+
 
 class ApprovalRequest(Base):
     __tablename__ = "approval_requests"

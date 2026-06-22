@@ -24,10 +24,11 @@ from app.schemas.tools import (
     ToolDefinitionResponse,
     ToolExecuteRequest,
     ToolExecutionRecord,
+    ToolExecutionDetailRecord,
     ToolResultResponse,
     ToolsInfoResponse,
 )
-from app.services.tools.manager import ApprovalEngine, ToolManager, get_registry
+from app.services.tools.manager import ApprovalEngine, ToolManager, get_registry, ConcurrencyLimitError
 from app.services.tools.base import ToolRequest
 
 router = APIRouter(prefix="/tools", tags=["Tools"])
@@ -96,8 +97,13 @@ def execute_tool(
         tool_name=body.tool_name,
         parameters=body.parameters,
         trace_id=body.trace_id,
+        requested_by=body.requested_by or "user"
     )
-    result = tool_manager.execute(request)
+    try:
+        result = tool_manager.execute(request)
+    except ConcurrencyLimitError as exc:
+        raise HTTPException(status_code=429, detail=str(exc))
+
     return ToolResultResponse(
         tool_name=result.tool_name,
         status=result.status.value,
@@ -171,3 +177,23 @@ def decide_approval(
         duration_ms=result.duration_ms,
         metadata=result.metadata,
     )
+
+
+# ---------------------------------------------------------------------------
+# GET /tools/executions/{execution_id}
+# ---------------------------------------------------------------------------
+
+@router.get("/executions/{execution_id}", response_model=ToolExecutionDetailRecord)
+def get_execution_detail(
+    execution_id: str,
+    db: Session = Depends(get_db),
+) -> ToolExecutionDetailRecord:
+    """Retrieve full details of a specific tool execution by execution_id."""
+    record = (
+        db.query(ToolExecution)
+        .filter(ToolExecution.execution_id == execution_id)
+        .first()
+    )
+    if not record:
+        raise HTTPException(status_code=404, detail=f"Tool execution '{execution_id}' not found.")
+    return ToolExecutionDetailRecord.model_validate(record)

@@ -33,11 +33,12 @@ from app.core.config import settings
 from app.services.tools.base import (
     BaseTool,
     CapabilityLevel,
+    ExecutionStatus,
     ToolCategory,
     ToolDefinition,
     ToolResult,
 )
-
+from app.services.tools.process_runner import ProcessRunner, ExecutionRequest
 
 # ---------------------------------------------------------------------------
 # Sandbox helper
@@ -420,3 +421,263 @@ class ApprovalTestTool(BaseTool):
             f"Approved execution: {msg}",
             max_chars=settings.MAX_TOOL_OUTPUT_CHARS,
         )
+
+
+# ---------------------------------------------------------------------------
+# GitDiffTool
+# ---------------------------------------------------------------------------
+
+class GitDiffTool(BaseTool):
+    definition = ToolDefinition(
+        name="git_diff",
+        description="Run git diff in the workspace to view changes.",
+        category=ToolCategory.GIT,
+        capability_level=CapabilityLevel.READ,
+        requires_approval=False,
+        tool_version="1.0.0",
+        parameters_schema={
+            "cached": {"type": "boolean", "description": "Show staged changes if True", "default": False},
+            "path": {"type": "string", "description": "Optional file path to restrict diff"},
+        },
+    )
+
+    def _run(self, parameters: Dict[str, Any]) -> ToolResult:
+        args = ["diff"]
+        if parameters.get("cached"):
+            args.append("--cached")
+        path = parameters.get("path")
+        if path:
+            args.extend(["--", path])
+
+        req = ExecutionRequest(
+            executable_key="git",
+            args=args,
+            cwd=settings.WORKSPACE_DIR,
+            tool_name="git_diff",
+            requested_by=parameters.get("_requested_by", "unknown")
+        )
+        res = ProcessRunner.run(req)
+
+        if res.timed_out:
+            return ToolResult(
+                tool_name="git_diff",
+                status=ExecutionStatus.ERROR,
+                error_message="Process timed out.",
+                duration_ms=res.duration_ms,
+                timed_out=True
+            )
+
+        if res.exit_code is not None and res.exit_code != 0:
+            return ToolResult(
+                tool_name="git_diff",
+                status=ExecutionStatus.ERROR,
+                error_message=res.stderr or f"Git diff exited with code {res.exit_code}",
+                exit_code=res.exit_code,
+                stdout=res.stdout,
+                stderr=res.stderr,
+                stdout_truncated=res.stdout_truncated,
+                stderr_truncated=res.stderr_truncated,
+                duration_ms=res.duration_ms
+            )
+
+        return ToolResult(
+            tool_name="git_diff",
+            status=ExecutionStatus.SUCCESS,
+            output=res.stdout,
+            exit_code=res.exit_code,
+            stdout=res.stdout,
+            stderr=res.stderr,
+            stdout_truncated=res.stdout_truncated,
+            stderr_truncated=res.stderr_truncated,
+            duration_ms=res.duration_ms
+        )
+
+
+# ---------------------------------------------------------------------------
+# GitLogTool
+# ---------------------------------------------------------------------------
+
+class GitLogTool(BaseTool):
+    definition = ToolDefinition(
+        name="git_log",
+        description="Run git log in the workspace to view commit history.",
+        category=ToolCategory.GIT,
+        capability_level=CapabilityLevel.READ,
+        requires_approval=False,
+        tool_version="1.0.0",
+        parameters_schema={
+            "max_count": {"type": "integer", "description": "Limit the number of commits (default 10)", "default": 10},
+            "revision": {"type": "string", "description": "Optional revision range filter (e.g. main..HEAD)"},
+        },
+    )
+
+    def _run(self, parameters: Dict[str, Any]) -> ToolResult:
+        max_count = parameters.get("max_count", 10)
+        args = ["log", "-n", str(max_count)]
+        revision = parameters.get("revision")
+        if revision:
+            args.append(revision)
+
+        req = ExecutionRequest(
+            executable_key="git",
+            args=args,
+            cwd=settings.WORKSPACE_DIR,
+            tool_name="git_log",
+            requested_by=parameters.get("_requested_by", "unknown")
+        )
+        res = ProcessRunner.run(req)
+
+        if res.timed_out:
+            return ToolResult(
+                tool_name="git_log",
+                status=ExecutionStatus.ERROR,
+                error_message="Process timed out.",
+                duration_ms=res.duration_ms,
+                timed_out=True
+            )
+
+        if res.exit_code is not None and res.exit_code != 0:
+            return ToolResult(
+                tool_name="git_log",
+                status=ExecutionStatus.ERROR,
+                error_message=res.stderr or f"Git log exited with code {res.exit_code}",
+                exit_code=res.exit_code,
+                stdout=res.stdout,
+                stderr=res.stderr,
+                stdout_truncated=res.stdout_truncated,
+                stderr_truncated=res.stderr_truncated,
+                duration_ms=res.duration_ms
+            )
+
+        return ToolResult(
+            tool_name="git_log",
+            status=ExecutionStatus.SUCCESS,
+            output=res.stdout,
+            exit_code=res.exit_code,
+            stdout=res.stdout,
+            stderr=res.stderr,
+            stdout_truncated=res.stdout_truncated,
+            stderr_truncated=res.stderr_truncated,
+            duration_ms=res.duration_ms
+        )
+
+
+# ---------------------------------------------------------------------------
+# RuffRunnerTool
+# ---------------------------------------------------------------------------
+
+class RuffRunnerTool(BaseTool):
+    definition = ToolDefinition(
+        name="ruff_runner",
+        description="Run ruff linter on the workspace.",
+        category=ToolCategory.TESTING,
+        capability_level=CapabilityLevel.ANALYZE,
+        requires_approval=False,
+        tool_version="1.0.0",
+        parameters_schema={
+            "paths": {"type": "array", "items": {"type": "string"}, "description": "Relative paths to run ruff check on"},
+        },
+    )
+
+    def _run(self, parameters: Dict[str, Any]) -> ToolResult:
+        paths = parameters.get("paths") or []
+        args = ["check"]
+        args.extend(paths)
+
+        req = ExecutionRequest(
+            executable_key="ruff",
+            args=args,
+            cwd=settings.WORKSPACE_DIR,
+            tool_name="ruff_runner",
+            requested_by=parameters.get("_requested_by", "unknown")
+        )
+        res = ProcessRunner.run(req)
+
+        if res.timed_out:
+            return ToolResult(
+                tool_name="ruff_runner",
+                status=ExecutionStatus.ERROR,
+                error_message="Process timed out.",
+                duration_ms=res.duration_ms,
+                timed_out=True
+            )
+
+        status = ExecutionStatus.SUCCESS if res.exit_code in (0, 1) else ExecutionStatus.ERROR
+        error_msg = None if status == ExecutionStatus.SUCCESS else (res.stderr or f"Ruff failed with exit code {res.exit_code}")
+
+        return ToolResult(
+            tool_name="ruff_runner",
+            status=status,
+            output=res.stdout or res.stderr,
+            error_message=error_msg,
+            exit_code=res.exit_code,
+            stdout=res.stdout,
+            stderr=res.stderr,
+            stdout_truncated=res.stdout_truncated,
+            stderr_truncated=res.stderr_truncated,
+            duration_ms=res.duration_ms
+        )
+
+
+# ---------------------------------------------------------------------------
+# PytestRunnerTool
+# ---------------------------------------------------------------------------
+
+class PytestRunnerTool(BaseTool):
+    definition = ToolDefinition(
+        name="pytest_runner",
+        description="Run pytest test suite in the workspace.",
+        category=ToolCategory.TESTING,
+        capability_level=CapabilityLevel.EXECUTE,
+        requires_approval=True,
+        tool_version="1.0.0",
+        parameters_schema={
+            "test_path": {"type": "string", "description": "Optional relative path to a specific test file/directory"},
+            "filter_expr": {"type": "string", "description": "Optional expression to filter tests by name (maps to -k)"},
+        },
+    )
+
+    def _run(self, parameters: Dict[str, Any]) -> ToolResult:
+        args = []
+        test_path = parameters.get("test_path")
+        if test_path:
+            args.append(test_path)
+        filter_expr = parameters.get("filter_expr")
+        if filter_expr:
+            args.extend(["-k", filter_expr])
+
+        req = ExecutionRequest(
+            executable_key="pytest",
+            args=args,
+            cwd=settings.WORKSPACE_DIR,
+            timeout_seconds=120.0,
+            tool_name="pytest_runner",
+            requested_by=parameters.get("_requested_by", "unknown")
+        )
+        res = ProcessRunner.run(req)
+
+        if res.timed_out:
+            return ToolResult(
+                tool_name="pytest_runner",
+                status=ExecutionStatus.ERROR,
+                error_message="Process timed out.",
+                duration_ms=res.duration_ms,
+                timed_out=True
+            )
+
+        status = ExecutionStatus.SUCCESS if res.exit_code in (0, 1) else ExecutionStatus.ERROR
+        error_msg = None if status == ExecutionStatus.SUCCESS else (res.stderr or f"Pytest failed with exit code {res.exit_code}")
+
+        return ToolResult(
+            tool_name="pytest_runner",
+            status=status,
+            output=res.stdout or res.stderr,
+            error_message=error_msg,
+            exit_code=res.exit_code,
+            stdout=res.stdout,
+            stderr=res.stderr,
+            stdout_truncated=res.stdout_truncated,
+            stderr_truncated=res.stderr_truncated,
+            duration_ms=res.duration_ms
+        )
+

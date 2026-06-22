@@ -63,6 +63,7 @@ class ToolRequest:
     tool_name: str
     parameters: Dict[str, Any]
     trace_id: Optional[str] = None
+    requested_by: Optional[str] = None
 
 
 @dataclass
@@ -75,6 +76,14 @@ class ToolResult:
     error_message: Optional[str] = None
     duration_ms: Optional[int] = None
     metadata: Dict[str, Any] = field(default_factory=dict)
+
+    # Subprocess execution details (MS-11)
+    exit_code: Optional[int] = None
+    stdout: Optional[str] = None
+    stderr: Optional[str] = None
+    stdout_truncated: bool = False
+    stderr_truncated: bool = False
+    timed_out: bool = False
 
     # -----------------------------------------------------------------------
     # Convenience factories

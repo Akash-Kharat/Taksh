@@ -62,6 +62,15 @@ class Settings(BaseSettings):
     MAX_TOOL_OUTPUT_CHARS: int = 10000
     APPROVAL_EXPIRATION_HOURS: int = 24
 
+    # Controlled Execution Layer (MS-11) configurations
+    DEFAULT_EXECUTION_TIMEOUT: int = 60
+    MAX_STDOUT_CHARS: int = 10000
+    MAX_STDERR_CHARS: int = 5000
+    MAX_CONCURRENT_EXECUTIONS: int = 2
+    ALLOWED_GIT_COMMANDS: list[str] = ["diff", "log", "status"]
+    MAX_PYTEST_ARGUMENTS: int = 5
+    MAX_TEST_PATH_DEPTH: int = 5
+
     # API keys loaded safely from environment
     GEMINI_API_KEY: str = ""
     GEMINI_LIVE_API_URL: str = "wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidirectionalGenerateContent"

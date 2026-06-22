@@ -17,8 +17,13 @@ ApprovalEngine
 """
 from __future__ import annotations
 
+import threading
 from datetime import datetime, timedelta
 from typing import Optional
+
+class ConcurrencyLimitError(Exception):
+    """Raised when the maximum concurrent executions limit is reached."""
+    pass
 
 from sqlalchemy.orm import Session
 
@@ -38,6 +43,10 @@ from app.services.tools.builtins import (
     ReadFileTool,
     SearchRepositoryTool,
     TestReportReaderTool,
+    GitDiffTool,
+    GitLogTool,
+    RuffRunnerTool,
+    PytestRunnerTool,
 )
 from app.services.tools.registry import ToolRegistry
 
@@ -54,6 +63,10 @@ _registry.register_all(
     GitStatusTool,
     TestReportReaderTool,
     ApprovalTestTool,
+    GitDiffTool,
+    GitLogTool,
+    RuffRunnerTool,
+    PytestRunnerTool,
 )
 
 
@@ -83,9 +96,26 @@ class ToolManager:
         An open database session (caller is responsible for lifecycle).
     """
 
+    _active_executions = 0
+    _active_lock = threading.Lock()
+
     def __init__(self, db: Session) -> None:
         self.db = db
         self.registry = _registry
+
+    def _execute_with_concurrency_gate(self, tool, parameters: dict) -> ToolResult:
+        with ToolManager._active_lock:
+            if ToolManager._active_executions >= settings.MAX_CONCURRENT_EXECUTIONS:
+                raise ConcurrencyLimitError(
+                    f"Max concurrent executions limit ({settings.MAX_CONCURRENT_EXECUTIONS}) reached."
+                )
+            ToolManager._active_executions += 1
+        
+        try:
+            return tool.execute(parameters)
+        finally:
+            with ToolManager._active_lock:
+                ToolManager._active_executions -= 1
 
     # ------------------------------------------------------------------
     # Public API
@@ -114,7 +144,15 @@ class ToolManager:
         if not defn.requires_approval and defn.capability_level in _AUTO_EXECUTE_LEVELS:
             tool_logger.info(f"Auto-executing tool '{defn.name}' (level={defn.capability_level})")
             try:
-                result = tool.execute(request.parameters)
+                # Add requested_by to parameters so process runner can log it
+                params = dict(request.parameters)
+                if request.requested_by:
+                    params["_requested_by"] = request.requested_by
+                
+                result = self._execute_with_concurrency_gate(tool, params)
+            except ConcurrencyLimitError as exc:
+                # Propagating ConcurrencyLimitError to endpoint
+                raise
             except Exception as exc:  # noqa: BLE001
                 tool_logger.error(f"Tool '{defn.name}' raised unexpected exception: {exc}")
                 result = ToolResult.error(defn.name, f"Unexpected error: {exc}")
@@ -158,6 +196,14 @@ class ToolManager:
                 output_truncated=result.output_truncated,
                 error_message=result.error_message,
                 duration_ms=result.duration_ms,
+                # Controlled Execution (MS-11) extensions
+                exit_code=getattr(result, "exit_code", None),
+                stdout=getattr(result, "stdout", None),
+                stderr=getattr(result, "stderr", None),
+                stdout_truncated=getattr(result, "stdout_truncated", False),
+                stderr_truncated=getattr(result, "stderr_truncated", False),
+                timed_out=getattr(result, "timed_out", False),
+                requested_by=request.requested_by
             )
             self.db.add(record)
             self.db.commit()
@@ -260,10 +306,39 @@ class ApprovalEngine:
         if tool is None:
             return ToolResult.error("approval_engine", f"Tool '{ar.tool_name}' no longer registered.")
 
+        # Query the linked execution record to inject requested_by and retrieve metadata
+        record = (
+            self.db.query(ToolExecution)
+            .filter(ToolExecution.execution_id == ar.execution_id)
+            .first()
+        )
+        requested_by = record.requested_by if record else "unknown"
+
+        params = dict(ar.parameters)
+        if requested_by:
+            params["_requested_by"] = requested_by
+
         try:
-            result = tool.execute(ar.parameters)
+            result = self.tool_manager._execute_with_concurrency_gate(tool, params)
+        except ConcurrencyLimitError as exc:
+            result = ToolResult.error(ar.tool_name, str(exc))
         except Exception as exc:  # noqa: BLE001
             result = ToolResult.error(ar.tool_name, f"Unexpected error after approval: {exc}")
+
+        # Update the linked execution record with detailed execution fields
+        if record:
+            record.status = result.status.value
+            record.exit_code = getattr(result, "exit_code", None)
+            record.stdout = getattr(result, "stdout", None)
+            record.stderr = getattr(result, "stderr", None)
+            record.stdout_truncated = getattr(result, "stdout_truncated", False)
+            record.stderr_truncated = getattr(result, "stderr_truncated", False)
+            record.timed_out = getattr(result, "timed_out", False)
+            record.duration_ms = result.duration_ms
+            record.output_summary = result.output[:500] if result.output else None
+            record.output_truncated = result.output_truncated
+            record.error_message = result.error_message
+            self.db.commit()
 
         self._update_execution_status(ar.execution_id, result.status)
         return result
