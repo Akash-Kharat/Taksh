@@ -75,6 +75,15 @@ class Settings(BaseSettings):
     MAX_PROJECT_SNAPSHOTS: int = 3
     MAX_PREFERENCES: int = 10
 
+    # Voice Transport Layer (MS-13) configurations
+    VOICE_SAMPLE_RATE: int = 16000
+    VOICE_CHANNELS: int = 1
+    VOICE_BUFFER_SIZE_FRAMES: int = 256
+    MAX_AUDIO_FRAME_BYTES: int = 65536
+    MAX_VOICE_SESSIONS: int = 10
+    VOICE_IDLE_TIMEOUT_SECONDS: int = 30
+
+
     # API keys loaded safely from environment
     GEMINI_API_KEY: str = ""
     GEMINI_LIVE_API_URL: str = "wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1alpha.GenerativeService.BidirectionalGenerateContent"

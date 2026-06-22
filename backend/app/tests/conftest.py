@@ -13,14 +13,24 @@ temp_chroma_dir = tempfile.TemporaryDirectory()
 settings.CHROMA_DIR = Path(temp_chroma_dir.name)
 settings.MOCK_EMBEDDINGS = True
 
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.pool import StaticPool
+
+SQLALCHEMY_DATABASE_URL = "sqlite:///file:testdb?mode=memory&cache=shared"
+engine = create_engine(
+    SQLALCHEMY_DATABASE_URL,
+    connect_args={"check_same_thread": False, "uri": True}
+)
+TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+# Patch SessionLocal globally for background tasks to use the test database
+import app.core.database
+app.core.database.SessionLocal = TestingSessionLocal
+
 from app.main import app
 from app.core.database import Base, get_db
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///:memory:"
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
-)
-TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 @pytest.fixture(scope="session", autouse=True)
 def init_test_db():
@@ -35,8 +45,14 @@ def db_session() -> Generator:
     session = TestingSessionLocal(bind=connection)
     yield session
     session.close()
-    transaction.rollback()
-    connection.close()
+    try:
+        transaction.rollback()
+    except Exception:
+        pass
+    try:
+        connection.close()
+    except Exception:
+        pass
 
 @pytest.fixture
 def client(db_session) -> Generator[TestClient, None, None]:

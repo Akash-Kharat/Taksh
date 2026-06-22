@@ -309,3 +309,28 @@ class ProjectSnapshot(Base):
     open_questions: Mapped[list] = mapped_column(JSON, default=list)
     next_steps: Mapped[list] = mapped_column(JSON, default=list)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+
+class VoiceSession(Base):
+    __tablename__ = "voice_sessions"
+
+    voice_session_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    session_id: Mapped[Optional[str]] = mapped_column(
+        ForeignKey("sessions.session_id", ondelete="SET NULL"), nullable=True
+    )
+    websocket_client_id: Mapped[str] = mapped_column(String, nullable=False)
+    transport_instance_id: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    reconnect_count: Mapped[int] = mapped_column(Integer, default=0)
+    state: Mapped[str] = mapped_column(String, nullable=False, default="connected")
+    frames_received: Mapped[int] = mapped_column(Integer, default=0)
+    frames_sent: Mapped[int] = mapped_column(Integer, default=0)
+    bytes_received: Mapped[int] = mapped_column(Integer, default=0)
+    bytes_sent: Mapped[int] = mapped_column(Integer, default=0)
+    dropped_frames: Mapped[int] = mapped_column(Integer, default=0)
+    missing_frames: Mapped[int] = mapped_column(Integer, default=0)
+    out_of_order_frames: Mapped[int] = mapped_column(Integer, default=0)
+    average_latency_ms: Mapped[float] = mapped_column(Float, default=0.0)
+    disconnect_reason: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    started_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    ended_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+
