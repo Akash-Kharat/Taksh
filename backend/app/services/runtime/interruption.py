@@ -35,6 +35,7 @@ class InterruptionController:
             logger.debug(f"No active audio output queue found for session {runtime_session_id} to clear.")
 
         # 2. Update interruption_count in DB
+        from app.core.database import SessionLocal
         db: Session = SessionLocal()
         try:
             session_rec = db.query(ConversationRuntimeSession).filter(
@@ -54,6 +55,13 @@ class InterruptionController:
             db.rollback()
         finally:
             db.close()
+
+        # 3. Notify ProviderManager of interruption
+        from app.services.providers.manager import provider_manager
+        try:
+            await provider_manager.interrupt_session(runtime_session_id)
+        except Exception as e:
+            logger.warning(f"Failed to notify ProviderManager of interruption: {e}")
 
     @staticmethod
     async def trigger_interruption(runtime_session_id: str, db: Session) -> None:

@@ -5,73 +5,75 @@ from sqlalchemy import func
 
 from app.core.database import get_db
 from app.core.logger import api_logger
-from app.services.providers.registry import provider_registry
+from app.core.config import settings
+from app.services.providers.manager import provider_manager
 from app.services.providers.factory import provider_factory
 from app.services.providers.contracts import ProviderState
-from app.models.database_models import ProviderHealthRecord
-from app.schemas.providers import ProviderDiagnosticInfo
+from app.models.database_models import ProviderSession
+from app.schemas.providers import ProviderInfoResponse, ProviderSessionsResponse, ProviderSessionSchema
 
 router = APIRouter()
 
-@router.get("/providers/info", response_model=List[ProviderDiagnosticInfo])
+@router.get("/providers/info", response_model=ProviderInfoResponse)
 async def get_providers_info(db: DbSession = Depends(get_db)):
     api_logger.info("Serving provider diagnostics check")
-    results = []
 
-    # Iterate over all registered provider types and names
-    provider_types = [
-        ("stt", provider_registry.list_stt_providers(), provider_factory.get_stt_provider),
-        ("tts", provider_registry.list_tts_providers(), provider_factory.get_tts_provider),
-        ("realtime", provider_registry.list_realtime_providers(), provider_factory.get_realtime_provider)
-    ]
+    # Determine active provider
+    active_provider = provider_manager._get_provider_name(None, settings.DEFAULT_REALTIME_PROVIDER)
 
-    for p_type, names, get_provider_fn in provider_types:
-        for name in names:
-            try:
-                # Instantiate/retrieve provider via factory to get metadata and state
-                provider_instance = get_provider_fn(name)
-                metadata = provider_instance.get_metadata()
-                state = provider_instance.get_state()
-            except Exception as e:
-                api_logger.error(f"Error loading provider {name} of type {p_type}: {e}")
-                continue
+    # Determine state and health
+    try:
+        provider_instance = provider_factory.get_realtime_provider(active_provider)
+        state_enum = provider_instance.get_state()
+        state = getattr(provider_instance, "provider_state", "closed")
+        healthy = (state_enum == ProviderState.CONNECTED or state == "active")
+    except Exception:
+        state = "failed"
+        healthy = False
 
-            # Query database for the latest health check
-            last_record = db.query(ProviderHealthRecord).filter(
-                ProviderHealthRecord.provider_name == name,
-                ProviderHealthRecord.provider_type == p_type
-            ).order_by(ProviderHealthRecord.created_at.desc()).first()
+    # Query active session counts
+    active_sessions = db.query(ProviderSession).filter(
+        ProviderSession.disconnected_at == None
+    ).count()
 
-            # Healthy status is determined by the last run or if it's connected/connecting
-            healthy = last_record.healthy if last_record else (state in [ProviderState.CONNECTED, ProviderState.DISCONNECTED, ProviderState.CONNECTING])
-            
-            # Query last successful operation timestamp
-            last_success = db.query(ProviderHealthRecord).filter(
-                ProviderHealthRecord.provider_name == name,
-                ProviderHealthRecord.provider_type == p_type,
-                ProviderHealthRecord.healthy == True
-            ).order_by(ProviderHealthRecord.created_at.desc()).first()
+    return ProviderInfoResponse(
+        active_provider=active_provider,
+        provider_state=state,
+        healthy=healthy,
+        fallback_active=provider_manager.fallback_active,
+        active_sessions=active_sessions,
+        reconnect_count=provider_manager.reconnect_count,
+        failure_count=provider_manager.failure_count
+    )
 
-            last_successful_operation = last_success.created_at if last_success else None
 
-            # Calculate average latency
-            avg_latency = db.query(func.avg(ProviderHealthRecord.latency_ms)).filter(
-                ProviderHealthRecord.provider_name == name,
-                ProviderHealthRecord.provider_type == p_type
-            ).scalar()
+@router.get("/providers/sessions", response_model=ProviderSessionsResponse)
+async def get_provider_sessions(db: DbSession = Depends(get_db)):
+    api_logger.info("Serving provider sessions history")
 
-            average_latency_ms = float(avg_latency) if avg_latency is not None else 0.0
+    # Fetch session history
+    sessions_rec = db.query(ProviderSession).order_by(ProviderSession.connected_at.desc()).all()
 
-            results.append(
-                ProviderDiagnosticInfo(
-                    provider=name,
-                    provider_type=p_type,
-                    state=state.value,
-                    healthy=healthy,
-                    supports_streaming=metadata.supports_streaming,
-                    last_successful_operation=last_successful_operation,
-                    average_latency_ms=average_latency_ms
-                )
-            )
+    # Calculate aggregates
+    total_sessions = len(sessions_rec)
+    
+    avg_latency = db.query(func.avg(ProviderSession.average_response_latency_ms)).scalar()
+    average_latency_ms = float(avg_latency) if avg_latency is not None else 0.0
 
-    return results
+    total_interruptions = db.query(func.sum(ProviderSession.interruptions)).scalar()
+    total_interruptions = int(total_interruptions) if total_interruptions is not None else 0
+
+    total_audio_frames_sent = db.query(func.sum(ProviderSession.audio_frames_sent)).scalar()
+    total_audio_frames_sent = int(total_audio_frames_sent) if total_audio_frames_sent is not None else 0
+
+    total_audio_frames_received = db.query(func.sum(ProviderSession.audio_frames_received)).scalar()
+    total_audio_frames_received = int(total_audio_frames_received) if total_audio_frames_received is not None else 0
+
+    return ProviderSessionsResponse(
+        sessions=sessions_rec,
+        total_sessions=total_sessions,
+        average_latency_ms=average_latency_ms,
+        total_interruptions=total_interruptions,
+        total_audio_frames_sent=total_audio_frames_sent,
+        total_audio_frames_received=total_audio_frames_received
+    )

@@ -84,14 +84,24 @@ class Settings(BaseSettings):
     VOICE_IDLE_TIMEOUT_SECONDS: int = 30
 
 
-    # Provider Integration Layer (MS-15) configurations
+    # Provider Integration Layer (MS-15/16) configurations
     DEFAULT_STT_PROVIDER: str = "mock"
     DEFAULT_TTS_PROVIDER: str = "mock"
-    DEFAULT_REALTIME_PROVIDER: str = "mock"
+    DEFAULT_REALTIME_PROVIDER: str = "gemini_live"
     ENABLE_PROVIDER_HEALTH_CHECKS: bool = True
     PROVIDER_REQUEST_TIMEOUT_SECONDS: int = 30
     PROVIDER_HEALTH_RETENTION_DAYS: int = 30
     MAX_PROVIDER_QUEUE_SIZE: int = 100
+
+    # Live Provider Integration (MS-16) configurations
+    GEMINI_LIVE_MODEL: str = "gemini-2.5-flash-preview-native-audio-dialog"
+    GEMINI_LIVE_TIMEOUT_SECONDS: int = 60
+    MAX_PROVIDER_RECONNECT_ATTEMPTS: int = 3
+    PROVIDER_RECONNECT_DELAY_SECONDS: int = 2
+    ENABLE_PROVIDER_FALLBACK: bool = True
+    PROVIDER_FAILURE_THRESHOLD: int = 5
+    MAX_PROVIDER_RESPONSE_CHARS: int = 10000
+    MAX_PROVIDER_RESPONSE_SEGMENTS: int = 50
 
     # API keys loaded safely from environment
     GEMINI_API_KEY: str = ""

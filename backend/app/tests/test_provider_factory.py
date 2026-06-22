@@ -40,8 +40,10 @@ def test_provider_factory_get_providers():
     assert isinstance(rt1, RealtimeConversationProvider)
 
     # Get default Realtime provider when name is None
-    rt_default = provider_factory.get_realtime_provider()
-    assert rt_default is rt1
+    from unittest.mock import patch
+    with patch('app.core.config.settings.DEFAULT_REALTIME_PROVIDER', "mock"):
+        rt_default = provider_factory.get_realtime_provider()
+        assert rt_default is rt1
 
 def test_provider_factory_clear_cache():
     provider_factory.clear_cache()

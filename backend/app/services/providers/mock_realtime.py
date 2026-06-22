@@ -15,6 +15,34 @@ class MockRealtimeProvider(RealtimeConversationProvider):
         self.audio_queue = collections.deque()
         self.text_queue = collections.deque()
         self.dropped_messages = 0
+        self.interruptions = 0
+        self.db_session_id = None
+
+    async def interrupt(self, db = None) -> None:
+        self.interruptions += 1
+        if self.db_session_id:
+            db_conn = db
+            if db_conn is None:
+                from app.core.database import SessionLocal
+                db_conn = SessionLocal()
+            try:
+                from app.models.database_models import ProviderSession
+                session_rec = db_conn.query(ProviderSession).filter(
+                    ProviderSession.provider_session_id == self.db_session_id
+                ).first()
+                if session_rec:
+                    session_rec.interruptions += 1
+                    if db is None:
+                        db_conn.commit()
+                    else:
+                        db_conn.flush()
+            except Exception as e:
+                logger.error(f"Failed to update provider interruptions in DB: {e}")
+                if db is None:
+                    db_conn.rollback()
+            finally:
+                if db is None:
+                    db_conn.close()
 
     def get_metadata(self) -> ProviderMetadata:
         return ProviderMetadata(

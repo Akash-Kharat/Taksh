@@ -382,4 +382,43 @@ class ProviderHealthRecord(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
 
 
+class ProviderSession(Base):
+    __tablename__ = "provider_sessions"
+
+    provider_session_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    provider_name: Mapped[str] = mapped_column(String, nullable=False)
+    runtime_session_id: Mapped[Optional[str]] = mapped_column(
+        ForeignKey("conversation_runtime_sessions.runtime_session_id", ondelete="SET NULL"), nullable=True, index=True
+    )
+    voice_session_id: Mapped[Optional[str]] = mapped_column(
+        ForeignKey("voice_sessions.voice_session_id", ondelete="SET NULL"), nullable=True, index=True
+    )
+    provider_state: Mapped[str] = mapped_column(String, nullable=False, default="initializing")
+    connected_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    disconnected_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+    disconnect_reason: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    messages_sent: Mapped[int] = mapped_column(Integer, default=0)
+    messages_received: Mapped[int] = mapped_column(Integer, default=0)
+    audio_frames_sent: Mapped[int] = mapped_column(Integer, default=0)
+    audio_frames_received: Mapped[int] = mapped_column(Integer, default=0)
+    interruptions: Mapped[int] = mapped_column(Integer, default=0)
+    total_tokens_in: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    total_tokens_out: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    average_response_latency_ms: Mapped[Optional[float]] = mapped_column(Float, nullable=True)
+    max_response_latency_ms: Mapped[Optional[float]] = mapped_column(Float, nullable=True)
+
+
+class ProviderConversationMessage(Base):
+    __tablename__ = "provider_conversation_messages"
+
+    message_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    provider_session_id: Mapped[str] = mapped_column(
+        ForeignKey("provider_sessions.provider_session_id", ondelete="CASCADE"), nullable=False, index=True
+    )
+    role: Mapped[str] = mapped_column(String, nullable=False)
+    content: Mapped[str] = mapped_column(Text, nullable=False)
+    timestamp: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    latency_ms: Mapped[float] = mapped_column(Float, default=0.0)
+
+
 
