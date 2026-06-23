@@ -109,6 +109,8 @@ class Settings(BaseSettings):
 
     # End-to-End Voice Conversation (MS-17) configurations
     MAX_CONVERSATION_TURNS: int = 10
+    MAX_CONVERSATION_HISTORY_TURNS: int = 20
+    MAX_CONVERSATION_HISTORY_CHARS: int = 8000
     MAX_RESPONSE_SEGMENTS: int = 50
     MAX_RESPONSE_CHARS: int = 10000
     MAX_PLAYBACK_QUEUE_ITEMS: int = 100

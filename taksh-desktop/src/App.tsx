@@ -12,6 +12,7 @@ import { Dashboard } from './pages/Dashboard';
 import { Diagnostics } from './pages/Diagnostics';
 import { Providers } from './pages/Providers';
 import { Settings } from './pages/Settings';
+import { ConversationPage } from './pages/ConversationPage';
 
 import { GlobalHealthStatus } from './components/GlobalStatusBanner';
 
@@ -82,6 +83,7 @@ const AppContent: React.FC = () => {
               <Route path="/diagnostics" element={<Diagnostics />} />
               <Route path="/providers" element={<Providers />} />
               <Route path="/settings" element={<Settings />} />
+              <Route path="/chats" element={<ConversationPage />} />
             </Routes>
           </ErrorBoundary>
         </ShellLayout>

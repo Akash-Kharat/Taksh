@@ -188,18 +188,30 @@ class ContextBuilder:
                 ]
             }
 
-        # 8. Retrieve recent conversation turns up to settings.MAX_CONVERSATION_TURNS (Revision 3)
+        # 8. Retrieve recent conversation turns up to settings.MAX_CONVERSATION_HISTORY_TURNS, respecting character budgets (Revision 2)
         turns_data = []
         if session_id:
             from app.models.database_models import ConversationTurn
-            turns = (
+            raw_turns = (
                 db.query(ConversationTurn)
                 .filter(ConversationTurn.runtime_session_id == session_id)
                 .order_by(ConversationTurn.started_at.desc())
-                .limit(settings.MAX_CONVERSATION_TURNS)
+                .limit(settings.MAX_CONVERSATION_HISTORY_TURNS)
                 .all()
             )
-            turns.reverse()  # Make it chronological
+            
+            # Apply character budget
+            accumulated_chars = 0
+            selected_turns = []
+            for t in raw_turns:
+                turn_chars = len(t.user_text or "") + len(t.assistant_text or "")
+                if accumulated_chars + turn_chars > settings.MAX_CONVERSATION_HISTORY_CHARS:
+                    # character budget exceeded, skip remaining older turns
+                    break
+                accumulated_chars += turn_chars
+                selected_turns.append(t)
+            
+            selected_turns.reverse()  # Make it chronological
             turns_data = [
                 {
                     "user_text": t.user_text,
@@ -208,7 +220,7 @@ class ContextBuilder:
                     "ai_response_id": t.ai_response_id,
                     "segment_count": t.segment_count,
                     "response_truncated": t.response_truncated
-                } for t in turns
+                } for t in selected_turns
             ]
 
         # 8b. Retrieve relevant episodic memories (Milestone-18)

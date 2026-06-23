@@ -366,6 +366,7 @@ class ConversationRuntimeSession(Base):
     session_summary_status: Mapped[Optional[str]] = mapped_column(String, nullable=True)  # completed, failed
     # MS-19: Audit trail — root of the correlation chain for this session
     correlation_id: Mapped[Optional[str]] = mapped_column(String, nullable=True, index=True)
+    conversation_title: Mapped[Optional[str]] = mapped_column(String(80), nullable=True)
 
     memory_episode: Mapped[Optional["MemoryEpisode"]] = relationship(
         "MemoryEpisode", back_populates="runtime_session", uselist=False, cascade="all, delete-orphan"
@@ -470,10 +471,14 @@ class ConversationTurn(Base):
     )
     segment_count: Mapped[int] = mapped_column(Integer, default=0)
     response_truncated: Mapped[bool] = mapped_column(Boolean, default=False)
+    message_version: Mapped[int] = mapped_column(Integer, default=1, nullable=False)
     # MS-19: Audit trail
     created_by: Mapped[Optional[str]] = mapped_column(String, nullable=True)
     source_component: Mapped[Optional[str]] = mapped_column(String, nullable=True)
     correlation_id: Mapped[Optional[str]] = mapped_column(String, nullable=True, index=True)
+
+    cognitive_trace: Mapped[Optional["CognitiveTrace"]] = relationship("CognitiveTrace", foreign_keys=[cognitive_trace_id])
+    ai_response: Mapped[Optional["AIResponse"]] = relationship("AIResponse", foreign_keys=[ai_response_id])
 
 
 class ConversationMetrics(Base):

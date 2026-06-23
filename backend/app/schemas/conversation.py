@@ -65,6 +65,11 @@ class ConversationTurnSchema(BaseModel):
     ai_response_id: Optional[str] = None
     segment_count: int
     response_truncated: bool
+    message_version: int = 1
+    prompt_tokens: Optional[int] = None
+    completion_tokens: Optional[int] = None
+    memory_hits: Optional[int] = None
+    knowledge_hits: Optional[int] = None
 
     model_config = ConfigDict(from_attributes=True)
 
@@ -97,3 +102,21 @@ class ConversationPipelineInfoResponse(BaseModel):
     avg_tts_latency_ms: float
     provider_fallbacks: int
     playback_queue_depth: int
+
+
+class ConversationSessionResponse(BaseModel):
+    runtime_session_id: str
+    conversation_title: Optional[str] = None
+    conversation_session_state: str
+    started_at: datetime
+    ended_at: Optional[datetime] = None
+    last_message: Optional[str] = None
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class PaginatedConversationSessionsResponse(BaseModel):
+    items: List[ConversationSessionResponse]
+    total: int
+    page: int
+    page_size: int

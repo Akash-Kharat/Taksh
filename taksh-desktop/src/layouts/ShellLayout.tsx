@@ -93,11 +93,27 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
               </div>
             </div>
 
-            {/* Future Modules Group */}
+            {/* Conversation Group */}
+            <div>
+              <span className="px-4 text-[10px] font-bold text-[#585b70] uppercase tracking-wider block mb-2">
+                Conversation
+              </span>
+              <div className="space-y-1">
+                <NavLink
+                  to="/chats"
+                  className={({ isActive }) => (isActive ? activeClass : inactiveClass)}
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  Chats
+                </NavLink>
+              </div>
+            </div>
+
+            {/* Future Group */}
             <div>
               <div className="flex items-center justify-between px-4 mb-2">
                 <span className="text-[10px] font-bold text-[#585b70] uppercase tracking-wider">
-                  Future Modules
+                  Future
                 </span>
                 <span className="text-[8px] bg-[#313244] text-[#89b4fa] px-1.5 py-0.5 rounded font-mono">
                   v1.1+
@@ -105,16 +121,12 @@ export const ShellLayout: React.FC<ShellLayoutProps> = ({
               </div>
               <div className="space-y-1">
                 <div className={disabledClass} title="Available in future release">
-                  <MessageSquare className="w-4 h-4" />
-                  Conversation
-                </div>
-                <div className={disabledClass} title="Available in future release">
                   <Mic className="w-4 h-4" />
-                  Voice Controls
+                  Voice
                 </div>
                 <div className={disabledClass} title="Available in future release">
                   <Brain className="w-4 h-4" />
-                  Memory Browser
+                  Memory
                 </div>
                 <div className={disabledClass} title="Available in future release">
                   <FolderCode className="w-4 h-4" />

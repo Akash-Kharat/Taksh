@@ -27,7 +27,9 @@ from app.schemas.conversation import (
     ConversationStopRequest,
     ConversationSessionDetailResponse,
     ConversationTurnSchema,
-    ConversationMetricsSchema
+    ConversationMetricsSchema,
+    ConversationSessionResponse,
+    PaginatedConversationSessionsResponse
 )
 from app.services.conversation.coordinator import conversation_coordinator
 from app.services.conversation.playback import playback_controller
@@ -179,10 +181,81 @@ def get_session_details(
             "max_response_latency_ms": prov_session.max_response_latency_ms
         }
 
+    turn_schemas = []
+    for t in turns:
+        schema = ConversationTurnSchema.model_validate(t)
+        # Fetch prompt/completion tokens
+        schema.prompt_tokens = t.ai_response.prompt_tokens if t.ai_response else None
+        schema.completion_tokens = t.ai_response.completion_tokens if t.ai_response else None
+        
+        # Fetch memory/knowledge hits
+        schema.knowledge_hits = len(t.cognitive_trace.knowledge_chunks) if (t.cognitive_trace and t.cognitive_trace.knowledge_chunks) else 0
+        
+        schema.memory_hits = 0
+        if t.cognitive_trace and t.cognitive_trace.memory_items:
+            m_items = t.cognitive_trace.memory_items
+            schema.memory_hits = len(m_items.get("active_goals", [])) + len(m_items.get("recent_events", []))
+            
+        schema.message_version = t.message_version if t.message_version else 1
+        turn_schemas.append(schema)
+
     return ConversationSessionDetailResponse(
-        turns=[ConversationTurnSchema.model_validate(t) for t in turns],
+        turns=turn_schemas,
         metrics=ConversationMetricsSchema.model_validate(metrics) if metrics else None,
         provider_info=provider_info,
         interruptions=session_rec.interruption_count,
         session_summary=session_rec.session_summary_status
+    )
+
+
+@router.get("/sessions", response_model=PaginatedConversationSessionsResponse)
+def list_conversation_sessions(
+    page: int = 1,
+    page_size: int = 25,
+    db: Session = Depends(get_db)
+) -> PaginatedConversationSessionsResponse:
+    """Returns a paginated list of conversation sessions with metadata and last message preview."""
+    if page < 1:
+        page = 1
+    if page_size < 1:
+        page_size = 25
+
+    total = db.query(ConversationRuntimeSession).count()
+    offset = (page - 1) * page_size
+
+    sessions = (
+        db.query(ConversationRuntimeSession)
+        .order_by(ConversationRuntimeSession.started_at.desc())
+        .offset(offset)
+        .limit(page_size)
+        .all()
+    )
+
+    items = []
+    for s in sessions:
+        last_turn = (
+            db.query(ConversationTurn)
+            .filter(ConversationTurn.runtime_session_id == s.runtime_session_id)
+            .order_by(ConversationTurn.started_at.desc())
+            .first()
+        )
+        
+        last_message = last_turn.user_text if last_turn else None
+        
+        items.append(
+            ConversationSessionResponse(
+                runtime_session_id=s.runtime_session_id,
+                conversation_title=s.conversation_title,
+                conversation_session_state=s.conversation_session_state,
+                started_at=s.started_at,
+                ended_at=s.ended_at,
+                last_message=last_message
+            )
+        )
+
+    return PaginatedConversationSessionsResponse(
+        items=items,
+        total=total,
+        page=page,
+        page_size=page_size
     )

@@ -155,6 +155,10 @@ class ConversationCoordinator:
         if not user_text:
             user_text = ""
 
+        # Auto-generate title if not present (Revision 1)
+        if not session_rec.conversation_title and user_text:
+            session_rec.conversation_title = user_text[:80]
+
         # 3. Assemble context & invoke Cognitive Orchestrator
         # ContextBuilder will load last 10 turns (budget limit)
         plan = self.cognitive_orchestrator.generate_plan(db, user_text, session_id=runtime_session_id)
@@ -265,7 +269,8 @@ class ConversationCoordinator:
             cognitive_trace_id=cognitive_trace_id if cognitive_trace_id != "failed-to-save" else None,
             ai_response_id=ai_resp_id,
             segment_count=segment_count,
-            response_truncated=response_truncated
+            response_truncated=response_truncated,
+            message_version=1
         )
         db.add(turn)
         db.flush()
