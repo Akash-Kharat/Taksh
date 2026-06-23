@@ -1,5 +1,6 @@
 from typing import Dict, Any, List
 from app.core.config import settings
+from app.core.logger import system_logger
 
 class PromptBuilder:
     """Formats aggregated context blocks into standardized system/user prompt packages."""
@@ -176,6 +177,16 @@ class PromptBuilder:
 
         user_prompt = "\n".join(user_sections).strip()
 
+        # Performance budget enforcement (MS-19)
+        user_prompt_truncated = False
+        if len(user_prompt) > settings.MAX_PROMPT_CHARS:
+            user_prompt = user_prompt[:settings.MAX_PROMPT_CHARS] + "\n[TRUNCATED]"
+            user_prompt_truncated = True
+            system_logger.warning(
+                f"User prompt truncated at {settings.MAX_PROMPT_CHARS} chars "
+                f"(original length exceeded budget)"
+            )
+
         # 3. Preview Generation
         # A short summary of counts and highlights
         skills_summary = ", ".join([s["name"] for s in context["skills"]]) if context["skills"] else "None"
@@ -186,6 +197,7 @@ class PromptBuilder:
             f"Active Skills: {skills_summary}\n"
             f"Knowledge Chunks: {chunks_count} included\n"
             f"Sensory History Events: {events_count} included\n"
+            f"Prompt Truncated: {user_prompt_truncated}\n"
             f"Raw Query: '{query[:60]}...'"
         )
 
@@ -193,5 +205,6 @@ class PromptBuilder:
             "system_prompt": system_prompt,
             "user_prompt": user_prompt,
             "preview": preview,
-            "prompt_version": self.version
+            "prompt_version": self.version,
+            "prompt_truncated": user_prompt_truncated,
         }

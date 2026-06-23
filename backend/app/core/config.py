@@ -114,6 +114,13 @@ class Settings(BaseSettings):
     MAX_PLAYBACK_QUEUE_ITEMS: int = 100
     MEMORY_RETRIEVAL_LIMIT: int = 5
 
+    # Product Hardening (MS-19) configurations
+    MAX_PROMPT_CHARS: int = 25000
+    MAX_MEMORY_ITEMS: int = 10
+    MAX_EPISODES: int = 5
+    HEALTH_CHECK_TIMEOUT_SECONDS: int = 5
+    HEALTH_HISTORY_RETENTION_DAYS: int = 30
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",

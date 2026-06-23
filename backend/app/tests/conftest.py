@@ -3,6 +3,7 @@ from typing import Generator
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from unittest.mock import patch as _patch
 
 import tempfile
 from pathlib import Path
@@ -72,11 +73,29 @@ def client(db_session) -> Generator[TestClient, None, None]:
             pass
     
     app.dependency_overrides[get_db] = override_get_db
-    old_value = settings.ENABLE_PROVIDER_HEALTH_CHECKS
+    old_health = settings.ENABLE_PROVIDER_HEALTH_CHECKS
     settings.ENABLE_PROVIDER_HEALTH_CHECKS = False
-    try:
-        with TestClient(app) as test_client:
-            yield test_client
-    finally:
-        settings.ENABLE_PROVIDER_HEALTH_CHECKS = old_value
-        app.dependency_overrides.clear()
+
+    # Patch maintenance loop to be a no-op so the TestClient lifespan doesn't
+    # start a long-running background coroutine that gets cancelled on teardown
+    import asyncio
+    from app.core import maintenance as _maint_module
+
+    async def _noop_loop():
+        await asyncio.sleep(0)  # yield once then exit cleanly
+
+    old_loop = _maint_module.maintenance_scheduler.start_maintenance_loop
+    _maint_module.maintenance_scheduler.start_maintenance_loop = _noop_loop
+
+    # Patch startup validator to be a no-op only during the TestClient lifespan
+    with _patch(
+        "app.core.startup_validator.StartupValidator.validate_all",
+        return_value=[]
+    ):
+        try:
+            with TestClient(app) as test_client:
+                yield test_client
+        finally:
+            settings.ENABLE_PROVIDER_HEALTH_CHECKS = old_health
+            _maint_module.maintenance_scheduler.start_maintenance_loop = old_loop
+            app.dependency_overrides.clear()

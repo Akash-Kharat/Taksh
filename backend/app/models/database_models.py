@@ -143,6 +143,10 @@ class CognitiveTrace(Base):
     final_prompt_preview: Mapped[str] = mapped_column(Text, nullable=False)
     workspace_snapshot_id: Mapped[Optional[str]] = mapped_column(ForeignKey("workspace_snapshots.snapshot_id", ondelete="SET NULL"), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    # MS-19: Audit trail
+    created_by: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    source_component: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    correlation_id: Mapped[Optional[str]] = mapped_column(String, nullable=True, index=True)
 
 class AIResponse(Base):
     __tablename__ = "ai_responses"
@@ -156,6 +160,10 @@ class AIResponse(Base):
     completion_tokens: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
     latency_ms: Mapped[int] = mapped_column(Integer, nullable=False)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    # MS-19: Audit trail
+    created_by: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    source_component: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    correlation_id: Mapped[Optional[str]] = mapped_column(String, nullable=True, index=True)
 
 class ConversationMessage(Base):
     __tablename__ = "conversation_messages"
@@ -233,6 +241,10 @@ class ToolExecution(Base):
     stderr_truncated: Mapped[bool] = mapped_column(Boolean, default=False)
     timed_out: Mapped[bool] = mapped_column(Boolean, default=False)
     requested_by: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    # MS-19: Audit trail
+    created_by: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    source_component: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    correlation_id: Mapped[Optional[str]] = mapped_column(String, nullable=True, index=True)
 
 
 class ApprovalRequest(Base):
@@ -352,6 +364,8 @@ class ConversationRuntimeSession(Base):
     ended_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
     conversation_session_state: Mapped[str] = mapped_column(String, nullable=False, default="active")  # active, recovering, closed, failed
     session_summary_status: Mapped[Optional[str]] = mapped_column(String, nullable=True)  # completed, failed
+    # MS-19: Audit trail — root of the correlation chain for this session
+    correlation_id: Mapped[Optional[str]] = mapped_column(String, nullable=True, index=True)
 
     memory_episode: Mapped[Optional["MemoryEpisode"]] = relationship(
         "MemoryEpisode", back_populates="runtime_session", uselist=False, cascade="all, delete-orphan"
@@ -412,6 +426,10 @@ class ProviderSession(Base):
     total_tokens_out: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
     average_response_latency_ms: Mapped[Optional[float]] = mapped_column(Float, nullable=True)
     max_response_latency_ms: Mapped[Optional[float]] = mapped_column(Float, nullable=True)
+    # MS-19: Audit trail
+    created_by: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    source_component: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    correlation_id: Mapped[Optional[str]] = mapped_column(String, nullable=True, index=True)
 
 
 class ProviderConversationMessage(Base):
@@ -452,6 +470,10 @@ class ConversationTurn(Base):
     )
     segment_count: Mapped[int] = mapped_column(Integer, default=0)
     response_truncated: Mapped[bool] = mapped_column(Boolean, default=False)
+    # MS-19: Audit trail
+    created_by: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    source_component: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    correlation_id: Mapped[Optional[str]] = mapped_column(String, nullable=True, index=True)
 
 
 class ConversationMetrics(Base):
@@ -491,6 +513,10 @@ class MemoryEpisode(Base):
     open_tasks: Mapped[list] = mapped_column(JSON, default=list)
     importance_score: Mapped[float] = mapped_column(Float, default=0.0)
     embedding_vector: Mapped[list] = mapped_column(JSON, nullable=False)
+    # MS-19: Audit trail
+    created_by: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    source_component: Mapped[Optional[str]] = mapped_column(String, nullable=True)
+    correlation_id: Mapped[Optional[str]] = mapped_column(String, nullable=True, index=True)
 
     runtime_session: Mapped["ConversationRuntimeSession"] = relationship(
         "ConversationRuntimeSession", back_populates="memory_episode"
@@ -537,4 +563,21 @@ class OpenTask(Base):
     episode: Mapped["MemoryEpisode"] = relationship("MemoryEpisode", back_populates="tasks")
 
 
+# ---------------------------------------------------------------------------
+# MS-19: MetricsSnapshot — persisted metrics for restart recovery
+# ---------------------------------------------------------------------------
+
+class MetricsSnapshot(Base):
+    __tablename__ = "metrics_snapshots"
+
+    snapshot_id: Mapped[str] = mapped_column(String, primary_key=True, default=generate_uuid, index=True)
+    captured_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, index=True)
+    conversation_count: Mapped[int] = mapped_column(Integer, default=0)
+    turn_count: Mapped[int] = mapped_column(Integer, default=0)
+    provider_requests: Mapped[int] = mapped_column(Integer, default=0)
+    provider_failures: Mapped[int] = mapped_column(Integer, default=0)
+    tool_executions: Mapped[int] = mapped_column(Integer, default=0)
+    memory_recalls: Mapped[int] = mapped_column(Integer, default=0)
+    knowledge_searches: Mapped[int] = mapped_column(Integer, default=0)
+    average_latency_ms: Mapped[float] = mapped_column(Float, default=0.0)
 
