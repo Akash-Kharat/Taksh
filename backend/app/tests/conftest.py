@@ -99,3 +99,30 @@ def client(db_session) -> Generator[TestClient, None, None]:
             settings.ENABLE_PROVIDER_HEALTH_CHECKS = old_health
             _maint_module.maintenance_scheduler.start_maintenance_loop = old_loop
             app.dependency_overrides.clear()
+
+
+@pytest.fixture(autouse=True)
+def cleanup_chroma_clients():
+    """Autouse fixture to close any ChromaDBClient instances after each test."""
+    yield
+    try:
+        from app.services.knowledge.vector_store import close_all_clients
+        close_all_clients()
+    except Exception:
+        pass
+
+
+@pytest.fixture(scope="session", autouse=True)
+def cleanup_session_chroma():
+    """Session-scoped autouse fixture to close Chroma clients and trigger clean teardown of temp directory."""
+    yield
+    try:
+        from app.services.knowledge.vector_store import close_all_clients
+        close_all_clients()
+    except Exception:
+        pass
+    try:
+        temp_chroma_dir.cleanup()
+    except Exception:
+        pass
+

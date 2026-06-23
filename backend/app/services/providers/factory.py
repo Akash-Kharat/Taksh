@@ -60,6 +60,30 @@ class ProviderFactory:
         self._realtime_instances.clear()
         logger.info("Cleared all provider instances from factory cache.")
 
+    async def disconnect_all(self) -> None:
+        """Disconnects and cleans up all instantiated providers."""
+        for name, provider in list(self._stt_instances.items()):
+            try:
+                if hasattr(provider, "is_connected") and provider.is_connected():
+                    await provider.disconnect()
+            except Exception as e:
+                logger.warning(f"Error disconnecting STT provider {name}: {e}")
+
+        for name, provider in list(self._tts_instances.items()):
+            try:
+                if hasattr(provider, "is_connected") and provider.is_connected():
+                    await provider.disconnect()
+            except Exception as e:
+                logger.warning(f"Error disconnecting TTS provider {name}: {e}")
+
+        for name, provider in list(self._realtime_instances.items()):
+            try:
+                if hasattr(provider, "is_connected") and provider.is_connected():
+                    await provider.disconnect()
+            except Exception as e:
+                logger.warning(f"Error disconnecting Realtime provider {name}: {e}")
+        self.clear_cache()
+
 
 # Global factory singleton instance
 provider_factory = ProviderFactory()

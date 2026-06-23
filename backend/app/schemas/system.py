@@ -134,9 +134,11 @@ class SmokeTestReportResponse(BaseModel):
 
 class ReleaseManifestResponse(BaseModel):
     version:               str
+    release_type:          Optional[str] = None
     schema_version:        str
     build_date:            str
-    completed_milestones:  List[str]
+    completed_milestones:  Optional[List[str]] = None
+    milestones_completed:  Optional[List[str]] = None
 
 
 # ---------------------------------------------------------------------------

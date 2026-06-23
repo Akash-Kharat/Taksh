@@ -4,7 +4,7 @@ Pydantic schemas for the Conversation Intelligence Layer REST API (MS-12).
 from __future__ import annotations
 
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class ConversationInfoResponse(BaseModel):
@@ -37,8 +37,7 @@ class ConversationStartResponse(BaseModel):
     conversation_state: str
     conversation_session_state: str
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class ConversationMessageRequest(BaseModel):
     runtime_session_id: str
@@ -67,8 +66,7 @@ class ConversationTurnSchema(BaseModel):
     segment_count: int
     response_truncated: bool
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class ConversationMetricsSchema(BaseModel):
     metrics_id: str
@@ -81,8 +79,7 @@ class ConversationMetricsSchema(BaseModel):
     total_interruptions: int
     playback_dropped_chunks: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class ConversationSessionDetailResponse(BaseModel):
     turns: List[ConversationTurnSchema]

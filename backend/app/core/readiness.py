@@ -30,9 +30,9 @@ class ReadinessReport:
 
 
 def _status_from_score(score: int) -> str:
-    if score == 100:
+    if score >= 90:
         return "ready"
-    if score >= 80:
+    if score >= 70:
         return "degraded"
     return "not_ready"
 

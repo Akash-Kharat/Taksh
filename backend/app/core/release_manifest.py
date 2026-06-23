@@ -14,6 +14,8 @@ logger = logging.getLogger("release_manifest")
 # Resolve path relative to this file (backend/app/core/ → backend/)
 _MANIFEST_PATH = Path(__file__).parent.parent.parent / "release_manifest.json"
 
+MANIFEST_VERSION = "1.0.0"
+
 _manifest_cache: Optional[Dict[str, Any]] = None
 
 

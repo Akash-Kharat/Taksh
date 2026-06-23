@@ -43,6 +43,7 @@ class StartupValidator:
         checks.append(self._check_llm_provider())
         checks.append(self._check_docs_dir())
         checks.append(self._check_fts5())
+        checks.append(self._check_release_manifest_version())
 
         # Cache results for the startup-report endpoint
         global startup_results
@@ -96,11 +97,11 @@ class StartupValidator:
                 ctx = MigrationContext.configure(conn)
                 current = set(ctx.get_current_heads())
 
-            if current >= head_revisions:
+            if current == head_revisions and len(current) > 0:
                 return StartupCheck("Alembic Migration", critical=True, passed=True, detail=f"Current: {current}")
             return StartupCheck(
                 "Alembic Migration", critical=True, passed=False,
-                detail=f"Pending migrations. Current={current}, Head={head_revisions}",
+                detail=f"Migration drift detected. Current={current}, Head={head_revisions}",
             )
         except Exception as exc:
             return StartupCheck("Alembic Migration", critical=True, passed=False, detail=str(exc))
@@ -169,3 +170,18 @@ class StartupValidator:
             return StartupCheck("SQLite FTS5", critical=True, passed=True, detail="Available")
         except Exception as exc:
             return StartupCheck("SQLite FTS5", critical=True, passed=False, detail=str(exc))
+
+    def _check_release_manifest_version(self) -> StartupCheck:
+        try:
+            from app.core.release_manifest import get_manifest, MANIFEST_VERSION
+            manifest = get_manifest()
+            manifest_ver = manifest.get("version")
+            if manifest_ver == MANIFEST_VERSION:
+                return StartupCheck("Release Manifest Version", critical=True, passed=True, detail=f"Version match: {MANIFEST_VERSION}")
+            return StartupCheck(
+                "Release Manifest Version", critical=True, passed=False,
+                detail=f"Version mismatch: manifest has {manifest_ver}, expected {MANIFEST_VERSION}",
+            )
+        except Exception as exc:
+            return StartupCheck("Release Manifest Version", critical=True, passed=False, detail=str(exc))
+
