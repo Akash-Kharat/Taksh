@@ -49,4 +49,14 @@ class ConnectionManager:
             "connected_client_ids": self.get_active_clients()
         }
 
+    async def clear(self) -> None:
+        """Closes and clears all active connections."""
+        for client_id, ws in list(self.active_connections.items()):
+            try:
+                await ws.close()
+            except Exception:
+                pass
+        self.active_connections.clear()
+        logger.info("Cleared all active WebSocket connections.")
+
 ws_manager = ConnectionManager()

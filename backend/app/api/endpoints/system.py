@@ -245,11 +245,14 @@ def get_release():
     api_logger.info("Serving release manifest")
     from app.core.release_manifest import get_manifest
     manifest = get_manifest()
+    milestones = manifest.get("milestones_completed", manifest.get("completed_milestones", []))
     return ReleaseManifestResponse(
-        version              = manifest["version"],
-        schema_version       = manifest["schema_version"],
-        build_date           = manifest["build_date"],
-        completed_milestones = manifest["completed_milestones"],
+        version              = manifest.get("version"),
+        release_type         = manifest.get("release_type", "production"),
+        schema_version       = manifest.get("schema_version"),
+        build_date           = manifest.get("build_date"),
+        completed_milestones = milestones,
+        milestones_completed = milestones,
     )
 
 

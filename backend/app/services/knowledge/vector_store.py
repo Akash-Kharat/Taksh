@@ -25,7 +25,8 @@ class MockEmbeddingFunction(chromadb.EmbeddingFunction):
             embeddings.append(vector)
         return embeddings
 
-    def name(self) -> str:
+    @classmethod
+    def name(cls) -> str:
         return "MockEmbeddingFunction"
 
     def get_config(self) -> Dict[str, Any]:
@@ -35,6 +36,16 @@ class MockEmbeddingFunction(chromadb.EmbeddingFunction):
     def build_from_config(cls, config: Dict[str, Any]) -> "MockEmbeddingFunction":
         return cls()
 
+
+
+active_clients: List["ChromaDBClient"] = []
+
+
+def close_all_clients() -> None:
+    """Closes all active ChromaDBClient connections."""
+    for client in list(active_clients):
+        client.close()
+    active_clients.clear()
 
 
 class ChromaDBClient:
@@ -62,9 +73,28 @@ class ChromaDBClient:
                 embedding_function=self.embedding_function
             )
             knowledge_logger.info(f"ChromaDBClient initialized at storage path: {self.chroma_path}")
+            active_clients.append(self)
         except Exception as e:
             knowledge_logger.error(f"Failed to initialize ChromaDBClient: {e}")
             raise RuntimeError(f"ChromaDB failed to initialize: {e}") from e
+
+    def close(self) -> None:
+        """Closes the underlying ChromaDB client connection."""
+        if hasattr(self, "client"):
+            try:
+                self.client.close()
+                knowledge_logger.info("ChromaDBClient connection closed.")
+            except Exception as e:
+                # Some versions/tests might throw if already closed
+                pass
+        if self in active_clients:
+            active_clients.remove(self)
+
+    def __enter__(self) -> "ChromaDBClient":
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb) -> None:
+        self.close()
 
     def add_chunks(self, document_id: str, filepath: str, chunks: List[Dict[str, Any]]) -> None:
         """Stores document chunk vectors and metadata properties."""

@@ -99,6 +99,39 @@ async def lifespan(app: FastAPI):
     except Exception:
         pass
 
+    # Clean up WebSocket registries, providers, and vector store connections
+    system_logger.info("Clearing active WebSocket connections...")
+    try:
+        from app.services.websocket.manager import ws_manager
+        await ws_manager.clear()
+    except Exception as e:
+        system_logger.warning(f"Error clearing WebSockets: {e}")
+
+    system_logger.info("Disconnecting all active providers...")
+    try:
+        from app.services.providers.factory import provider_factory
+        await provider_factory.disconnect_all()
+    except Exception as e:
+        system_logger.warning(f"Error disconnecting providers: {e}")
+
+    system_logger.info("Closing ChromaDB vector store clients...")
+    try:
+        from app.services.knowledge.vector_store import close_all_clients
+        close_all_clients()
+    except Exception as e:
+        system_logger.warning(f"Error closing Chroma clients: {e}")
+
+    system_logger.info("Clearing active runtime and voice sessions...")
+    try:
+        from app.services.runtime.state_machine import active_state_machines
+        from app.services.runtime.output_queue import active_output_queues
+        from app.services.voice.session_manager import voice_session_manager
+        active_state_machines.clear()
+        active_output_queues.clear()
+        voice_session_manager.active_sessions.clear()
+    except Exception as e:
+        system_logger.warning(f"Error clearing runtime/voice sessions: {e}")
+
     system_logger.info("Shutting down Taksh Backend...")
 
 

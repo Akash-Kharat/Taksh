@@ -11,17 +11,18 @@ from app.core.readiness import ReadinessReporter, ReadinessReport, _status_from_
 # Status threshold logic
 # ---------------------------------------------------------------------------
 
-def test_status_ready_when_score_100():
+def test_status_ready_when_score_90_or_above():
     assert _status_from_score(100) == "ready"
+    assert _status_from_score(90) == "ready"
 
 
-def test_status_degraded_when_score_80_to_99():
-    assert _status_from_score(95) == "degraded"
-    assert _status_from_score(80) == "degraded"
+def test_status_degraded_when_score_70_to_89():
+    assert _status_from_score(89) == "degraded"
+    assert _status_from_score(70) == "degraded"
 
 
-def test_status_not_ready_when_score_below_80():
-    assert _status_from_score(79) == "not_ready"
+def test_status_not_ready_when_score_below_70():
+    assert _status_from_score(69) == "not_ready"
     assert _status_from_score(0) == "not_ready"
 
 
