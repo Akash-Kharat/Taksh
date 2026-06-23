@@ -14,27 +14,31 @@ from app.services.health.manager import (
 # Unit tests for individual probes
 # ---------------------------------------------------------------------------
 
-def test_database_probe_healthy(db_session):
-    result = asyncio.get_event_loop().run_until_complete(_probe_database(db_session))
+@pytest.mark.anyio
+async def test_database_probe_healthy(db_session):
+    result = await _probe_database(db_session)
     assert result.status == HealthStatus.HEALTHY
 
 
-def test_database_probe_unhealthy():
+@pytest.mark.anyio
+async def test_database_probe_unhealthy():
     bad_db = MagicMock()
     bad_db.execute.side_effect = Exception("connection refused")
-    result = asyncio.get_event_loop().run_until_complete(_probe_database(bad_db))
+    result = await _probe_database(bad_db)
     assert result.status == HealthStatus.UNHEALTHY
     assert "connection refused" in result.detail
 
 
-def test_memory_probe_does_not_crash():
-    result = asyncio.get_event_loop().run_until_complete(_probe_memory())
+@pytest.mark.anyio
+async def test_memory_probe_does_not_crash():
+    result = await _probe_memory()
     assert result.status in (HealthStatus.HEALTHY, HealthStatus.DEGRADED)
 
 
-def test_knowledge_probe_degraded_on_failure():
+@pytest.mark.anyio
+async def test_knowledge_probe_degraded_on_failure():
     with patch("app.services.knowledge.vector_store.ChromaDBClient", side_effect=RuntimeError("chroma down")):
-        result = asyncio.get_event_loop().run_until_complete(_probe_knowledge())
+        result = await _probe_knowledge()
     assert result.status == HealthStatus.DEGRADED
 
 
@@ -42,17 +46,16 @@ def test_knowledge_probe_degraded_on_failure():
 # Timeout behaviour
 # ---------------------------------------------------------------------------
 
-def test_health_check_timeout():
+@pytest.mark.anyio
+async def test_health_check_timeout():
     """A slow probe must return DEGRADED within timeout, not hang."""
     manager = HealthManager()
 
-    async def run():
-        async def slow_probe():
-            await asyncio.sleep(999)
-        with patch("app.core.config.settings.HEALTH_CHECK_TIMEOUT_SECONDS", 1):
-            return await manager._run_with_timeout(slow_probe, "test_component")
+    async def slow_probe():
+        await asyncio.sleep(999)
+    with patch("app.core.config.settings.HEALTH_CHECK_TIMEOUT_SECONDS", 1):
+        result = await manager._run_with_timeout(slow_probe, "test_component")
 
-    result = asyncio.get_event_loop().run_until_complete(run())
     assert result.status == HealthStatus.DEGRADED
     assert "Timed out" in result.detail
 
@@ -61,34 +64,29 @@ def test_health_check_timeout():
 # Aggregation logic
 # ---------------------------------------------------------------------------
 
-def test_overall_status_unhealthy_when_db_down(db_session):
-    async def run():
-        with patch(
-            "app.services.health.manager._probe_database",
-            new=AsyncMock(return_value=ComponentHealth("database", HealthStatus.UNHEALTHY, "down")),
-        ):
-            manager = HealthManager()
-            return await manager.get_health(db_session)
+@pytest.mark.anyio
+async def test_overall_status_unhealthy_when_db_down(db_session):
+    with patch(
+        "app.services.health.manager._probe_database",
+        new=AsyncMock(return_value=ComponentHealth("database", HealthStatus.UNHEALTHY, "down")),
+    ):
+        manager = HealthManager()
+        result = await manager.get_health(db_session)
 
-    result = asyncio.get_event_loop().run_until_complete(run())
     assert result["status"] == HealthStatus.UNHEALTHY.value
 
 
-def test_overall_status_contains_all_components(db_session):
-    async def run():
-        manager = HealthManager()
-        return await manager.get_health(db_session)
-
-    result = asyncio.get_event_loop().run_until_complete(run())
+@pytest.mark.anyio
+async def test_overall_status_contains_all_components(db_session):
+    manager = HealthManager()
+    result = await manager.get_health(db_session)
     assert "database" in result["components"]
 
 
-def test_get_health_returns_component_map(db_session):
-    async def run():
-        manager = HealthManager()
-        return await manager.get_health(db_session)
-
-    result = asyncio.get_event_loop().run_until_complete(run())
+@pytest.mark.anyio
+async def test_get_health_returns_component_map(db_session):
+    manager = HealthManager()
+    result = await manager.get_health(db_session)
     assert "status" in result
     assert "components" in result
     assert isinstance(result["components"], dict)

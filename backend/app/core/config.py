@@ -121,6 +121,10 @@ class Settings(BaseSettings):
     HEALTH_CHECK_TIMEOUT_SECONDS: int = 5
     HEALTH_HISTORY_RETENTION_DAYS: int = 30
 
+    # Release Candidate (MS-20) configurations
+    TAKSH_PROFILE: str = "development"  # development | lab | production
+
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",

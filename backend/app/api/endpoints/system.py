@@ -22,7 +22,13 @@ from app.schemas.system import (
     ProviderConfigSchema,
     StartupReportResponse,
     StartupCheckSchema,
+    ReadinessResponse,
+    SmokeTestReportResponse,
+    SmokeTestResultSchema,
+    ReleaseManifestResponse,
+    BackupValidateResponse,
 )
+
 
 router = APIRouter(prefix="/system", tags=["System Diagnostics"])
 
@@ -170,4 +176,97 @@ def get_startup_report():
         total  = len(checks),
         passed = passed,
         failed = len(checks) - passed,
+    )
+
+
+# ---------------------------------------------------------------------------
+# GET /api/v1/system/readiness  (MS-20)
+# ---------------------------------------------------------------------------
+
+@router.get("/readiness", response_model=ReadinessResponse)
+async def get_readiness(db: Session = Depends(get_db)):
+    """
+    Returns a composite deployment readiness score aggregating startup
+    validation results, health checks, and configuration validation.
+    """
+    api_logger.info("Serving system readiness report")
+    from app.core.readiness import readiness_reporter
+    report = await readiness_reporter.get_report(db)
+    return ReadinessResponse(
+        status        = report.status,
+        score         = report.score,
+        checks_passed = report.checks_passed,
+        checks_failed = report.checks_failed,
+        warnings      = report.warnings,
+    )
+
+
+# ---------------------------------------------------------------------------
+# POST /api/v1/system/smoke-test  (MS-20)
+# ---------------------------------------------------------------------------
+
+@router.post("/smoke-test", response_model=SmokeTestReportResponse)
+def run_smoke_test(db: Session = Depends(get_db)):
+    """
+    Runs the full deployment smoke test suite covering Runtime, Memory,
+    Knowledge, Provider, and Conversation categories.
+    """
+    api_logger.info("Running smoke test suite")
+    from app.core.smoke_tests import smoke_test_runner
+    report = smoke_test_runner.run_all(db)
+    return SmokeTestReportResponse(
+        total             = report.total,
+        passed            = report.passed,
+        failed            = report.failed,
+        total_duration_ms = report.total_duration_ms,
+        results           = [
+            SmokeTestResultSchema(
+                category    = r.category,
+                name        = r.name,
+                passed      = r.passed,
+                duration_ms = r.duration_ms,
+                detail      = r.detail,
+            )
+            for r in report.results
+        ],
+    )
+
+
+# ---------------------------------------------------------------------------
+# GET /api/v1/system/release  (MS-20)
+# ---------------------------------------------------------------------------
+
+@router.get("/release", response_model=ReleaseManifestResponse)
+def get_release():
+    """
+    Returns the release manifest: version, schema_version, build_date,
+    and list of completed milestones.
+    """
+    api_logger.info("Serving release manifest")
+    from app.core.release_manifest import get_manifest
+    manifest = get_manifest()
+    return ReleaseManifestResponse(
+        version              = manifest["version"],
+        schema_version       = manifest["schema_version"],
+        build_date           = manifest["build_date"],
+        completed_milestones = manifest["completed_milestones"],
+    )
+
+
+# ---------------------------------------------------------------------------
+# POST /api/v1/system/backup/validate  (MS-20)
+# ---------------------------------------------------------------------------
+
+@router.post("/backup/validate", response_model=BackupValidateResponse)
+def validate_backup(db: Session = Depends(get_db)):
+    """
+    Exports a backup and restores it into a temporary database to verify
+    integrity. Returns valid=True only if the full restore cycle succeeds.
+    """
+    api_logger.info("Running backup restore validation")
+    from app.core.backup_validator import backup_validator
+    result = backup_validator.validate(db)
+    return BackupValidateResponse(
+        valid            = result.valid,
+        records_restored = result.records_restored,
     )

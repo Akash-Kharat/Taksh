@@ -94,3 +94,56 @@ class StartupReportResponse(BaseModel):
     total: int
     passed: int
     failed: int
+
+
+# ---------------------------------------------------------------------------
+# MS-20: Readiness
+# ---------------------------------------------------------------------------
+
+class ReadinessResponse(BaseModel):
+    status:        str    # "ready" | "degraded" | "not_ready"
+    score:         int    # 0–100
+    checks_passed: int
+    checks_failed: int
+    warnings:      int
+
+
+# ---------------------------------------------------------------------------
+# MS-20: Smoke Tests
+# ---------------------------------------------------------------------------
+
+class SmokeTestResultSchema(BaseModel):
+    category:    str
+    name:        str
+    passed:      bool
+    duration_ms: float
+    detail:      str = ""
+
+
+class SmokeTestReportResponse(BaseModel):
+    total:             int
+    passed:            int
+    failed:            int
+    total_duration_ms: float
+    results:           List[SmokeTestResultSchema]
+
+
+# ---------------------------------------------------------------------------
+# MS-20: Release Manifest
+# ---------------------------------------------------------------------------
+
+class ReleaseManifestResponse(BaseModel):
+    version:               str
+    schema_version:        str
+    build_date:            str
+    completed_milestones:  List[str]
+
+
+# ---------------------------------------------------------------------------
+# MS-20: Backup Validation
+# ---------------------------------------------------------------------------
+
+class BackupValidateResponse(BaseModel):
+    valid:            bool
+    records_restored: int
+

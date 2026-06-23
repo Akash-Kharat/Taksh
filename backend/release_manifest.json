@@ -1,0 +1,27 @@
+{
+  "version": "0.1.0-rc1",
+  "schema_version": "a1b2c3d4e5f6",
+  "build_date": "2026-06-23T05:56:00Z",
+  "completed_milestones": [
+    "MS-01",
+    "MS-02",
+    "MS-03",
+    "MS-04",
+    "MS-05",
+    "MS-06",
+    "MS-07",
+    "MS-08",
+    "MS-09",
+    "MS-10",
+    "MS-11",
+    "MS-12",
+    "MS-13",
+    "MS-14",
+    "MS-15",
+    "MS-16",
+    "MS-17",
+    "MS-18",
+    "MS-19",
+    "MS-20"
+  ]
+}
